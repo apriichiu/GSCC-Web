@@ -1,0 +1,12 @@
+# Logfile created on Wed Mar 10 15:00:39 -0800 2010
+
+Processing StaticPageController#frontpage (for 127.0.0.1 at 2010-03-10 15:00:44) [GET]
+Rendering template within layouts/application
+Rendering static_page/frontpage
+Completed in 38ms (View: 36, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StaticPageController#frontpage (for 127.0.0.1 at 2010-03-10 21:02:20) [GET]
+Rendering template within layouts/application
+Rendering static_page/frontpage
+Completed in 69ms (View: 67, DB: 0) | 200 OK [http://localhost/]

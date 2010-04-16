@@ -1,0 +1,134 @@
+!!!
+%html
+  %head
+    %link{:rel => "shortcut icon", :href => "/favicon.ico", :type => "image/x-icon"}/
+    %title
+      = page_title
+      \- Good Shepherd Christian Community
+
+    /Blueprint CSS
+    %link{:rel => "stylesheet",
+          :href => "/stylesheets/blueprint/screen.css",
+          :type => "text/css",
+          :media => "screen, projection"}
+    %link{:rel => "stylesheet",
+          :href => "/stylesheets/blueprint/print.css",
+          :type => "text/css",
+          :media => "print"}
+    /[if lt IE 8]
+      <link rel="stylesheet" href="/stylesheets/blueprint/ie.css" type="text/css" media="screen, projection">
+    %link{:rel => "stylesheet",
+          :href => "/stylesheets/blueprint/plugins/buttons/screen.css",
+          :type => "text/css",
+          :media => "screen, projection"}
+    %link{:rel => "stylesheet",
+          :href => "/stylesheets/blueprint/plugins/fancy-type/screen.css",
+          :type => "text/css",
+          :media => "screen, projection"}
+    %link{:rel => "stylesheet",
+          :href => "/stylesheets/application.css",
+          :type => "text/css"}
+  %body{:class => params[:action] == 'frontpage' ? 'frontpage' : 'interior'}
+    #header
+      .container
+        %address
+          %strong Good Shepherd Christian Community
+          \/
+          940 South Stelling Road, Cupertino, Ca 95014 /
+          408-253-5152
+
+        %a.map-button{:href => 'http://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=940+S+Stelling+Rd,+Cupertino,+CA+95014&sll=37.0625,-95.677068&sspn=60.158465,134.912109&ie=UTF8&z=17&iwloc=A',
+                      :target =>'_blank'}
+          map &amp; directions
+    #outer-container.container
+      #content.span-18.last= yield
+      #sidebar.span-6
+        %ul#navigation
+          %li.home
+            %a{:href => root_path()} Home
+          =navigation_item('about_us')
+          =navigation_item('connect')
+          =navigation_item('create')
+          =navigation_item('care')
+          =navigation_item('resources')
+
+        %h3.upcoming-events Upcoming events
+        %ul.upcoming-events.vcalendar
+          %li.vevent
+            %abbr.dtstart{:title => '2009-03-21T13:00:00'}
+              MAR 21 / 1:30-5:00P
+            %a.url{:href => '#'}
+              .summary
+                Joshua Style Amazing Race
+              .location
+                Good Shepherd Church Building
+          %li.vevent
+            %abbr.dtstart{:title => '2009-06-20T14:00:00'}
+              AUG 27-29
+            %a.url{:href => '#'}
+              .summary
+                Summer Retreat
+              .location
+                Yosemite
+
+        %h3.subscribe Subscribe to our mailing list
+        %form.subscribe
+          %input.text{:type => 'text'}
+          %button{:type => 'submit'} Subscribe
+
+    .container
+      #footer.span-24.last
+        .span-5.append-1.contact
+          %h3 We would love to hear from you!
+          %p
+            %a{:href => 'mailto:gscc@gschristian.org'} gscc@gschristian.org
+          %address
+            940 S Stelling Rd<br />
+            Cupertino, CA 95014<br />
+            408-253-5152<br />
+
+        .span-6
+          %ul
+            %li
+              = link_to('Home', root_path)
+            %li
+              = link_to('About Us', section_path('about_us'))
+              %ul
+                - static_pages()['About Us'].each do |subsection|
+                  = li_link_to(subsection, subsection_path('about_us', subsection.dehumanize))
+
+        .span-6
+          %ul
+            %li
+              %a{:href => section_path('connect')}
+                Connect /
+                %small Ministries
+              %ul
+                - static_pages()['Connect'].each do |subsection|
+                  = li_link_to(subsection, subsection_path('connect', subsection.dehumanize))
+
+          %ul
+            %li
+              %a{:href => section_path('care')}
+                Care /
+                %small Serving Opportunities
+              %ul
+                - static_pages()['Care'].each do |subsection|
+                  = li_link_to(subsection, subsection_path('care', subsection.dehumanize))
+        .span-6.last
+          %ul
+            %li
+              %a{:href => section_path('create')}
+                Create
+              %ul
+                - static_pages()['Create'].each do |subsection|
+                  = li_link_to(subsection, subsection_path('create', subsection.dehumanize))
+            %li
+              %a{:href => section_path('resources')}
+                Resources
+              %ul
+                - static_pages()['Resources'].each do |subsection|
+                  = li_link_to(subsection, subsection_path('resources', subsection.dehumanize))
+      .span-24.last
+        %p#copyright.incr
+          &copy;2008 Good Shepherd Christian Community &lt;3
