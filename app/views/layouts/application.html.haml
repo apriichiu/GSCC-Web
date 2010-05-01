@@ -4,7 +4,7 @@
     %link{:rel => "shortcut icon", :href => "/favicon.ico", :type => "image/x-icon"}/
     %title
       = page_title
-      \Good Shepherd Christian Community
+      Good Shepherd Christian Community
 
     /Blueprint CSS
     %link{:rel => "stylesheet",
@@ -54,22 +54,9 @@
 
         %h3.upcoming-events Upcoming events
         %ul.upcoming-events.vcalendar
-          %li.vevent
-            %abbr.dtstart{:title => '2009-03-21T13:00:00'}
-              MAR 21 / 1:30-5:00P
-            %a.url{:href => '#'}
-              .summary
-                Joshua Style Amazing Race
-              .location
-                Good Shepherd Church Building
-          %li.vevent
-            %abbr.dtstart{:title => '2009-06-20T14:00:00'}
-              AUG 27-29
-            %a.url{:href => '#'}
-              .summary
-                Summer Retreat
-              .location
-                Yosemite
+          - recent_events().each do |e|
+            %li.vevent
+              = link_to_events(e)
 
         %h3.subscribe Subscribe to our mailing list
         %form.subscribe

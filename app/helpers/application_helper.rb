@@ -22,5 +22,10 @@ module ApplicationHelper
   def li_link_to(*args)
     "<li>#{link_to(*args)}</li>"
   end
+
+  def recent_events
+    EventsController.recent_events
+  end
+
 end
 
