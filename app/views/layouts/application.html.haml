@@ -57,7 +57,7 @@
           - recent_events().each do |e|
             %li.vevent
               = link_to_events(e)
-            - Digest::SHA256.hexdigest("test")
+        = link_to( "See all upcoming events", { :controller => "events" } )
 
         %h3.subscribe Subscribe to our mailing list
         %form.subscribe

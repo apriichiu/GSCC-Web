@@ -1,5 +1,8 @@
 <h1>New event</h1>
 
+<% if flash[:notice] -%> <div id="notice"><%= flash[:notice] %></div>
+<% end -%>
+
 <% form_for(@event) do |f| %>
   <%= f.error_messages %>
 
@@ -22,6 +25,10 @@
   <p>
     <%= f.label :startdate %><br />
     <%= f.datetime_select :startdate %>
+  </p>
+  <p>
+    Password: <br />
+    <%= text_field "auth", "pass" %>
   </p>
   <p>
     <%= f.submit 'Create' %>
