@@ -5512,3 +5512,734 @@ Rendering template within layouts/application
 Rendering events/show
   [4;35;1mEvent Load (0.4ms)[0m   [0mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
 Completed in 22ms (View: 16, DB: 1) | 200 OK [http://localhost/events/3]
+
+
+Processing StaticPageController#frontpage (for 127.0.0.1 at 2010-05-01 18:50:37) [GET]
+Rendering template within layouts/application
+Rendering static_page/frontpage
+  [4;36;1mEvent Load (1.0ms)[0m   [0;1mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 260ms (View: 256, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StaticPageController#frontpage (for 127.0.0.1 at 2010-05-01 18:52:18) [GET]
+Rendering template within layouts/application
+Rendering static_page/frontpage
+  [4;35;1mEvent Load (0.6ms)[0m   [0mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 81ms (View: 79, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StaticPageController#frontpage (for 127.0.0.1 at 2010-05-01 18:52:36) [GET]
+Rendering template within layouts/application
+Rendering static_page/frontpage
+  [4;36;1mEvent Load (0.6ms)[0m   [0;1mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 20ms (View: 18, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StaticPageController#frontpage (for 127.0.0.1 at 2010-05-01 18:54:54) [GET]
+Rendering template within layouts/application
+Rendering static_page/frontpage
+  [4;35;1mEvent Load (0.6ms)[0m   [0mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 21ms (View: 18, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StaticPageController#frontpage (for 127.0.0.1 at 2010-05-01 18:55:02) [GET]
+Rendering template within layouts/application
+Rendering static_page/frontpage
+  [4;36;1mEvent Load (0.6ms)[0m   [0;1mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 20ms (View: 18, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StaticPageController#frontpage (for 127.0.0.1 at 2010-05-01 18:55:10) [GET]
+Rendering template within layouts/application
+Rendering static_page/frontpage
+  [4;35;1mEvent Load (0.6ms)[0m   [0mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 21ms (View: 18, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StaticPageController#frontpage (for 127.0.0.1 at 2010-05-01 18:55:15) [GET]
+Rendering template within layouts/application
+Rendering static_page/frontpage
+  [4;36;1mEvent Load (0.7ms)[0m   [0;1mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 20ms (View: 18, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StaticPageController#frontpage (for 127.0.0.1 at 2010-05-01 18:55:19) [GET]
+Rendering template within layouts/application
+Rendering static_page/frontpage
+  [4;35;1mEvent Load (0.6ms)[0m   [0mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 20ms (View: 18, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StaticPageController#frontpage (for 127.0.0.1 at 2010-05-01 18:55:20) [GET]
+Rendering template within layouts/application
+Rendering static_page/frontpage
+  [4;36;1mEvent Load (0.6ms)[0m   [0;1mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 20ms (View: 17, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StaticPageController#frontpage (for 127.0.0.1 at 2010-05-01 18:55:23) [GET]
+Rendering template within layouts/application
+Rendering static_page/frontpage
+  [4;35;1mEvent Load (0.6ms)[0m   [0mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 21ms (View: 19, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StaticPageController#frontpage (for 127.0.0.1 at 2010-05-01 18:55:29) [GET]
+Rendering template within layouts/application
+Rendering static_page/frontpage
+  [4;36;1mEvent Load (0.6ms)[0m   [0;1mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 20ms (View: 18, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StaticPageController#frontpage (for 127.0.0.1 at 2010-05-01 18:55:33) [GET]
+Rendering template within layouts/application
+Rendering static_page/frontpage
+  [4;35;1mEvent Load (0.6ms)[0m   [0mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 20ms (View: 18, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StaticPageController#frontpage (for 127.0.0.1 at 2010-05-01 18:55:34) [GET]
+Rendering template within layouts/application
+Rendering static_page/frontpage
+  [4;36;1mEvent Load (0.9ms)[0m   [0;1mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 81ms (View: 79, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StaticPageController#frontpage (for 127.0.0.1 at 2010-05-01 18:55:36) [GET]
+Rendering template within layouts/application
+Rendering static_page/frontpage
+  [4;35;1mEvent Load (0.6ms)[0m   [0mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 20ms (View: 18, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StaticPageController#frontpage (for 127.0.0.1 at 2010-05-01 18:56:39) [GET]
+Rendering template within layouts/application
+Rendering static_page/frontpage
+  [4;36;1mEvent Load (0.6ms)[0m   [0;1mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 21ms (View: 19, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StaticPageController#frontpage (for 127.0.0.1 at 2010-05-01 18:57:22) [GET]
+Rendering template within layouts/application
+Rendering static_page/frontpage
+  [4;35;1mEvent Load (0.6ms)[0m   [0mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 20ms (View: 18, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StaticPageController#frontpage (for 127.0.0.1 at 2010-05-01 18:57:37) [GET]
+Rendering template within layouts/application
+Rendering static_page/frontpage
+  [4;36;1mEvent Load (0.6ms)[0m   [0;1mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 81ms (View: 18, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StaticPageController#frontpage (for 127.0.0.1 at 2010-05-01 18:57:48) [GET]
+Rendering template within layouts/application
+Rendering static_page/frontpage
+  [4;35;1mEvent Load (0.6ms)[0m   [0mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 20ms (View: 18, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StaticPageController#frontpage (for 127.0.0.1 at 2010-05-01 18:57:56) [GET]
+Rendering template within layouts/application
+Rendering static_page/frontpage
+  [4;36;1mEvent Load (0.6ms)[0m   [0;1mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 25ms (View: 23, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StaticPageController#frontpage (for 127.0.0.1 at 2010-05-01 18:58:00) [GET]
+Rendering template within layouts/application
+Rendering static_page/frontpage
+  [4;35;1mEvent Load (0.6ms)[0m   [0mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 21ms (View: 19, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StaticPageController#frontpage (for 127.0.0.1 at 2010-05-01 18:58:06) [GET]
+Rendering template within layouts/application
+Rendering static_page/frontpage
+  [4;36;1mEvent Load (0.6ms)[0m   [0;1mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 20ms (View: 18, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StaticPageController#frontpage (for 127.0.0.1 at 2010-05-01 18:58:09) [GET]
+Rendering template within layouts/application
+Rendering static_page/frontpage
+  [4;35;1mEvent Load (0.6ms)[0m   [0mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 21ms (View: 19, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StaticPageController#frontpage (for 127.0.0.1 at 2010-05-01 18:58:12) [GET]
+Rendering template within layouts/application
+Rendering static_page/frontpage
+  [4;36;1mEvent Load (0.6ms)[0m   [0;1mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 20ms (View: 18, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StaticPageController#frontpage (for 127.0.0.1 at 2010-05-01 18:58:17) [GET]
+Rendering template within layouts/application
+Rendering static_page/frontpage
+  [4;35;1mEvent Load (0.6ms)[0m   [0mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 83ms (View: 81, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StaticPageController#frontpage (for 127.0.0.1 at 2010-05-01 19:14:18) [GET]
+Rendering template within layouts/application
+Rendering static_page/frontpage
+  [4;36;1mEvent Load (0.7ms)[0m   [0;1mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 22ms (View: 20, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StaticPageController#frontpage (for 127.0.0.1 at 2010-05-01 19:15:10) [GET]
+Rendering template within layouts/application
+Rendering static_page/frontpage
+  [4;35;1mEvent Load (0.6ms)[0m   [0mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 20ms (View: 18, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StaticPageController#frontpage (for 127.0.0.1 at 2010-05-01 19:15:18) [GET]
+Rendering template within layouts/application
+Rendering static_page/frontpage
+  [4;36;1mEvent Load (0.6ms)[0m   [0;1mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 20ms (View: 18, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StaticPageController#frontpage (for 127.0.0.1 at 2010-05-01 19:15:25) [GET]
+Rendering template within layouts/application
+Rendering static_page/frontpage
+  [4;35;1mEvent Load (0.6ms)[0m   [0mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 82ms (View: 80, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StaticPageController#frontpage (for 127.0.0.1 at 2010-05-01 19:15:43) [GET]
+Rendering template within layouts/application
+Rendering static_page/frontpage
+  [4;36;1mEvent Load (0.6ms)[0m   [0;1mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 21ms (View: 19, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StaticPageController#frontpage (for 127.0.0.1 at 2010-05-01 19:15:48) [GET]
+Rendering template within layouts/application
+Rendering static_page/frontpage
+  [4;35;1mEvent Load (0.6ms)[0m   [0mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 20ms (View: 18, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StaticPageController#frontpage (for 127.0.0.1 at 2010-05-01 19:15:56) [GET]
+Rendering template within layouts/application
+Rendering static_page/frontpage
+  [4;36;1mEvent Load (0.6ms)[0m   [0;1mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 20ms (View: 18, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StaticPageController#frontpage (for 127.0.0.1 at 2010-05-01 19:20:56) [GET]
+Rendering template within layouts/application
+Rendering static_page/frontpage
+  [4;35;1mEvent Load (0.7ms)[0m   [0mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 21ms (View: 19, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StaticPageController#frontpage (for 127.0.0.1 at 2010-05-01 19:44:14) [GET]
+Rendering template within layouts/application
+Rendering static_page/frontpage
+  [4;36;1mEvent Load (1.0ms)[0m   [0;1mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 89ms (View: 87, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2010-05-01 19:44:16) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mEvent Load (0.2ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering events/show
+  [4;36;1mEvent Load (0.5ms)[0m   [0;1mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 106ms (View: 100, DB: 1) | 200 OK [http://localhost/events/2]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2010-05-01 19:44:16) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mEvent Load (0.3ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering events/show
+  [4;36;1mEvent Load (0.5ms)[0m   [0;1mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 25ms (View: 18, DB: 1) | 200 OK [http://localhost/events/2]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2010-05-01 19:44:17) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mEvent Load (0.2ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering events/show
+  [4;36;1mEvent Load (0.5ms)[0m   [0;1mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 23ms (View: 17, DB: 1) | 200 OK [http://localhost/events/3]
+
+
+Processing EventsController#edit (for 127.0.0.1 at 2010-05-01 19:46:41) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mEvent Load (0.3ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering events/edit
+  [4;36;1mEvent Load (0.5ms)[0m   [0;1mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 50ms (View: 44, DB: 1) | 200 OK [http://localhost/events/3/edit]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2010-05-01 19:46:48) [GET]
+  [4;35;1mEvent Load (0.6ms)[0m   [0mSELECT * FROM "events" [0m
+Rendering template within layouts/application
+Rendering events/index
+  [4;36;1mEvent Load (0.5ms)[0m   [0;1mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 114ms (View: 109, DB: 1) | 200 OK [http://localhost/events]
+
+
+Processing StaticPageController#frontpage (for 127.0.0.1 at 2010-05-01 20:41:19) [GET]
+Rendering template within layouts/application
+Rendering static_page/frontpage
+  [4;35;1mEvent Load (0.8ms)[0m   [0mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 26ms (View: 23, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StaticPageController#frontpage (for 127.0.0.1 at 2010-05-01 20:41:21) [GET]
+Rendering template within layouts/application
+Rendering static_page/frontpage
+  [4;36;1mEvent Load (0.6ms)[0m   [0;1mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 20ms (View: 18, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StaticPageController#frontpage (for 127.0.0.1 at 2010-05-01 20:41:32) [GET]
+Rendering template within layouts/application
+Rendering static_page/frontpage
+  [4;35;1mEvent Load (0.6ms)[0m   [0mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 20ms (View: 17, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StaticPageController#frontpage (for 127.0.0.1 at 2010-05-01 20:44:26) [GET]
+Rendering template within layouts/application
+Rendering static_page/frontpage
+  [4;36;1mEvent Load (0.6ms)[0m   [0;1mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 80ms (View: 78, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StaticPageController#frontpage (for 127.0.0.1 at 2010-05-01 20:48:19) [GET]
+Rendering template within layouts/application
+Rendering static_page/frontpage
+  [4;35;1mEvent Load (0.6ms)[0m   [0mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 25ms (View: 23, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StaticPageController#frontpage (for 127.0.0.1 at 2010-05-01 20:51:58) [GET]
+Rendering template within layouts/application
+Rendering static_page/frontpage
+  [4;36;1mEvent Load (0.6ms)[0m   [0;1mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 21ms (View: 18, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StaticPageController#frontpage (for 127.0.0.1 at 2010-05-01 20:52:06) [GET]
+Rendering template within layouts/application
+Rendering static_page/frontpage
+  [4;35;1mEvent Load (0.6ms)[0m   [0mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 26ms (View: 23, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StaticPageController#frontpage (for 127.0.0.1 at 2010-05-01 20:53:27) [GET]
+Rendering template within layouts/application
+Rendering static_page/frontpage
+  [4;36;1mEvent Load (0.6ms)[0m   [0;1mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 20ms (View: 18, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StaticPageController#frontpage (for 127.0.0.1 at 2010-05-01 20:55:35) [GET]
+Rendering template within layouts/application
+Rendering static_page/frontpage
+  [4;35;1mEvent Load (0.6ms)[0m   [0mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 25ms (View: 23, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StaticPageController#frontpage (for 127.0.0.1 at 2010-05-01 21:00:35) [GET]
+Rendering template within layouts/application
+Rendering static_page/frontpage
+  [4;36;1mEvent Load (0.6ms)[0m   [0;1mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 20ms (View: 18, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2010-05-01 21:00:38) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mEvent Load (0.2ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering events/show
+  [4;36;1mEvent Load (0.4ms)[0m   [0;1mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 77ms (View: 16, DB: 1) | 200 OK [http://localhost/events/2]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2010-05-01 21:00:39) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mEvent Load (0.2ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering events/show
+  [4;36;1mEvent Load (0.4ms)[0m   [0;1mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 21ms (View: 16, DB: 1) | 200 OK [http://localhost/events/3]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2010-05-01 21:00:40) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mEvent Load (0.2ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering events/show
+  [4;36;1mEvent Load (0.5ms)[0m   [0;1mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 21ms (View: 16, DB: 1) | 200 OK [http://localhost/events/2]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2010-05-01 21:01:14) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mEvent Load (0.3ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering events/show
+  [4;36;1mEvent Load (0.4ms)[0m   [0;1mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 24ms (View: 16, DB: 1) | 200 OK [http://localhost/events/3]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2010-05-01 21:01:16) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mEvent Load (0.2ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering events/show
+  [4;36;1mEvent Load (0.5ms)[0m   [0;1mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 22ms (View: 16, DB: 1) | 200 OK [http://localhost/events/2]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2010-05-01 21:01:17) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mEvent Load (0.2ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering events/show
+  [4;36;1mEvent Load (0.6ms)[0m   [0;1mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 22ms (View: 16, DB: 1) | 200 OK [http://localhost/events/3]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2010-05-01 21:01:18) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mEvent Load (0.2ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering events/show
+  [4;36;1mEvent Load (0.5ms)[0m   [0;1mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 21ms (View: 16, DB: 1) | 200 OK [http://localhost/events/2]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2010-05-01 21:01:18) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mEvent Load (0.2ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering events/show
+  [4;36;1mEvent Load (0.5ms)[0m   [0;1mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 22ms (View: 16, DB: 1) | 200 OK [http://localhost/events/3]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2010-05-01 21:01:19) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mEvent Load (0.2ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering events/show
+  [4;36;1mEvent Load (0.4ms)[0m   [0;1mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 21ms (View: 15, DB: 1) | 200 OK [http://localhost/events/2]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2010-05-01 21:01:22) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mEvent Load (0.2ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering events/show
+  [4;36;1mEvent Load (0.5ms)[0m   [0;1mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 83ms (View: 77, DB: 1) | 200 OK [http://localhost/events/2]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2010-05-01 21:01:22) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mEvent Load (0.3ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering events/show
+  [4;36;1mEvent Load (0.4ms)[0m   [0;1mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 22ms (View: 16, DB: 1) | 200 OK [http://localhost/events/3]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2010-05-01 21:01:27) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mEvent Load (0.2ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering events/show
+  [4;36;1mEvent Load (0.4ms)[0m   [0;1mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 21ms (View: 15, DB: 1) | 200 OK [http://localhost/events/2]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2010-05-01 21:01:28) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mEvent Load (0.2ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering events/show
+  [4;36;1mEvent Load (0.5ms)[0m   [0;1mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 21ms (View: 15, DB: 1) | 200 OK [http://localhost/events/3]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2010-05-01 21:15:52) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mEvent Load (0.2ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering events/show
+  [4;36;1mEvent Load (0.5ms)[0m   [0;1mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 100ms (View: 94, DB: 1) | 200 OK [http://localhost/events/3]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2010-05-01 21:15:54) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mEvent Load (0.2ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering events/show
+  [4;36;1mEvent Load (0.4ms)[0m   [0;1mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 21ms (View: 16, DB: 1) | 200 OK [http://localhost/events/3]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2010-05-01 21:16:20) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mEvent Load (0.3ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering events/show
+  [4;35;1mEvent Load (0.5ms)[0m   [0mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 88ms (View: 82, DB: 1) | 200 OK [http://localhost/events/3]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2010-05-01 21:16:20) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mEvent Load (0.2ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering events/show
+  [4;35;1mEvent Load (0.5ms)[0m   [0mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 81ms (View: 75, DB: 1) | 200 OK [http://localhost/events/3]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2010-05-01 21:17:26) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mEvent Load (0.3ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering events/show
+
+ActionView::TemplateError (The line was indented 2 levels deeper than the previous line.) on line #61 of app/views/layouts/application.html.haml:
+58:             %li.vevent
+59:               = link_to_events(e)
+60:           %li.vevent
+61:               = Digest::SHA1.hexdigest("test")
+62: 
+63:         %h3.subscribe Subscribe to our mailing list
+64:         %form.subscribe
+
+    app/views/layouts/application.html.haml:61
+    haml (2.2.23) lib/haml/precompiler.rb:198:in `precompile'
+    haml (2.2.23) lib/haml/engine.rb:114:in `initialize'
+    haml (2.2.23) lib/haml/template/plugin.rb:27:in `new'
+    haml (2.2.23) lib/haml/template/plugin.rb:27:in `compile'
+    haml (2.2.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    app/controllers/events_controller.rb:19:in `show'
+    haml (2.2.23) lib/sass/plugin/rails.rb:20:in `process'
+
+Rendered rescues/_trace (51.1ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EventsController#show (for 127.0.0.1 at 2010-05-01 21:17:46) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mEvent Load (0.2ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering events/show
+  [4;36;1mEvent Load (0.5ms)[0m   [0;1mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 106ms (View: 100, DB: 1) | 200 OK [http://localhost/events/3]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2010-05-01 21:18:17) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mEvent Load (0.2ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering events/show
+  [4;36;1mEvent Load (0.5ms)[0m   [0;1mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 109ms (View: 104, DB: 1) | 200 OK [http://localhost/events/3]
+
+
+Processing EventsController#edit (for 127.0.0.1 at 2010-05-01 21:21:08) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mEvent Load (0.2ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering events/edit
+  [4;36;1mEvent Load (0.5ms)[0m   [0;1mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 36ms (View: 30, DB: 1) | 200 OK [http://localhost/events/3/edit]
+
+
+Processing EventsController#edit (for 127.0.0.1 at 2010-05-01 21:21:27) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mEvent Load (0.2ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering events/edit
+
+ActionView::TemplateError (undefined method `pass' for #<Event:0x1036755d0>) on line #28 of app/views/events/edit.html.erb:
+25:   </p>
+26:   <p>
+27:     <%= f.label "password" %><br />
+28:     <%= f.text_field :pass %>
+29:   </p>
+30:   <p>
+31:     <%= f.submit 'Update' %>
+
+    app/views/events/edit.html.erb:28
+    haml (2.2.23) lib/haml/helpers/action_view_mods.rb:208:in `form_for'
+    app/views/events/edit.html.erb:3
+    haml (2.2.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.23) lib/sass/plugin/rails.rb:20:in `process'
+
+Rendered rescues/_trace (45.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EventsController#edit (for 127.0.0.1 at 2010-05-01 21:21:35) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mEvent Load (0.2ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering events/edit
+
+ActionView::TemplateError (undefined method `pass' for #<Event:0x103325dd0>) on line #28 of app/views/events/edit.html.erb:
+25:   </p>
+26:   <p>
+27:     <%= f.label "password" %><br />
+28:     <%= f.text_field "pass" %>
+29:   </p>
+30:   <p>
+31:     <%= f.submit 'Update' %>
+
+    app/views/events/edit.html.erb:28
+    haml (2.2.23) lib/haml/helpers/action_view_mods.rb:208:in `form_for'
+    app/views/events/edit.html.erb:3
+    haml (2.2.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.23) lib/sass/plugin/rails.rb:20:in `process'
+
+Rendered rescues/_trace (46.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EventsController#edit (for 127.0.0.1 at 2010-05-01 21:21:36) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mEvent Load (0.2ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering events/edit
+
+ActionView::TemplateError (undefined method `pass' for #<Event:0x103475208>) on line #28 of app/views/events/edit.html.erb:
+25:   </p>
+26:   <p>
+27:     <%= f.label "password" %><br />
+28:     <%= f.text_field "pass" %>
+29:   </p>
+30:   <p>
+31:     <%= f.submit 'Update' %>
+
+    app/views/events/edit.html.erb:28
+    haml (2.2.23) lib/haml/helpers/action_view_mods.rb:208:in `form_for'
+    app/views/events/edit.html.erb:3
+    haml (2.2.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.23) lib/sass/plugin/rails.rb:20:in `process'
+
+Rendered rescues/_trace (117.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EventsController#edit (for 127.0.0.1 at 2010-05-01 21:21:40) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mEvent Load (0.2ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering events/edit
+
+ActionView::TemplateError (wrong number of arguments (0 for 1)) on line #28 of app/views/events/edit.html.erb:
+25:   </p>
+26:   <p>
+27:     <%= f.label "password" %><br />
+28:     <%= f.text_field  %>
+29:   </p>
+30:   <p>
+31:     <%= f.submit 'Update' %>
+
+    app/views/events/edit.html.erb:28:in `text_field'
+    app/views/events/edit.html.erb:28
+    haml (2.2.23) lib/haml/helpers/action_view_mods.rb:208:in `form_for'
+    app/views/events/edit.html.erb:3
+    haml (2.2.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.23) lib/sass/plugin/rails.rb:20:in `process'
+
+Rendered rescues/_trace (42.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EventsController#edit (for 127.0.0.1 at 2010-05-01 21:29:07) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mEvent Load (0.2ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering events/edit
+
+ActionView::TemplateError (wrong number of arguments (0 for 1)) on line #28 of app/views/events/edit.html.erb:
+25:   </p>
+26:   <p>
+27:     <%= f.label "password" %><br />
+28:     <%= f.text_field  %>
+29:   </p>
+30:   <p>
+31:     <%= f.submit 'Update' %>
+
+    app/views/events/edit.html.erb:28:in `text_field'
+    app/views/events/edit.html.erb:28
+    haml (2.2.23) lib/haml/helpers/action_view_mods.rb:208:in `form_for'
+    app/views/events/edit.html.erb:3
+    haml (2.2.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.23) lib/sass/plugin/rails.rb:20:in `process'
+
+Rendered rescues/_trace (43.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EventsController#edit (for 127.0.0.1 at 2010-05-01 21:29:17) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mEvent Load (0.2ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering events/edit
+  [4;35;1mEvent Load (0.5ms)[0m   [0mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 31ms (View: 25, DB: 1) | 200 OK [http://localhost/events/3/edit]
+
+
+Processing EventsController#edit (for 127.0.0.1 at 2010-05-01 21:29:18) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mEvent Load (0.2ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering events/edit
+  [4;35;1mEvent Load (0.5ms)[0m   [0mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 94ms (View: 89, DB: 1) | 200 OK [http://localhost/events/3/edit]
+
+
+Processing StaticPageController#frontpage (for 127.0.0.1 at 2010-05-01 21:29:20) [GET]
+Rendering template within layouts/application
+Rendering static_page/frontpage
+  [4;36;1mEvent Load (0.6ms)[0m   [0;1mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 26ms (View: 24, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StaticPageController#frontpage (for 127.0.0.1 at 2010-05-01 21:30:51) [GET]
+Rendering template within layouts/application
+Rendering static_page/frontpage
+  [4;35;1mEvent Load (0.6ms)[0m   [0mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 25ms (View: 23, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StaticPageController#frontpage (for 127.0.0.1 at 2010-05-01 21:31:36) [GET]
+Rendering template within layouts/application
+Rendering static_page/frontpage
+  [4;36;1mEvent Load (0.6ms)[0m   [0;1mSELECT * FROM "events" ORDER BY startdate LIMIT 2[0m
+Completed in 98ms (View: 96, DB: 1) | 200 OK [http://localhost/]
