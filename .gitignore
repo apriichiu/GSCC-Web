@@ -1,0 +1,4 @@
+./.gitignore 
+config/database.yml
+log/*
+db/development.sqlite3
