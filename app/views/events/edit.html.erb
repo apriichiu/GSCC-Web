@@ -6,10 +6,6 @@
 <% form_for(@event) do |f| %>
   <%= f.error_messages %>
   <p>
-    Password: <br />
-    <%= text_field "auth", "pass" %>
-  </p>
-  <p>
     <%= f.label :title %><br />
     <%= f.text_field :title %>
   </p>
