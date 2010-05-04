@@ -1,28 +1,37 @@
 <h1>Listing events</h1>
 
+<% if flash[:notice] -%> <div id="notice"><%= flash[:notice] %></div>
+<% end -%>
+
 <table>
   <tr>
     <th>Title</th>
     <th>Location</th>
     <th>Description</th>
-    <th>Page</th>
     <th>Startdate</th>
   </tr>
-
 <% @events.each do |event| %>
   <tr>
-    <td><%=h event.title %></td>
+    <td><%= link_to event.title, event %></td>
     <td><%=h event.location %></td>
     <td><%=h event.description %></td>
-    <td><%=h event.page %></td>
-    <td><%=h event.startdate %></td>
-    <td><%= link_to 'Show', event %></td>
+    <td><%=h event.startdate.strftime("%a, %b %d, %Y %I:%M %p") %></td>
+
+    <% if admin? %>
     <td><%= link_to 'Edit', edit_event_path(event) %></td>
     <td><%= link_to 'Destroy', event, :confirm => 'Are you sure?', :method => :delete %></td>
+    <% end %>
   </tr>
 <% end %>
 </table>
-
 <br />
 
-<%= link_to 'New event', new_event_path %>
+<div id="login-link">
+<% if admin? %>
+<%= link_to 'New event', new_event_path %> |  <%= link_to 'Logout', logout_path %>
+<% else %>
+<%= link_to 'Login', login_path %> to add/edit events.
+<% end %>
+</div>
+
+

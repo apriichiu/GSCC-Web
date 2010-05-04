@@ -1,6 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :events
-
+  map.resources :sessions
+  map.login 'login', :controller => 'sessions', :action => 'new'
+  map.logout 'logout', :controller => 'sessions', :action => 'destroy'
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
@@ -37,6 +39,7 @@ ActionController::Routing::Routes.draw do |map|
   map.root(:controller => 'static_page', :action => 'frontpage')
   map.section(':section', :controller => 'static_page', :action => 'section')
   map.subsection(':section/:subsection', :controller => 'static_page', :action => 'section_page')
+
 
   # See how all your routes lay out with "rake routes"
 

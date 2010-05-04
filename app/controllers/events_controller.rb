@@ -1,11 +1,12 @@
 class EventsController < ApplicationController
   layout "application"
+  before_filter :authorize, :except => [:index, :show]
+  
   # GET /events
   # GET /events.xml
-  $password_hash = "0f06bb7d50077b038be79b69ca6f37b271ee3ff4c6e7a790ba7d40473729a646"
 
   def index
-    @events = Event.all
+    @events = Event.find(:all, :order => "startdate", :conditions => "startdate > '#{Time.now.strftime("%Y-%m-%d %H:%M:%S UTC")}'");
 
     respond_to do |format|
       format.html # index.html.erb
@@ -46,17 +47,11 @@ class EventsController < ApplicationController
     @event = Event.new(params[:event])
 
     respond_to do |format|
-      if  Digest::SHA256.hexdigest(params[:auth][:pass]) == $password_hash
-        if @event.save
-          flash[:notice] = 'Event was successfully created.'
-          format.html { redirect_to(@event) }
-          format.xml  { render :xml => @event, :status => :created, :location => @event }
-        else
-          format.html { render :action => "new" }
-          format.xml  { render :xml => @event.errors, :status => :unprocessable_entity }
-        end
+      if @event.save
+        flash[:notice] = 'Event was successfully created.'
+        format.html { redirect_to(@event) }
+        format.xml  { render :xml => @event, :status => :created, :location => @event }
       else
-        flash[:notice] = 'Incorrect Password'
         format.html { render :action => "new" }
         format.xml  { render :xml => @event.errors, :status => :unprocessable_entity }
       end
@@ -69,17 +64,11 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
 
     respond_to do |format|
-      if  Digest::SHA256.hexdigest(params[:auth][:pass]) == $password_hash
-        if @event.update_attributes(params[:event])
-          flash[:notice] = 'Event was successfully updated.'
-          format.html { redirect_to(@event) }
-          format.xml  { head :ok }
-        else
-          format.html { render :action => "edit" }
-          format.xml  { render :xml => @event.errors, :status => :unprocessable_entity }
-        end
+      if @event.update_attributes(params[:event])
+        flash[:notice] = 'Event was successfully updated.'
+        format.html { redirect_to(@event) }
+        format.xml  { head :ok }
       else
-        flash[:notice] = 'Incorrect Password.'
         format.html { render :action => "edit" }
         format.xml  { render :xml => @event.errors, :status => :unprocessable_entity }
       end
@@ -99,7 +88,7 @@ class EventsController < ApplicationController
   end
 
   def self.recent_events
-    @events = Event.find(:all, :order => "startdate", :limit => 3);
+    @events = Event.find(:all, :order => "startdate", :limit => 3, :conditions => "startdate > '#{Time.now.strftime("%Y-%m-%d %H:%M:%S UTC")}'");
     return @events
   end
 

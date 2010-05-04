@@ -28,4 +28,19 @@ class ApplicationController < ActionController::Base
   end
   
   helper_method :render_to_string
+
+  helper_method :admin?
+
+  protected
+  def authorize
+    unless admin?
+      flash[:notice] = "unauthorized access"
+      redirect_to events_path
+      false
+    end
+  end
+
+  def admin?
+    session[:password] == "7ba44afcb856df9ff8152cff1752a2eb69da845edfa57d328bbb1050f2caee60"
+  end
 end
