@@ -1,7 +1,6 @@
 class StaticPageController < ApplicationController
   @@pages = { 'Home' => [],
               'About Us'    => [ 'Welcome from the Pastor',
-                                 'What to Expect',
                                  'Vision & Values',
                                  'Our Beliefs',
                                  'Staff' ],
@@ -9,8 +8,8 @@ class StaticPageController < ApplicationController
                                  'College Students',
                                  'Young Adults',
                                  'Family' ],
-               'Create'     => [ 'Art'],
-               'Care'       => [ 'Compassion Ministry',
+               'Serve'     => [ 'Art'],
+               'Give'       => [ 'Compassion Ministry',
                                  'Serve the Church' ],
                'Resources'  => [ 'Sermons',
                                  'Calendar of Events',

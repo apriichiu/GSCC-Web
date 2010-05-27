@@ -53,13 +53,13 @@ body {
       background-position: 0 -72px; }
       #sidebar #navigation li.connect a:hover {
         background-position: -240px -72px; }
-    #sidebar #navigation li.create a {
+    #sidebar #navigation li.serve a {
       background-position: 0 -108px; }
-      #sidebar #navigation li.create a:hover {
+      #sidebar #navigation li.serve a:hover {
         background-position: -240px -108px; }
-    #sidebar #navigation li.care a {
+    #sidebar #navigation li.give a {
       background-position: 0 -144px; }
-      #sidebar #navigation li.care a:hover {
+      #sidebar #navigation li.give a:hover {
         background-position: -240px -144px; }
     #sidebar #navigation li.resources a {
       background-position: 0 -180px; }
