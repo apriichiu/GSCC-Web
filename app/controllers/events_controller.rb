@@ -1,7 +1,5 @@
-
-
 class EventsController < ApplicationController
-  require "RedCloth"
+
   layout "application"
   before_filter :authorize, :except => [:index, :show]
   

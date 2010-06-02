@@ -1,5 +1,5 @@
 begin
-  require 'RedCloth' unless defined? RedCloth
+  require_library_or_gem "redcloth" unless Object.const_defined?(:RedCloth)
 rescue LoadError
   nil
 end
