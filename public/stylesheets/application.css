@@ -185,7 +185,7 @@ body {
   padding: 0 20px 1.5em;
   width: 670px; }
   .interior #content h1 {
-    margin: 0.5em 0 0;
+    margin: 0.5em 0 0.5em 0;
     color: #9bda5e; }
   .interior #content .subsection-navigation {
     color: #fff;
@@ -195,6 +195,21 @@ body {
       font-weight: bold; }
       .interior #content .subsection-navigation a:hover {
         color: #9bda5e; }
+    .interior #content a {
+      color: #9bda5e;
+      font-weight: bold; }
+
+
+.interior #content #login-link {
+    float: right;
+    margin-top: 20px;
+}
+
+.interior #content #textile-bar{
+    float: right;
+    margin-right: 100px;
+    
+}
 
 #footer {
   background: url(/images/footer-bkg.png) repeat-y 230px 0;

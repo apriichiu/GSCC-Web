@@ -1,37 +1,39 @@
-<h1>Upcoming events</h1>
-
+<div id="login-link">
 <% if flash[:notice] -%> <div id="notice"><%= flash[:notice] %></div>
 <% end -%>
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Location</th>
-    <th>Description</th>
-    <th>Startdate</th>
-  </tr>
-<% @events.each do |event| %>
-  <tr>
-    <td><%= link_to event.title, event %></td>
-    <td><%=h event.location %></td>
-    <td><%=h event.description %></td>
-    <td><%=h event.startdate.strftime("%a, %b %d, %Y %I:%M %p") %></td>
-
-    <% if admin? %>
-    <td><%= link_to 'Edit', edit_event_path(event) %></td>
-    <td><%= link_to 'Destroy', event, :confirm => 'Are you sure?', :method => :delete %></td>
-    <% end %>
-  </tr>
-<% end %>
-</table>
-<br />
-
-<div id="login-link">
 <% if admin? %>
 <%= link_to 'New event', new_event_path %> |  <%= link_to 'Logout', logout_path %>
 <% else %>
 <%= link_to 'Login', login_path %> to add/edit events.
 <% end %>
 </div>
+
+
+<h1>Upcoming Events</h1>
+
+
+<table>
+  <tr>
+    <th>Time</th>
+    <th>Event</th>
+    <th>Location</th>
+    <th>Description</th>
+  </tr>
+<% @events.each do |event| %>
+  <tr>
+    <td><%=h event.startdate.strftime("%a, %b %d, %Y %I:%M %p") %></td>
+    <td><%= link_to event.title, event %></td>
+    <td><%=h event.location %></td>
+    <td><%=h event.description %></td>
+
+
+    <% if admin? %>
+    <td><%= link_to 'Edit', edit_event_path(event) %> / <%= link_to 'Destroy', event, :confirm => 'Are you sure?', :method => :delete %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+<br />
+
 
 

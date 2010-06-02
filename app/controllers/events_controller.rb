@@ -1,4 +1,7 @@
+
+
 class EventsController < ApplicationController
+  require "RedCloth"
   layout "application"
   before_filter :authorize, :except => [:index, :show]
   
@@ -62,6 +65,10 @@ class EventsController < ApplicationController
   # PUT /events/1.xml
   def update
     @event = Event.find(params[:id])
+    puts "PAGE OUTPUT;"
+    puts @event.page;
+    puts "PAGE OUTPUT;"
+
 
     respond_to do |format|
       if @event.update_attributes(params[:event])

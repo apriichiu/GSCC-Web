@@ -1,27 +1,18 @@
 <p>
-  <b>Title:</b>
-  <%=h @event.title %>
+  <h1><%=h @event.title %></h1>
 </p>
-
-<p>
+  <b>Time:</b>
+  <%=h @event.startdate.strftime("%a, %b %d, %Y %I:%M %p") %>
+  <br />
   <b>Location:</b>
   <%=h @event.location %>
-</p>
 
 <p>
   <b>Description:</b>
   <%=h @event.description %>
 </p>
 
-<p>
-  <b>Page:</b>
-  <%=h @event.page %>
-</p>
-
-<p>
-  <b>Startdate:</b>
-  <%=h @event.startdate %>
-</p>
+<p><%= @event.page %></p>
 
 <% if admin? %>
 <%= link_to 'Edit', edit_event_path(@event) %> |
