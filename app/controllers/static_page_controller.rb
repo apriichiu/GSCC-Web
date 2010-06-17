@@ -4,16 +4,17 @@ class StaticPageController < ApplicationController
                                  'Vision & Values',
                                  'Our Beliefs',
                                  'Staff' ],
-               'Connect'    => [ 'Kids',
-                                 'College Students',
-                                 'Young Adults',
-                                 'Family' ],
-               'Serve'     => [ 'Art'],
-               'Give'       => [ 'Compassion Ministry',
-                                 'Serve the Church' ],
+               'Connect'    => [ 'Community Groups',
+                                 'Worship Service',
+                                 'Children\'s Program'],
+               'Serve'     => [ 'Worship & Multimedia',
+                                'Children',
+                                'Outreach'],
+               'Give'       => [ 'Compassion and Justice',
+                                 'Support GSCC' ],
                'Resources'  => [ 'Sermons',
                                  'Calendar of Events',
-                                 'Church Blog' ]
+                                 'Forms' ]
             }
 
   @@page_slugs = Hash.new

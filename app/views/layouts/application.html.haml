@@ -66,7 +66,7 @@
         .span-5.append-1.contact
           %h3 We would love to hear from you!
           %p
-            %a{:href => 'mailto:gscc@gschristian.org'} gscc@gschristian.org
+            %a{:href => 'mailto:welcome@gschristian.org'} gscc@gschristian.org
           %address
             940 S Stelling Rd<br />
             Cupertino, CA 95014<br />
@@ -86,28 +86,26 @@
           %ul
             %li
               %a{:href => section_path('connect')}
-                Connect /
-                %small Ministries
+                Connect
               %ul
                 - static_pages()['Connect'].each do |subsection|
                   = li_link_to(subsection, subsection_path('connect', subsection.dehumanize))
 
           %ul
             %li
-              %a{:href => section_path('give')}
-                Care /
-                %small Serving Opportunities
-              %ul
-                - static_pages()['Give'].each do |subsection|
-                  = li_link_to(subsection, subsection_path('give', subsection.dehumanize))
-        .span-6.last
-          %ul
-            %li
               %a{:href => section_path('serve')}
-                Create
+                Serve
               %ul
                 - static_pages()['Serve'].each do |subsection|
                   = li_link_to(subsection, subsection_path('serve', subsection.dehumanize))
+        .span-6.last
+          %ul
+            %li
+              %a{:href => section_path('give')}
+                Give
+              %ul
+                - static_pages()['Give'].each do |subsection|
+                  = li_link_to(subsection, subsection_path('give', subsection.dehumanize))
             %li
               %a{:href => section_path('resources')}
                 Resources
