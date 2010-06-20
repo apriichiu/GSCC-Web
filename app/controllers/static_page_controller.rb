@@ -14,7 +14,13 @@ class StaticPageController < ApplicationController
                                  'Support GSCC' ],
                'Resources'  => [ 'Sermons',
                                  'Calendar of Events',
-                                 'Forms' ]
+                                 'Forms' ],
+               'Groups'     => [ 'Antioch',
+                                 'Caleb',
+                                 'Galilee',
+                                 'Genesis',
+                                 'Joshua'
+                               ]
             }
 
   @@page_slugs = Hash.new
@@ -34,8 +40,12 @@ class StaticPageController < ApplicationController
 
   def section
     if @@page_slugs.include?(params[:section])
-      self.page_title = params[:section].humanize
-      render :action => "#{params[:section]}/index"
+      if params[:section] == "groups"
+         render :action => "connect/community_groups"
+      else
+        self.page_title = params[:section].humanize
+        render :action => "#{params[:section]}/index"
+      end
     else
       page_not_found!
     end

@@ -137,6 +137,13 @@ body {
     font-size: 1.5em;
     line-height: 1;
     display: block; }
+  #content #large-unit #sunday-services a {
+      color: #000;
+  }
+  #content #large-unit #sunday-services a:hover {
+      color: #666;
+  }
+
   #content #large-unit #sunday-services #new-callout {
     display: block;
     margin-top: 1em;
@@ -210,6 +217,13 @@ body {
     margin-right: 100px;
     
 }
+.interior #content .left {
+    float: left;
+    padding-right: 20px;
+    padding-top: 10px;
+
+}
+
 
 #footer {
   background: url(/images/footer-bkg.png) repeat-y 230px 0;
