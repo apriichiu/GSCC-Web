@@ -20,7 +20,13 @@ class StaticPageController < ApplicationController
                                  'Galilee',
                                  'Genesis',
                                  'Joshua'
-                               ]
+                               ], 
+               'Plug-ins'   => ['Student',
+                                'Young Adult', 
+                                'Family',
+                                'International'
+                                ]
+
             }
 
   @@page_slugs = Hash.new
