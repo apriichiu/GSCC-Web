@@ -19,7 +19,8 @@ class StaticPageController < ApplicationController
                                  'Caleb',
                                  'Galilee',
                                  'Genesis',
-                                 'Joshua'
+                                 'Joshua',
+								 'Jordan'
                                ], 
                'Plug-ins'   => ['Student',
                                 'Young Adult', 
