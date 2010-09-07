@@ -1,6 +1,10 @@
 = Good Shepherd Christian Community
 This repository contains the source code for the GSCC website.
 
-Files are laid out in the typical rails application fashion. Interesting
-'features' of the codebase include haml/sass instead of erb, and openid
-everywhere instead of our own authentication.
+Files are laid out in the typical rails application fashion. 
+
+Interesting 'features' of the codebase include haml/sass instead of
+erb, and openid everywhere instead of our own authentication. An event
+system and a resource management system
+
+
