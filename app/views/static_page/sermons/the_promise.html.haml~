@@ -1,0 +1,35 @@
+%h1 Sermons
+.subsection-navigation
+  %a{:href => subsection_path(:section => "resources", :subsection => "sermons")} Sermons
+  \/
+  %a{:href => subsection_path(:section => "resources", :subsection => "forms")} Forms
+
+%p
+The Promise - Inner Healing and Fruitful Living with Dr. Wendell Friest
+%br
+%br
+About the Speaker:
+%br
+%br
+Dr. Wendell Friest is a clinical psychologist and former pastor at Truth Lutheran Church in Taipei and faculty member of China Evangelical Seminary and the Taiwan Pastoral Training Center . He is a graduate of the University of Nebraska and Luther Theological Seminary and holds a Ph. D. from Purdue University. 
+%br
+Dr. Friest helped found Good Shepherd, and has taught numerous classes and workshops here on a variety of subjects, ranging from Bible classes to counseling to sex and marriage. 
+Title: Inner Healing and Fruitful Living - The Promise of Manasseh and Ephraim
+%br
+%br
+Theme Verses:
+%br
+%br
+Joseph named his firstborn Manasseh and said, "It is because God has made me forget all my trouble and all my father's household." The second son he named Ephraim and said, "It is because God has made me fruitful in the land of my suffering." - Genesis 41:51-52
+%br
+%br
+%a{:href => '/audio/promisecon/ThePromise_Session1.mp3'} Session 1
+%br
+%a{:href => '/audio/promisecon/ThePromise_Session2.mp3'} Session 2
+%br
+%a{:href => '/audio/promisecon/ThePromise_Session3.mp3'} Session 3
+%br
+%a{:href => '/audio/promisecon/ThePromise_Session4.mp3'} Session 4
+%br
+%a{:href => '/audio/promisecon/ThePromise_Session5.mp3'} Session 5
+

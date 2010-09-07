@@ -20,13 +20,16 @@ class StaticPageController < ApplicationController
                                  'Galilee',
                                  'Genesis',
                                  'Joshua',
-								 'Jordan'
+                                 'Jordan'
                                ], 
                'Plug-ins'   => ['Student',
                                 'Young Adult', 
                                 'Family',
                                 'International'
-                                ]
+                                ],
+               'Sermons'   => ['The Promise',
+                               'One Body'
+                              ]
 
             }
 
@@ -49,6 +52,8 @@ class StaticPageController < ApplicationController
     if @@page_slugs.include?(params[:section])
       if params[:section] == "groups"
          render :action => "connect/community_groups"
+      elsif params[:section] == "sermons"
+        render :action => "resources/sermons"
       else
         self.page_title = params[:section].humanize
         render :action => "#{params[:section]}/index"
