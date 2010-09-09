@@ -2,6 +2,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :attachments
   map.resources :entries
   map.resources :folders
+
   map.resources :events
   map.resources :sessions
   map.login 'login', :controller => 'sessions', :action => 'new'
