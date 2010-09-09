@@ -1,0 +1,28 @@
+
+<p>
+  <b>Topic:</b>
+  <%=h @entry.topic %>
+</p>
+
+
+<p>
+  <b>Series:</b>
+  <%=h @entry.series %>
+</p>
+
+
+<p>
+  <b>Date:</b>
+  <%=h @entry.date %>
+</p>
+
+
+<p>
+  <b>Verse:</b>
+  <%=h @entry.verse %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_entry_path(@entry) %> |
+<%= link_to 'Back', entries_path %>
