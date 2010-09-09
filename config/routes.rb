@@ -1,4 +1,54 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :series
+
+  map.resources :entries
+
+  map.resources :resources
+
+  map.resources :resources
+
+  map.resources :entries
+
+  map.resources :entries
+
+  map.resources :resources
+
+  map.resources :resources
+
+  map.resources :resources
+
+  map.resources :entries
+
+  map.resources :resources
+
+  map.resources :resources
+
+  map.resources :entries
+
+  map.resources :resources
+
+  map.resources :resources
+
+  map.resources :resources
+
+  map.resources :entries
+
+  map.resources :entries
+
+  map.resources :entries
+
+  map.resources :entries
+
+  map.resources :categories
+
+  map.resources :series
+
+  map.resources :resources
+
+  map.resources :entries
+
+  map.resources :series
+
   map.resources :events
   map.resources :sessions
   map.login 'login', :controller => 'sessions', :action => 'new'
