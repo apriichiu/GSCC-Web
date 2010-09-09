@@ -9,7 +9,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100501011944) do
+ActiveRecord::Schema.define(:version => 20100909054732) do
+
+  create_table "categories", :force => true do |t|
+    t.string   "title"
+    t.text     "overview"
+    t.text     "theme_verse"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "entries", :force => true do |t|
+    t.string   "topic"
+    t.string   "series"
+    t.date     "date"
+    t.text     "verse"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "events", :force => true do |t|
     t.string   "title"
@@ -19,6 +36,15 @@ ActiveRecord::Schema.define(:version => 20100501011944) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "location"
+  end
+
+  create_table "resources", :force => true do |t|
+    t.string   "name"
+    t.integer  "size"
+    t.string   "type"
+    t.string   "file"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
