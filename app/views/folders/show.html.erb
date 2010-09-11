@@ -1,0 +1,16 @@
+
+<p>
+  <b>Name:</b>
+  <%=h @folder.name %>
+</p>
+
+
+<p>
+  <b>Description:</b>
+  <%=h @folder.description %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_folder_path(@folder) %> |
+<%= link_to 'Back', folders_path %>
