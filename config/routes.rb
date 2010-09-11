@@ -1,4 +1,12 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :attachments
+
+  map.resources :entries
+
+  map.resources :folders
+
+  map.resources :folders
+
   map.resources :series
 
   map.resources :entries

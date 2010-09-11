@@ -9,7 +9,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100909054732) do
+ActiveRecord::Schema.define(:version => 20100911035447) do
+
+  create_table "attachments", :force => true do |t|
+    t.string   "name"
+    t.string   "type"
+    t.integer  "size"
+    t.date     "date"
+    t.string   "file"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "categories", :force => true do |t|
     t.string   "title"
@@ -20,10 +30,10 @@ ActiveRecord::Schema.define(:version => 20100909054732) do
   end
 
   create_table "entries", :force => true do |t|
-    t.string   "topic"
-    t.string   "series"
-    t.date     "date"
-    t.text     "verse"
+    t.string   "folder"
+    t.string   "title"
+    t.text     "description"
+    t.string   "attachment"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -38,11 +48,23 @@ ActiveRecord::Schema.define(:version => 20100909054732) do
     t.string   "location"
   end
 
+  create_table "folders", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "resources", :force => true do |t|
     t.string   "name"
     t.integer  "size"
     t.string   "type"
     t.string   "file"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "series", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end
