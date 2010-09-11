@@ -34,6 +34,14 @@
 <% end %>
 </table>
 <br />
+  <%= @page.name %> 
+ <%=image_tag @page.picture %>
+ <%= @event_gscc.length %>
+  <% @event_gscc.each do |e| %>
+  <%= e.name %> | <%= e.id %> <br />
+  
+  <% end %>
+
 
 
 

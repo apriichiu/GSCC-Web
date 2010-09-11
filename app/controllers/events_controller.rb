@@ -9,6 +9,11 @@ class EventsController < ApplicationController
   def index
     @events = Event.find(:all, :order => "startdate", :conditions => "startdate > '#{Time.now.strftime("%Y-%m-%d %H:%M:%S UTC")}'");
 
+    @page = FbGraph::Page.new("187141722947", :access_token => "109644265740640|FovFNSGUmYnAuaQhAw2VpFMR0IA").fetch;
+    @event_gscc = @page.events
+    
+
+
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @events }
