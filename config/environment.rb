@@ -20,6 +20,8 @@ Rails::Initializer.run do |config|
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"
   config.gem "json", :lib => "#{RAILS_ROOT}/vendor/gems/json-1.4.6/lib/json"
+  config.gem "rest-client", :lib => "#{RAILS_ROOT}/vendor/gems/rest-client-1.6.1/lib/rest-client"
+  config.gem "oauth2", :lib => "#{RAILS_ROOT}/vendor/gems/oauth2-0.0.13/lib/oauth2"
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
