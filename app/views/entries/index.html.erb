@@ -3,26 +3,26 @@
 <table>
   <tr>
 
-    <th>Topic</th>
+    <th>Folder</th>
 
-    <th>Series</th>
+    <th>Title</th>
 
-    <th>Date</th>
+    <th>Description</th>
 
-    <th>Verse</th>
+    <th>Attachment</th>
 
   </tr>
 
 <% @entries.each do |entry| %>
   <tr>
 
-    <td><%=h entry.topic %></td>
+    <td><%=h entry.folder %></td>
 
-    <td><%=h entry.series %></td>
+    <td><%=h entry.title %></td>
 
-    <td><%=h entry.date %></td>
+    <td><%=h entry.description %></td>
 
-    <td><%=h entry.verse %></td>
+    <td><%=h entry.attachment %></td>
 
     <td><%= link_to 'Show', entry %></td>
     <td><%= link_to 'Edit', edit_entry_path(entry) %></td>
