@@ -10,7 +10,8 @@ class EventsController < ApplicationController
   def index
     @events = Event.find(:all, :order => "startdate", :conditions => "startdate > '#{Time.now.strftime("%Y-%m-%d %H:%M:%S UTC")}'");
     @page = FbGraph::Page.new(session[:page_id], :access_token => session[:access_token]).fetch;
-    @event_gscc = @page.events;
+#    @event_gscc = @page.events;
+    @event_gscc = @page.events.find_all{|e| e.start_time > Time.now};
 
     respond_to do |format|
       format.html # index.html.erb

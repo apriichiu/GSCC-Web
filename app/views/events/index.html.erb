@@ -34,13 +34,10 @@
 <% end %>
 </table>
 <br />
-  <%= @page.name %> 
- <%=image_tag @page.picture %>
- <%= @thisid %>
  <%= @event_gscc.length %>
  <%= @event_gscc[0].id %>
   <% @event_gscc.each do |e| %>
-  <%= e.name %> -  <%= e.location %> <br />
+  <%= e.name %> -  <%= e.location %> - <%= image_tag e.picture, :height => 100, :width => 100 %>  <br />
   <%= e.start_time %> - <%= e.end_time %> - <%= e.attending.length %> 
   <% e.attending.each do |a| %>
   <%= a.name %> <br />
