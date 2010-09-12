@@ -265,3 +265,48 @@ body {
 
 #copyright {
   text-align: center; }
+
+#events_list_container .event_title, #events_list_container .event_time, #events_list_container .event_time_location, #events_list_container .event_description{
+    margin-left: 100px;
+}
+
+#events_list_container .event_admin, #events_list_container .event_options {
+    float: right;
+    clear: right;
+}
+
+#events_list_container .event_title a{
+    font-size: 2em;
+    text-decoration: none;
+}
+
+#events_list_container .event_title a:hover{
+    color: #ffffff;
+}
+
+
+#events_list_container .event_time ,#events_list_container .event_location {
+    margin: 0px; 
+    padding: 0px;
+    font-size: .8em;
+}
+
+#events_list_container .event_location {
+    margin-left: 10px;
+}
+#events_list_container .event_time {
+    margin-right: 10px;
+}
+
+#events_list_container .event_description {
+    padding-bottom: 20px;
+}
+
+#events_list_container .event_image {
+    float: left;
+    width: 100px;
+    height: 100px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+
