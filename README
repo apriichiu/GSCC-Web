@@ -5,6 +5,28 @@ Files are laid out in the typical rails application fashion.
 
 Interesting 'features' of the codebase include haml/sass instead of
 erb, and openid everywhere instead of our own authentication. An event
-system and a resource management system
+system and a resource management system. We call the facebook GraphAPI
+via the "fb_graph" gem written by Nov Matake
+(http://github.com/nov/fb_graph/tree/master/lib/fb_graph/). 
+
+Please create "config/facebook.yml" and fill in your app_id,
+client_secret, client_id, perms, and also page_id (this is the id of
+the page which events will be synced from). See the following example:
+
+------------------------
+development: &defaults
+  app_id: xxxxxxxxxxxxxxx
+  client_id: xxxxxxxxxxxxxxxxxxxxx
+  client_secret: xxxxxxxxxxxxxxxxxxxxx
+  perms: offline_access,manage_pages
+  page_id: xxxxxxxxxxxx
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
+-------------------------------------------------
+
 
 

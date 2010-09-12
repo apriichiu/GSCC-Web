@@ -36,9 +36,16 @@
 <br />
   <%= @page.name %> 
  <%=image_tag @page.picture %>
+ <%= @thisid %>
  <%= @event_gscc.length %>
+ <%= @event_gscc[0].id %>
   <% @event_gscc.each do |e| %>
-  <%= e.name %> | <%= e.id %> <br />
+  <%= e.name %> -  <%= e.location %> <br />
+  <%= e.start_time %> - <%= e.end_time %> - <%= e.attending.length %> 
+  <% e.attending.each do |a| %>
+  <%= a.name %> <br />
+  <% end %>
+  <br />
   
   <% end %>
 

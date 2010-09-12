@@ -2,17 +2,15 @@ class EventsController < ApplicationController
 
   layout "application"
   before_filter :authorize, :except => [:index, :show]
-  
+  before_filter :get_facebook_info
+
   # GET /events
   # GET /events.xml
 
   def index
     @events = Event.find(:all, :order => "startdate", :conditions => "startdate > '#{Time.now.strftime("%Y-%m-%d %H:%M:%S UTC")}'");
-
-    @page = FbGraph::Page.new("187141722947", :access_token => "109644265740640|FovFNSGUmYnAuaQhAw2VpFMR0IA").fetch;
-    @event_gscc = @page.events
-    
-
+    @page = FbGraph::Page.new(session[:page_id], :access_token => session[:access_token]).fetch;
+    @event_gscc = @page.events;
 
     respond_to do |format|
       format.html # index.html.erb

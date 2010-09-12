@@ -9,8 +9,6 @@ class ApplicationController < ActionController::Base
   
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
-
-
   def initialize
     super
     @page_title = false
@@ -45,4 +43,15 @@ class ApplicationController < ActionController::Base
   def admin?
     session[:password] == "7ba44afcb856df9ff8152cff1752a2eb69da845edfa57d328bbb1050f2caee60"
   end
+
+  protected
+  def get_facebook_info
+    if (!session[:access_token] || !session[:page_id])
+      config = YAML::load(File.open("#{RAILS_ROOT}/config/facebook.yml"));
+      gscc_app = FbGraph::Application.new(config['production']['app_id']);
+      session[:access_token] = gscc_app.get_access_token(config['production']['client_secret']);
+      session[:page_id] = config['production']['page_id'];
+    end
+  end
+
 end
