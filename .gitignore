@@ -1,4 +1,4 @@
-./.gitignore 
 config/database.yml
+config/facebook.yml
 log/*
 db/development.sqlite3
