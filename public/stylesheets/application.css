@@ -57,9 +57,9 @@ body {
       background-position: 0 -108px; }
       #sidebar #navigation li.serve a:hover {
         background-position: -240px -108px; }
-    #sidebar #navigation li.give a {
+    #sidebar #navigation li.events a {
       background-position: 0 -144px; }
-      #sidebar #navigation li.give a:hover {
+      #sidebar #navigation li.events a:hover {
         background-position: -240px -144px; }
     #sidebar #navigation li.resources a {
       background-position: 0 -180px; }
@@ -93,17 +93,26 @@ body {
     background: url(/images/sidebar-titles.png) no-repeat;
     text-indent: -5000px; }
   #sidebar ul.upcoming-events {
-    background: #777;
     margin: 0;
-    padding: 0 10px;
+    padding: 0;
     list-style: none; }
     #sidebar ul.upcoming-events abbr {
       border: none;
       color: #fff; }
     #sidebar ul.upcoming-events a {
-      color: #fff; }
+      color: #79aa3c;
+      font-weight: bold;
+      font-size: 1.2em;
+      text-decoration: none;
+      line-height: 90%;
+    }
+    #sidebar ul.upcoming-events a:hover {
+	color: #777;
+    }
     #sidebar ul.upcoming-events .vevent {
-      padding: 9px 0; }
+      padding: 0; 
+     }
+
   #sidebar h3.subscribe {
     background-position: 0 -54px; }
   #sidebar form.subscribe input {
@@ -266,47 +275,103 @@ body {
 #copyright {
   text-align: center; }
 
+
+#events_list_container .event_item {
+    border: 1px solid #bbb;
+    position: relative;
+    margin-bottom: 15px;
+}
 #events_list_container .event_title, #events_list_container .event_time, #events_list_container .event_time_location, #events_list_container .event_description{
     margin-left: 100px;
 }
-
-#events_list_container .event_admin, #events_list_container .event_options {
-    float: right;
-    clear: right;
-}
-
 #events_list_container .event_title a{
     font-size: 2em;
     text-decoration: none;
 }
-
 #events_list_container .event_title a:hover{
     color: #ffffff;
 }
-
-
+#events_list_container .event_time_location table *{
+    padding: 0;
+}
+#events_list_container .event_time_location td{
+    padding-left: 20px;
+}
 #events_list_container .event_time ,#events_list_container .event_location {
     margin: 0px; 
     padding: 0px;
-    font-size: .8em;
 }
-
-#events_list_container .event_location {
-    margin-left: 10px;
+#events_list_container .event_time, #events_list_container .event_location {
+    padding-left: 20px;
 }
-#events_list_container .event_time {
-    margin-right: 10px;
-}
-
 #events_list_container .event_description {
     padding-bottom: 20px;
 }
-
 #events_list_container .event_image {
-    float: left;
     width: 100px;
     height: 100px;
-    padding-right: 20px;
-    padding-bottom: 20px;
+    padding: 10px 10px 0px 10px;
+
+}
+#events_list_container .event_info {
+    position: absolute;
+    top: 25px;
+    padding: 10px 0px 0px 0px;
+}
+#events_list_container .event_date_top {
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: 25px;
+    background-color: #333;
+    border-bottom: 1px solid #bbb;
+}
+#events_list_container .event_date_top strong{
+    padding-left: 10px;
+    line-height: 25px;
+}
+#events_list_container #past_events_container{
+    display: none;
 }
 
+.upcoming-events-icon {
+    position: absolute:
+    top: 0;
+    left: 0;
+    width: 51px;
+    height: 52px;
+    background-image: url(/images/homeUpcomingDate_bg.png);
+    background-position: top right;
+    background-repeat: no-repeat;
+}
+
+.upcoming-events-text {
+    
+   padding-top: 10px;
+   position: absolute;
+   top: 0;
+   padding-left: 52px;
+
+}
+
+.upcoming-events-icon p{
+    padding-top: 6px;
+    text-align: center;
+}
+
+.upcoming-events-icon strong {
+    display: block;
+    padding-top: 1px;
+    font-size: 16px;
+    color: #555;
+}
+.upcoming-events-icon span {
+    text-transform: uppercase;
+    color: #999;
+}
+
+
+.upcoming-events-item {
+    padding-bottom: 15px;
+    position: relative;
+}

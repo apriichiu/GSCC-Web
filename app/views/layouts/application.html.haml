@@ -50,17 +50,16 @@
             %a{:href => root_path()} Home
           =navigation_item('about_us')
           =navigation_item('connect')
+          =navigation_item('events')
           =navigation_item('serve')
-          =navigation_item('give')
           =navigation_item('resources')
 
-        %h3.upcoming-events Upcoming events
+        %h3.upcoming-events 
         %ul.upcoming-events.vcalendar
-          - recent_events().each do |e|
+          - @upcoming_events.each do |e|
             %li.vevent
-              = link_to_events(e)
-        = link_to( "See all upcoming events", { :controller => "events" } )
-
+              = upcoming_events_block(e)
+      
     .container
       #footer.span-24.last
         .span-5.append-1.contact

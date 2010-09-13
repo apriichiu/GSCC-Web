@@ -1,57 +1,34 @@
-<div id="login-link">
-  <% if flash[:notice] -%> <div id="notice"><%= flash[:notice] %></div>
-  <% end -%>
-  <% if admin? %>
-  <%= link_to 'New event', new_event_path %> |  <%= link_to 'Logout', logout_path %>
-  <% else %>
-  <%= link_to 'Login', login_path %> to add/edit events.
-  <% end %>
-</div>
+<!-- <div id="login-link"> -->
+<!--   <% if flash[:notice] -%> <div id="notice"><%= flash[:notice] %></div> -->
+<!--   <% end -%> -->
+<!--   <% if admin? %> -->
+<!--   <%= link_to 'New event', new_event_path %> |  <%= link_to 'Logout', logout_path %> -->
+<!--   <% else %> -->
+<!--   <%= link_to 'Login', login_path %> to add/edit events. -->
+<!--   <% end %> -->
+<!-- </div> -->
 
 
-<h1>Upcoming Events</h1>
+<h1>Events</h1>
 <div id="events_list_container">
+  <strong>Upcoming:</strong>
   <hr />
-  <% @events.each do |event| %>
-  <div class="event_item">
-    <div class="event_image"> 
-      <%= image_tag('noimgthumb.png', :size => "100x100") %>
-    </div>
-    <% if admin? %>
-    <div class="event_admin">
-      <%= link_to 'Edit', edit_event_path(event) %> / <%= link_to 'Destroy', event, :confirm => 'Are you sure?', :method => :delete %>
-    </div>
-    <% end %>
-    <div class="event_options">
-      options
-    </div>
-    <div class="event_title">
-      <%= link_to event.title, event %>
-    </div>
-    <div class="event_time_location">
-      <span class="event_time"><%=h event.startdate.strftime("%a, %b %d, %Y %I:%M %p") %></span> |
-      <span class="event_location"><%=h event.location %></span>
-    </div>
-    <div class="event_description">
-      <%=h event.description %>
-    </div>
-  </div>
-  <hr />
+  <% @upcoming_events.each do |event| %>
+    <%= event_list_block(event); %>
   <% end %>
+<br />
+
+<div id="past_events_container">
+<strong>Past:</strong>
+<br />
+<hr />
+  <% @past_events.each do |event| %>
+    <%= event_list_block(event); %>
+  <% end %>
+</div>
 </div>
 
 <br />
-<%= @event_gscc.length %>
-<%= @event_gscc[0].id %>
-<% @event_gscc.each do |e| %>
-<%= e.name %> -  <%= e.location %> - <%= image_tag e.picture, :height => 100, :width => 100 %>  <br />
-<%= e.start_time %> - <%= e.end_time %> - <%= e.attending.length %> 
-<% e.attending.each do |a| %>
-<%= a.name %> <br />
-<% end %>
-<br />
-
-<% end %>
 
 
 

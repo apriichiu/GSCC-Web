@@ -2,16 +2,13 @@ class EventsController < ApplicationController
 
   layout "application"
   before_filter :authorize, :except => [:index, :show]
-  before_filter :get_facebook_info
+  before_filter :in_events;
 
   # GET /events
   # GET /events.xml
 
   def index
     @events = Event.find(:all, :order => "startdate", :conditions => "startdate > '#{Time.now.strftime("%Y-%m-%d %H:%M:%S UTC")}'");
-    @page = FbGraph::Page.new(session[:page_id], :access_token => session[:access_token]).fetch;
-#    @event_gscc = @page.events;
-    @event_gscc = @page.events.find_all{|e| e.start_time > Time.now};
 
     respond_to do |format|
       format.html # index.html.erb
@@ -96,9 +93,7 @@ class EventsController < ApplicationController
     end
   end
 
-  def self.recent_events
-    @events = Event.find(:all, :order => "startdate", :limit => 3, :conditions => "startdate > '#{Time.now.strftime("%Y-%m-%d %H:%M:%S UTC")}'");
-    return @events
+  def in_events
+    @in_events = true;
   end
-
 end

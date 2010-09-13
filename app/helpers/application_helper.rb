@@ -6,10 +6,17 @@ module ApplicationHelper
   end
 
   def navigation_item(item)
+    #Added a quick hack so the events tab would also be selected
+    #The problem is that events isn't part of the static pages, so the
+    #params[:section] won't be filled with events. So i added a
+    #function that sets the variable @in_events in the before_filter
+    #list of the events controller, so whenever we're in the events
+    #controller the events navigation item will be selected - ILIU
+
     template = <<-eos
 %li{:class => item.dasherize}
   %a{:href => section_path(item),
-     :class => params[:section] == item ? 'selected' : ''}
+     :class => params[:section] == item || (item =="events" && @in_events) ? 'selected' : ''}
     =item.humanize
     eos
     return render_to_string(:inline => template, :type => :haml, :locals => { :item => item})
@@ -21,10 +28,6 @@ module ApplicationHelper
 
   def li_link_to(*args)
     "<li>#{link_to(*args)}</li>"
-  end
-
-  def recent_events
-    EventsController.recent_events
   end
 
 end

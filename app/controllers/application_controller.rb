@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
   require "vendor/gems/fb_graph-1.0.1/lib/fb_graph"
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
-  
+  before_filter :get_events, :get_facebook_info
   
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
@@ -52,6 +52,14 @@ class ApplicationController < ActionController::Base
       session[:access_token] = gscc_app.get_access_token(config['production']['client_secret']);
       session[:page_id] = config['production']['page_id'];
     end
+  end
+
+  protected
+  def get_events
+    page = FbGraph::Page.new(session[:page_id], :access_token => session[:access_token]).fetch;
+    event_gscc = page.events.sort_by{|e| e.start_time};;
+    @upcoming_events = event_gscc.find_all{|e| e.start_time >= Time.now};
+    @past_events = event_gscc.find_all{|e| e.start_time < Time.now}.reverse;
   end
 
 end

@@ -7,7 +7,8 @@ Interesting 'features' of the codebase include haml/sass instead of
 erb, and openid everywhere instead of our own authentication. An event
 system and a resource management system. We call the facebook GraphAPI
 via the "fb_graph" gem written by Nov Matake
-(http://github.com/nov/fb_graph/tree/master/lib/fb_graph/). 
+(http://github.com/nov/fb_graph/tree/master/lib/fb_graph/). You can
+see the documentation here: http://rdoc.info/github/nov/fb_graph/master
 
 Please create "config/facebook.yml" and fill in your app_id,
 client_secret, client_id, perms, and also page_id (this is the id of
