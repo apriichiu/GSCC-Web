@@ -275,14 +275,13 @@ body {
 #copyright {
   text-align: center; }
 
-
-#events_list_container .event_item {
+#events_list_container .event_item_wrap {
     border: 1px solid #bbb;
-    position: relative;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
-#events_list_container .event_title, #events_list_container .event_time, #events_list_container .event_time_location, #events_list_container .event_description{
-    margin-left: 100px;
+
+#events_list_container .event_item_space {
+    clear:both;
 }
 #events_list_container .event_title a{
     font-size: 2em;
@@ -295,32 +294,25 @@ body {
     padding: 0;
 }
 #events_list_container .event_time_location td{
-    padding-left: 20px;
+    padding-left: 0px;
 }
 #events_list_container .event_time ,#events_list_container .event_location {
     margin: 0px; 
     padding: 0px;
 }
-#events_list_container .event_time, #events_list_container .event_location {
-    padding-left: 20px;
-}
-#events_list_container .event_description {
-    padding-bottom: 20px;
-}
 #events_list_container .event_image {
-    width: 100px;
+    width: 80px;
     height: 100px;
-    padding: 10px 10px 0px 10px;
+    padding: 0px 0px 0px 10px;
+    float:left;
 
 }
 #events_list_container .event_info {
-    position: absolute;
-    top: 25px;
-    padding: 10px 0px 0px 0px;
+    width: 80%;
+    float:left;
+    padding: 0px 0px 0px 15px;
 }
 #events_list_container .event_date_top {
-    position: relative;
-    top: 0;
     width: 100%;
     height: 25px;
     background-color: #333;
@@ -333,6 +325,18 @@ body {
 #events_list_container #past_events_container{
     display: none;
 }
+#events_list_container #show_past_events_link{
+    clear: both;
+}
+#events_list_container #show_past_events_link strong{
+    color: #79aa3c;
+}
+#events_list_container #show_past_events_link strong:hover{
+    border-bottom: 1px dotted #999;
+    color: #999;
+    cursor: pointer;
+}
+
 
 .upcoming-events-icon {
     position: absolute:

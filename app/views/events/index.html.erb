@@ -16,17 +16,24 @@
   <% @upcoming_events.each do |event| %>
     <%= event_list_block(event); %>
   <% end %>
-<br />
 
+<div id="show_past_events_link"><strong>Past Events</strong></div>
 <div id="past_events_container">
-<strong>Past:</strong>
-<br />
 <hr />
   <% @past_events.each do |event| %>
     <%= event_list_block(event); %>
   <% end %>
 </div>
 </div>
+<script type="text/javascript"> 
+//<![CDATA[
+	  $('#show_past_events_link').click(function(){
+	  $('#past_events_container').slideToggle('slow');
+	  });
+//]]>
+</script> 
+
+
 
 <br />
 

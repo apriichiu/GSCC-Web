@@ -22,27 +22,30 @@ HTML
 
   def event_list_block (event)
     <<-HTML
+  <div class="event_item_wrap">
   <div class="event_item">
-    <div class="event_date_top">
+    <p class="event_date_top">
          <strong>#{event.start_time.getlocal.strftime("%A, %B %d")}</strong>
-    </div>
+    </p>
     <div class="event_image"> 
       #{image_tag(event.picture, :size => "80x80")}
     </div>
     <div class="event_info">
-    <div class="event_title">
-      #{facebook_event_link event.identifier, event.name}
-    </div>
-    <div class="event_time_location">
-      <table><tr>
-      <th><strong>When:</strong></th><td> <span class="event_time">#{get_short_time(event.start_time.getlocal, event.end_time.getlocal)}</span></td>
-      </tr>
-      <tr>
-      <th><strong>Where:</strong></th><td> <span class="event_location">#{event.location}</span></td>
-      </tr>
-      </table>
-    </div>
-   </div>
+      <div class="event_title">
+        #{facebook_event_link event.identifier, event.name}
+      </div>
+      <div class="event_time_location">
+        <table><tr>
+        <th><strong>When:</strong></th><td> <span class="event_time">#{get_short_time(event.start_time.getlocal, event.end_time.getlocal)}</span></td>
+        </tr>
+        <tr>
+        <th><strong>Where:</strong></th><td> <span class="event_location">#{event.location}</span></td>
+        </tr>
+        </table>
+      </div>
+     </div>
+  </div>
+  <div class="event_item_space"></div>
   </div>
 HTML
   end 
