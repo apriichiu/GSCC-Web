@@ -1,0 +1,308 @@
+= FbGraph
+
+A full-stack Facebook Graph API wrapper in Ruby.
+
+== Installation
+
+  gem install fb_graph
+
+== Resources
+
+* View RDoc on RDoc.info (http://rdoc.info/github/nov/fb_graph)
+* View Source on GitHub (http://github.com/nov/fb_graph)
+* Report Issues on GitHub (http://github.com/nov/fb_graph/issues)
+* Facebook fan page (http://www.facebook.com/pages/FbGraph/117513961602338)
+
+== Examples
+
+Now FbGraph supports all objects listed here: http://developers.facebook.com/docs/reference/api/
+Almost all connections　for each object are also supported. (Private message connections are not supported yet)
+
+Plus, you can play an Rails sample app here. http://fbgraphsample.heroku.com/
+
+=== GET
+
+==== Basic Objects
+
+  user = FbGraph::User.me(ACCESS_TOKEN)
+
+  user = FbGraph::User.fetch('matake')
+  user.name    # => 'Nov Matake'
+  user.picture # => 'https://graph.facebook.com/matake/picture'
+
+  # fb_graph doesn't access to Graph API until you call "fetch"
+  user = FbGraph::User.new('matake', :access_token => YOUR_ACCESS_TOKEN)
+  user.identifier # => "matake"
+  user.name # => nil
+  user.link # => nil
+  user.fetch
+  user.name # => "Nov Matake"
+  user.description # => "http://www.facebook.com/matake"
+
+  page = FbGraph::Page.fetch('smartfmteam')
+  page.name     # => 'smart.fm'
+  page.picture  # => 'https://graph.facebook.com/smart.fm/picture'
+
+  :
+
+==== Connections
+
+  # Public connections
+  user = FbGraph::User.fetch('matake')
+  user.feed
+  user.posts
+  user.friends
+  user.tagged
+  :
+  
+  # Private connections requires "access_token"
+  FbGraph::User.new('matake').friends # => raise FbGraph::Unauthorized
+  user = FbGraph::User.fetch('matake', :access_token => ACCESS_TOKEN)
+  user.albums
+  user.events
+  user.friends
+  user.likes
+  :
+  
+  # "home" connection is only available for "me"
+  me = User.new('me', :access_token => ACCESS_TOKEN)
+  me.home
+  :
+
+==== Search
+
+  # all objects
+  FbGraph::Searchable.search("FbGraph") # => Array of Hash
+
+  # specify type
+  FbGraph::Page.search("FbGraph") # => Array of FbGraph::Page
+  FbGraph::User.search("matake", :access_token => ACCESS_TOKEN) # => Array of FbGraph::User
+
+==== Pagination
+
+  # collection
+  user = FbGraph::User.new('matake', :access_token => ACCESS_TOKEN)
+  likes = user.likes # => Array of FbGraph::Like
+  likes.next         # => Array of FbGraph::Like (next page)
+  likes.previous     # => Array of FbGraph::Like (previous page)
+  likes.collection.next     # => Hash for pagination options (ex. {"limit"=>"25", "until"=>"2010-08-08T03:17:21+0000"})
+  likes.collection.previous # => Hash for pagination options (ex. {"limit"=>"25", "since"=>"2010-08-08T06:28:20+0000"})
+  user.likes(likes.collection.next)     # => same with likes.next
+  user.likes(likes.collection.previous) # => same with likes.previous
+
+  # search results
+  results = FbGraph::Page.search("FbGraph") # => Array of FbGraph::Page
+  results.next     # => Array of FbGraph::Page (next page)
+  results.previous # => Array of FbGraph::Page (next page)
+  results.klass    # => FbGraph::Page
+  results.collection.next     # => Hash for pagination options (ex. {"limit"=>"25", "until"=>"2010-08-08T03:17:21+0000"})
+  results.collection.previous # => Hash for pagination options (ex. {"limit"=>"25", "since"=>"2010-08-08T06:28:20+0000"})
+  results.klass.search(results.query, results.collection.next)     # => same with results.next
+  results.klass.search(results.query, results.collection.previous) # => same with results.previous
+
+=== POST
+
+==== Update status (wall post)
+
+  me = FbGraph::User.me(ACCESS_TOKEN)
+  me.feed!(
+    :message => 'Updating via FbGraph',
+    :picture => 'https://graph.facebook.com/matake/picture',
+    :link => 'http://github.com/nov/fb_graph',
+    :name => 'FbGraph',
+    :description => 'A Ruby wrapper for Facebook Graph API'
+  )
+
+==== Post a like/comment to a post
+
+  post = FbGraph::Page.new(117513961602338).feed.first
+  bool = post.like!(
+    :access_token => ACCESS_TOKEN
+  )
+  comment = post.comment!(
+    :access_token => ACCESS_TOKEN,
+    :message => 'Hey, I\'m testing you!'
+  )
+
+==== Post a note
+
+  page = FbGraph::Page.new(117513961602338)
+  note = page.note!(
+    :access_token => ACCESS_TOKEN,
+    :subject => 'testing',
+    :message => 'Hey, I\'m testing you!'
+  )
+
+==== Post a link
+
+  me = FbGraph::User.me(ACCESS_TOKEN)
+  link = me.link!(
+    :link => 'http://github.com/nov/fb_graph',
+    :message => 'A Ruby wrapper for Facebook Graph API.'
+  )
+
+==== Create Event, respond to it
+
+  me = FbGraph::User.me(ACCESS_TOKEN)
+  event = me.event!(
+    :name => 'FbGraph test event',
+    :start_time => 1.week.from_now.to_i,
+    :end_time => 2.week.from_now.to_i
+  )
+  bool = event.attending!(
+    :access_token => ACCESS_TOKEN
+  )
+  bool = event.maybe!(
+    :access_token => ACCESS_TOKEN
+  )
+  bool = event.declined!(
+    :access_token => ACCESS_TOKEN
+  )
+
+==== Create an album
+
+  me = FbGraph::User.me(ACCESS_TOKEN)
+  album = me.album!(
+    :name => 'FbGraph test',
+    :message => 'test test test'
+  ) # => now facebook Graph API returns weird response for this call
+
+==== Upload a photo to an album
+
+  me = FbGraph::User.me(ACCESS_TOKEN)
+  album = me.albums.first
+  album.photo!(
+    :access_token => ACCESS_TOKEN,
+    :image => File.new('/Users/nov/Desktop/nov.gif', 'rb'), # 'rb' is needed only on windows
+    :message => 'Hello, where is photo?'
+  )
+
+=== DELETE
+
+==== Delete an object
+
+  post = FbGraph::Page.new(117513961602338).feed.first
+  bool = post.like!(
+    :access_token => ACCESS_TOKEN
+  )
+  comment = post.comment!(
+    :access_token => ACCESS_TOKEN,
+    :message => 'Hey, I\'m testing you!'
+  )
+  comment.destroy(:access_token => ACCESS_TOKEN)
+  post.unlike!(:access_token => ACCESS_TOKEN)
+  post.destroy(:access_token => ACCESS_TOKEN)
+
+=== Authentication
+
+Both Facebook JavaScript SDK and normal OAuth2 flow is supported.
+Below I show simple sample code.
+You can also see http://github.com/nov/fb_graph_sample for more details Rails3 sample application.
+
+==== JavaScript SDK
+
+  fb_auth = FbGraph::Auth.new(YOUR_APP_ID, YOUR_APPLICATION_SECRET)
+  fb_auth.client # => OAuth2::Client
+
+  # get Facebook's auth cookie in advance using their JS SDK
+  fb_auth.from_cookie(cookies)
+  fb_auth.access_token # => OAuth2::AccessToken
+  fb_auth.user         # => FbGraph::User (only basic attributes)
+  fb_auth.user.fetch   # => fetch more details
+
+==== Normal OAuth2 Flow
+
+  # redirect user to facebook
+  redirect_to fb_auth.client.web_server.authorize_url(
+    :redirect_uri => "http://your.client.com/facebook/callback",
+    :scope => "email,read_stream,offline_access"
+  )
+
+  # in callback
+  fb_auth.client.web_server.get_access_token(
+    params[:code],
+    :redirect_uri => callback_facebook_url
+  ) # => OAuth2::AccessToken
+  FbGraph::User.me(access_token).fetch # => fetch user
+
+=== Analytics
+
+  app = FbGraph::Application.new(YOUR_APP_ID, :secret => YOUR_APPLICATION_SECRET)
+  app.insights # => Array of FbGraph::Insight
+
+== Documents
+
+Currently fb_graph isn't so well documented.
+
+I'm continuously updating RDoc now, but writing all documents <b>in English</b> is heavy task for me.
+
+Please see RDoc.info (http://rdoc.info/github/nov/fb_graph), and if the document is missing or hard to understand, please contact me on github.
+
+I'll add more documents or sample code.
+
+=== Objects
+
+* FbGraph::Album[http://rdoc.info/github/nov/fb_graph/master/FbGraph/Album]
+* FbGraph::Application[http://rdoc.info/github/nov/fb_graph/master/FbGraph/Application]
+* FbGraph::Checkin[http://rdoc.info/github/nov/fb_graph/master/FbGraph/Checkin]
+* FbGraph::Comment[http://rdoc.info/github/nov/fb_graph/master/FbGraph/Comment]
+* FbGraph::Event[http://rdoc.info/github/nov/fb_graph/master/FbGraph/Event]
+* FbGraph::Group[http://rdoc.info/github/nov/fb_graph/master/FbGraph/Group]
+* FbGraph::Insight[http://rdoc.info/github/nov/fb_graph/master/FbGraph/Insight]
+* FbGraph::Link[http://rdoc.info/github/nov/fb_graph/master/FbGraph/Link]
+* FbGraph::Note[http://rdoc.info/github/nov/fb_graph/master/FbGraph/Note]
+* FbGraph::Page[http://rdoc.info/github/nov/fb_graph/master/FbGraph/Page]
+* FbGraph::Photo[http://rdoc.info/github/nov/fb_graph/master/FbGraph/Photo]
+* FbGraph::Post[http://rdoc.info/github/nov/fb_graph/master/FbGraph/Post]
+* FbGraph::Status[http://rdoc.info/github/nov/fb_graph/master/FbGraph/Status]
+* FbGraph::Subscription[http://rdoc.info/github/nov/fb_graph/master/FbGraph/Subscription]
+* FbGraph::User[http://rdoc.info/github/nov/fb_graph/master/FbGraph/User]
+* FbGraph::Video[http://rdoc.info/github/nov/fb_graph/master/FbGraph/Video]
+
+=== Connections
+
+* FbGraph::Connections::Accounts[http://rdoc.info/github/nov/fb_graph/master/FbGraph/Connections/Accounts]
+* FbGraph::Connections::Activities[http://rdoc.info/github/nov/fb_graph/master/FbGraph/Connections/Activities]
+* FbGraph::Connections::Albums[http://rdoc.info/github/nov/fb_graph/master/FbGraph/Connections/Albums]
+* FbGraph::Connections::Attending[http://rdoc.info/github/nov/fb_graph/master/FbGraph/Connections/Attending]
+* FbGraph::Connections::Books[http://rdoc.info/github/nov/fb_graph/master/FbGraph/Connections/Books]
+* FbGraph::Connections::Checkins[http://rdoc.info/github/nov/fb_graph/master/FbGraph/Connections/Checkins]
+* FbGraph::Connections::Comments[http://rdoc.info/github/nov/fb_graph/master/FbGraph/Connections/Comments]
+* FbGraph::Connections::Declined[http://rdoc.info/github/nov/fb_graph/master/FbGraph/Connections/Declined]
+* FbGraph::Connections::Events[http://rdoc.info/github/nov/fb_graph/master/FbGraph/Connections/Events]
+* FbGraph::Connections::Feed[http://rdoc.info/github/nov/fb_graph/master/FbGraph/Connections/Feed]
+* FbGraph::Connections::Friends[http://rdoc.info/github/nov/fb_graph/master/FbGraph/Connections/Friends]
+* FbGraph::Connections::Groups[http://rdoc.info/github/nov/fb_graph/master/FbGraph/Connections/Groups]
+* FbGraph::Connections::Home[http://rdoc.info/github/nov/fb_graph/master/FbGraph/Connections/Home]
+* FbGraph::Connections::Insights[http://rdoc.info/github/nov/fb_graph/master/FbGraph/Connections/Insights]
+* FbGraph::Connections::Interests[http://rdoc.info/github/nov/fb_graph/master/FbGraph/Connections/Interests]
+* FbGraph::Connections::Invited[http://rdoc.info/github/nov/fb_graph/master/FbGraph/Connections/Invited]
+* FbGraph::Connections::Likes[http://rdoc.info/github/nov/fb_graph/master/FbGraph/Connections/Likes]
+* FbGraph::Connections::Links[http://rdoc.info/github/nov/fb_graph/master/FbGraph/Connections/Links]
+* FbGraph::Connections::Maybe[http://rdoc.info/github/nov/fb_graph/master/FbGraph/Connections/Maybe]
+* FbGraph::Connections::Members[http://rdoc.info/github/nov/fb_graph/master/FbGraph/Connections/Members]
+* FbGraph::Connections::Movies[http://rdoc.info/github/nov/fb_graph/master/FbGraph/Connections/Movies]
+* FbGraph::Connections::Music[http://rdoc.info/github/nov/fb_graph/master/FbGraph/Connections/Music]
+* FbGraph::Connections::Noreply[http://rdoc.info/github/nov/fb_graph/master/FbGraph/Connections/Noreply]
+* FbGraph::Connections::Notes[http://rdoc.info/github/nov/fb_graph/master/FbGraph/Connections/Notes]
+* FbGraph::Connections::Photos[http://rdoc.info/github/nov/fb_graph/master/FbGraph/Connections/Photos]
+* FbGraph::Connections::Picture[http://rdoc.info/github/nov/fb_graph/master/FbGraph/Connections/Picture]
+* FbGraph::Connections::Statuses[http://rdoc.info/github/nov/fb_graph/master/FbGraph/Connections/Statuses]
+* FbGraph::Connections::Subscriptions[http://rdoc.info/github/nov/fb_graph/master/FbGraph/Connections/Subscriptions]
+* FbGraph::Connections::Tagged[http://rdoc.info/github/nov/fb_graph/master/FbGraph/Connections/Tagged]
+* FbGraph::Connections::Television[http://rdoc.info/github/nov/fb_graph/master/FbGraph/Connections/Television]
+* FbGraph::Connections::Videos[http://rdoc.info/github/nov/fb_graph/master/FbGraph/Connections/Videos]
+
+== Note on Patches/Pull Requests
+ 
+* Fork the project.
+* Make your feature addition or bug fix.
+* Add tests for it. This is important so I don't break it in a
+  future version unintentionally.
+* Commit, do not mess with rakefile, version, or history.
+  (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)
+* Send me a pull request. Bonus points for topic branches.
+
+== Copyright
+
+Copyright (c) 2010 nov matake. See LICENSE for details.
