@@ -5,10 +5,6 @@ class EventsController < ApplicationController
   before_filter :in_events;
 
   def index
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @events }
-    end
   end
 
   def in_events
