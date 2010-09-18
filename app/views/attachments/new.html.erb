@@ -1,8 +1,7 @@
 <h1>New attachment</h1>
 
-<% form_for(@attachment) do |f| %>
+<% form_for @attachment, :html => { :multipart => true } do |f| %>
   <%= f.error_messages %>
-
 
   <p>
     <%= f.label :name %><br />
@@ -28,7 +27,10 @@
     <%= f.label :file %><br />
     <%= f.text_field :file %>
   </p>
-
+  <p>
+    <%= f.label :object %><br />
+    <%= f.file_field :object %>
+  </p>
   <p>
     <%= f.submit 'Create' %>
   </p>

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100918071640) do
+ActiveRecord::Schema.define(:version => 20100918073930) do
 
   create_table "attachments", :force => true do |t|
     t.string   "name"
@@ -19,6 +19,10 @@ ActiveRecord::Schema.define(:version => 20100918071640) do
     t.string   "file"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "object_file_name"
+    t.string   "object_content_type"
+    t.integer  "object_file_size"
+    t.datetime "object_updated_at"
   end
 
   create_table "entries", :force => true do |t|
