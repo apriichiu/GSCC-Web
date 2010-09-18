@@ -4,28 +4,33 @@
   <%=h @attachment.name %>
 </p>
 
+<p>
+  <b>Description:</b>
+  <%=h @attachment.description %>
+</p>
+
 
 <p>
   <b>Type:</b>
-  <%=h @attachment.type %>
+  <%=h @attachment.object_content_type %>
 </p>
 
 
 <p>
   <b>Size:</b>
-  <%=h @attachment.size %>
+  <%=h @attachment.object_file_size %>
 </p>
 
 
 <p>
   <b>Date:</b>
-  <%=h @attachment.date %>
+  <%=h @attachment.object_updated_at %>
 </p>
 
 
 <p>
-  <b>File:</b>
-  <%=h @attachment.file %>
+  <b>File name:</b>
+  <%=h @attachment.object_file_name %>
 </p>
 
 
