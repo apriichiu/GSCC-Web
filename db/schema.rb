@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100911035447) do
+ActiveRecord::Schema.define(:version => 20100918071640) do
 
   create_table "attachments", :force => true do |t|
     t.string   "name"
@@ -17,14 +17,6 @@ ActiveRecord::Schema.define(:version => 20100911035447) do
     t.integer  "size"
     t.date     "date"
     t.string   "file"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "categories", :force => true do |t|
-    t.string   "title"
-    t.text     "overview"
-    t.text     "theme_verse"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -38,33 +30,9 @@ ActiveRecord::Schema.define(:version => 20100911035447) do
     t.datetime "updated_at"
   end
 
-  create_table "events", :force => true do |t|
-    t.string   "title"
-    t.string   "description"
-    t.text     "page"
-    t.datetime "startdate"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "location"
-  end
-
   create_table "folders", :force => true do |t|
     t.string   "name"
     t.text     "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "resources", :force => true do |t|
-    t.string   "name"
-    t.integer  "size"
-    t.string   "type"
-    t.string   "file"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "series", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end

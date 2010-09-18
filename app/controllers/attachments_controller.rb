@@ -1,4 +1,5 @@
 class AttachmentsController < ApplicationController
+  layout "application"
   # GET /attachments
   # GET /attachments.xml
   def index

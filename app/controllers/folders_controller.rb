@@ -1,4 +1,5 @@
 class FoldersController < ApplicationController
+  layout "application"
   # GET /folders
   # GET /folders.xml
   def index
