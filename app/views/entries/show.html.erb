@@ -4,6 +4,11 @@
   <%=h @entry.title %>
 </p>
 
+<p>
+  <b>Folder ID:</b>
+  <%=h @entry.folder_id%>
+</p>
+
 
 <p>
   <b>Description:</b>
@@ -15,6 +20,17 @@
   <b># of Attachment:</b>
   <%=h @entry.attachments.size %>
 </p>
+
+<% if @entry.attachments.size > 0 %>
+<p>
+  <b>Attachments:</b>
+  <% @entry.attachments.each do |a| %>
+    <br />  <%=h a.object_content_type %> - <%=link_to a.name, a.object.url %>
+  <% end %>
+</p>
+
+
+<% end %>
 
 
 

@@ -3,6 +3,10 @@
 <% form_for(@entry) do |f| %>
   <%= f.error_messages %>
 
+<p>
+  <b>Folder ID:</b>
+  <%=h @attachment.folder_id%>
+</p>
 
   <p>
     <%= f.label :title %><br />

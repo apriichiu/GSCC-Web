@@ -11,6 +11,18 @@
 </p>
 
 
+<% if @folder.entries.size > 0 %>
+<p>
+  <b>Entries:</b>
+  <% @folder.entries.each do |e| %>
+    <br />  <%=h e.title %>
+  <% end %>
+</p>
+
+
+<% end %>
+
+
 
 <%= link_to 'Edit', edit_folder_path(@folder) %> |
 <%= link_to 'Back', folders_path %>

@@ -7,6 +7,7 @@
 
     <th>Description</th>
 
+    <th># of Entries </th>
   </tr>
 
 <% @folders.each do |folder| %>
@@ -15,6 +16,8 @@
     <td><%=h folder.name %></td>
 
     <td><%=h folder.description %></td>
+
+    <td><%=h folder.entries.size %></td>
 
     <td><%= link_to 'Show', folder %></td>
     <td><%= link_to 'Edit', edit_folder_path(folder) %></td>
