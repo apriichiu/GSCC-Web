@@ -3,26 +3,22 @@
 <table>
   <tr>
 
-    <th>Folder</th>
-
     <th>Title</th>
 
     <th>Description</th>
 
-    <th>Attachment</th>
+    <th># of Attachments</th>
 
   </tr>
 
 <% @entries.each do |entry| %>
   <tr>
 
-    <td><%=h entry.folder %></td>
-
     <td><%=h entry.title %></td>
 
     <td><%=h entry.description %></td>
 
-    <td><%=h entry.attachment %></td>
+    <td><%=h entry.attachments.size %></td>
 
     <td><%= link_to 'Show', entry %></td>
     <td><%= link_to 'Edit', edit_entry_path(entry) %></td>

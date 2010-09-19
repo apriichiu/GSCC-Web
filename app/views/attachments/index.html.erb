@@ -15,6 +15,7 @@
 
     <th>File</th>
 
+    <th>Entry id </th>
   </tr>
 
 <% @attachments.each do |attachment| %>
@@ -31,6 +32,8 @@
     <td><%=h attachment.object_updated_at %></td>
 
     <td><%=h attachment.object_file_name %></td>
+
+    <td><%=h attachment.entry_id %></td>
 
     <td><%= link_to 'Show', attachment %></td>
     <td><%= link_to 'Edit', edit_attachment_path(attachment) %></td>

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100918180520) do
+ActiveRecord::Schema.define(:version => 20100919054053) do
 
   create_table "attachments", :force => true do |t|
     t.string   "name"
@@ -20,15 +20,15 @@ ActiveRecord::Schema.define(:version => 20100918180520) do
     t.integer  "object_file_size"
     t.datetime "object_updated_at"
     t.string   "description"
+    t.integer  "entry_id"
   end
 
   create_table "entries", :force => true do |t|
-    t.string   "folder"
     t.string   "title"
     t.text     "description"
-    t.string   "attachment"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "folder_id"
   end
 
   create_table "folders", :force => true do |t|
