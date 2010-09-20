@@ -13,10 +13,12 @@ module ApplicationHelper
     #list of the events controller, so whenever we're in the events
     #controller the events navigation item will be selected - ILIU
 
+    ##Added the same hack for resources
+
     template = <<-eos
 %li{:class => item.dasherize}
   %a{:href => section_path(item),
-     :class => params[:section] == item || (item =="events" && @in_events) ? 'selected' : ''}
+     :class => params[:section] == item || (item =="events" && @in_events) || (item =="resources" && @in_resources) ? 'selected' : ''}
     =item.humanize
     eos
     return render_to_string(:inline => template, :type => :haml, :locals => { :item => item})
