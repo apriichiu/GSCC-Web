@@ -1,6 +1,14 @@
 <h1>Listing entries</h1>
 
-<table>
+<script type='text/javascript' src='/javascripts/jquery.dataTables.min.js'> </script>
+
+
+<% columns = [{:type => 'html'}, {:type => 'html'}, {:type => 'html'}, {:type => 'html'}, {:searchable => false, :sortable => false}] %>
+<%= datatable(columns, {:sort_by => "[0, 'desc']" }) %>
+
+<script type='text/javascript' src='/javascripts/jquery.dataTables.filter.js'> </script>
+<table class='datatable filtertable'>
+<thead>
   <tr>
 
     <th>Title</th>
@@ -11,7 +19,11 @@
 
     <th>Folder ID</th>
 
+    <th>Options</th>
+
   </tr>
+</thead>
+<tbody>
 
 <% @entries.each do |entry| %>
   <tr>
@@ -28,11 +40,19 @@
     <td><%=h entry.folder.name %></td>
     <% end %>
 
-    <td><%= link_to 'Show', entry %></td>
-    <td><%= link_to 'Edit', edit_entry_path(entry) %></td>
-    <td><%= link_to 'Destroy', entry, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Show', entry %> | <%= link_to 'Edit', edit_entry_path(entry) %> | <%= link_to 'Destroy', entry, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
+
+</tbody>
+	<tfoot> 
+		<tr> 
+			<th><input type="text" name="search_title" value="Search title" class="search_init" /></th> 
+			<th><input type="text" name="search_description" value="Search description" class="search_init" /></th> 
+			<th><input type="text" name="search_attachments" value="Search attachments" class="search_init" /></th> 
+			<th><input type="text" name="search_folder" value="Search folder" class="search_init" /></th> 
+		</tr> 
+	</tfoot> 
 </table>
 
 <br />

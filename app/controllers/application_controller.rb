@@ -3,7 +3,8 @@
 
 class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
-  require "vendor/gems/fb_graph-1.0.1/lib/fb_graph"
+  require "fb_graph"
+  
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
   before_filter :get_facebook_info, :get_events
   

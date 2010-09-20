@@ -379,3 +379,15 @@ body {
     padding-bottom: 15px;
     position: relative;
 }
+
+.datatable {
+    border: 1px solid #000;
+}
+.datatable th{
+    background-color: transparent;
+}
+
+.datatable tr.even{
+    background-color: transparent;
+    color: #000;
+}
