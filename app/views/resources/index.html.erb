@@ -1,4 +1,4 @@
-<h1>Listing entries</h1>
+<h1>Resources</h1>
 
 <script type='text/javascript' src='/javascripts/jquery.dataTables.min.js'> </script>
 
@@ -7,54 +7,55 @@
 <%= datatable(columns, {:sort_by => "[0, 'desc']" }) %>
 
 <script type='text/javascript' src='/javascripts/jquery.dataTables.filter.js'> </script>
+<link href='/stylesheets/datatable.css' rel='stylesheet' type='text/css'> 
+
 <table class='datatable filtertable'>
-<thead>
-  <tr>
+  <thead>
+    <tr>
 
-    <th>Title</th>
+      <th>Title</th>
 
-    <th>Description</th>
+      <th>Description</th>
 
-    <th># of Attachments</th>
+      <th># of Attachments</th>
 
-    <th>Folder ID</th>
+      <th>Folder ID</th>
 
-    <th>Options</th>
+      <th>Options</th>
 
-  </tr>
-</thead>
-<tbody>
+    </tr>
+  </thead>
+  <tbody>
 
-<% @entries.each do |entry| %>
-  <tr>
+    <% @entries.each do |entry| %>
+    <tr>
 
-    <td><%=h entry.title %></td>
+      <td><%=h entry.title %></td>
 
-    <td><%=h entry.description %></td>
+      <td><%=h entry.description %></td>
 
-    <td><%=h entry.attachments.size %></td>
-    
-    <% if entry.folder.nil? %>
-    <td></td>
-    <% else %>
-    <td><%=h entry.folder.name %></td>
+      <td><%=h entry.attachments.size %></td>
+      
+      <% if entry.folder.nil? %>
+      <td></td>
+      <% else %>
+      <td><%=h entry.folder.name %></td>
+      <% end %>
+
+      <td><%= link_to 'Show', entry %> | <%= link_to 'Edit', edit_entry_path(entry) %> | <%= link_to 'Destroy', entry, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
     <% end %>
 
-    <td><%= link_to 'Show', entry %> | <%= link_to 'Edit', edit_entry_path(entry) %> | <%= link_to 'Destroy', entry, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-
-</tbody>
-	<tfoot> 
-		<tr> 
-			<th><input type="text" name="search_title" value="Search title" class="search_init" /></th> 
-			<th><input type="text" name="search_description" value="Search description" class="search_init" /></th> 
-			<th><input type="text" name="search_attachments" value="Search attachments" class="search_init" /></th> 
-			<th><input type="text" name="search_folder" value="Search folder" class="search_init" /></th> 
-		</tr> 
-	</tfoot> 
+  </tbody>
+  <tbody> 
+    <tr> 
+      <th><input type="text" name="search_title" value="Filter by title" class="search_init" /></th> 
+      <th><input type="text" name="search_description" value="Filter by description" class="search_init" /></th> 
+      <th><input type="text" name="search_attachments" value="Filter by attachments" class="search_init" /></th> 
+      <th><input type="text" name="search_folder" value="Filter by folder" class="search_init" /></th> 
+    </tr> 
+  </tbody> 
 </table>
-
 <br />
 
 <%= link_to 'New entry', new_entry_path %>

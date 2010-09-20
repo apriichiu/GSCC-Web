@@ -1,0 +1,11 @@
+.datatable {
+    border: 1px solid #000;
+}
+.datatable th{
+    background-color: transparent;
+}
+
+.datatable tr.even td{
+    background-color: transparent;
+}
+

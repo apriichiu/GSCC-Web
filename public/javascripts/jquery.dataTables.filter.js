@@ -2,9 +2,9 @@ var asInitVals = new Array();
 
 $(document).ready(function() {
     var oTable = $('.filtertable').dataTable();    
-    $("tfoot input").keyup( function () {
+    $("tbody input").keyup( function () {
 	/* Filter on the column (the index) of this element */
-	oTable.fnFilter( this.value, $("tfoot input").index(this) );
+	oTable.fnFilter( this.value, $("tbody input").index(this) );
     } );
     
     
@@ -13,11 +13,11 @@ $(document).ready(function() {
 				 * Support functions to provide a little bit of 'user friendlyness' to the textboxes in 
 				 * the footer
 				 */
-    $("tfoot input").each( function (i) {
+    $("tbody input").each( function (i) {
 	asInitVals[i] = this.value;
     } );
     
-    $("tfoot input").focus( function () {
+    $("tbody input").focus( function () {
 	if ( this.className == "search_init" )
 	{
 	    this.className = "";
@@ -25,11 +25,11 @@ $(document).ready(function() {
 	}
     } );
     
-    $("tfoot input").blur( function (i) {
+    $("tbody input").blur( function (i) {
 	if ( this.value == "" )
 	{
 	    this.className = "search_init";
-	    this.value = asInitVals[$("tfoot input").index(this)];
+	    this.value = asInitVals[$("tbody input").index(this)];
 	}
     } );
 } );
