@@ -1,15 +1,10 @@
 <h1>Resources</h1>
 
 <script type='text/javascript' src='/javascripts/jquery.dataTables.min.js'> </script>
-
-
-<% columns = [{:type => 'html'}, {:type => 'html'}, {:type => 'html'}, {:type => 'html'}, {:searchable => false, :sortable => false}] %>
-<%= datatable(columns, {:sort_by => "[0, 'desc']" }) %>
-
-<script type='text/javascript' src='/javascripts/jquery.dataTables.filter.js'> </script>
+<script type='text/javascript' src='/javascripts/jquery.dataTables.plugins.js'> </script>
 <link href='/stylesheets/datatable.css' rel='stylesheet' type='text/css'> 
 
-<table class='datatable filtertable'>
+<table class='datatable'>
   <thead>
     <tr>
 
@@ -21,11 +16,11 @@
 
       <th>Folder ID</th>
 
-      <th>Options</th>
+      <th class="last">Options</th>
 
     </tr>
   </thead>
-  <tbody>
+  <tbody class="items">
 
     <% @entries.each do |entry| %>
     <tr>
@@ -53,6 +48,7 @@
       <th><input type="text" name="search_description" value="Filter by description" class="search_init" /></th> 
       <th><input type="text" name="search_attachments" value="Filter by attachments" class="search_init" /></th> 
       <th><input type="text" name="search_folder" value="Filter by folder" class="search_init" /></th> 
+      <th class="last"></th>
     </tr> 
   </tbody> 
 </table>
