@@ -13,10 +13,9 @@
     <%= f.text_field :description %>
   </p>
 
-
   <p>
-    <%= f.label :entry_id %><br />
-    <%= f.text_field :entry_id %>
+    Entry<br />
+    <%= f.select :entry_id, @entries %>
   </p>
 
   <p>

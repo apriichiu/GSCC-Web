@@ -42,7 +42,7 @@
 <p>
   <b>Object:</b>
   <% if @attachment.is_image? then %>
-  <p><%=image_tag @attachment.object.url %></p>
+  <p><%=image_tag @attachment.object.url(:small) %></p>
   <% else %>
   <p><%=link_to "permalink", @attachment.object.url %></p>
   <% end %> 

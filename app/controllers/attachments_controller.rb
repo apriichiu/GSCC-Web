@@ -26,6 +26,7 @@ class AttachmentsController < ApplicationController
   # GET /attachments/new.xml
   def new
     @attachment = Attachment.new
+    @entries = Entry.find(:all, :order => "updated_at DESC").map { |e| [e.title, e.id] }
 
     respond_to do |format|
       format.html # new.html.erb
@@ -36,6 +37,7 @@ class AttachmentsController < ApplicationController
   # GET /attachments/1/edit
   def edit
     @attachment = Attachment.find(params[:id])
+    @entries = Entry.find(:all, :order => "updated_at DESC").map { |e| [e.title, e.id] }
   end
 
   # POST /attachments

@@ -33,7 +33,11 @@
 
     <td><%=h attachment.object_file_name %></td>
 
-    <td><%=h attachment.entry_id %></td>
+    <% if attachment.entry.nil? %>
+    <td></td>
+    <% else %>
+    <td><%=h attachment.entry.title %></td>
+    <% end %>
 
     <td><%= link_to 'Show', attachment %></td>
     <td><%= link_to 'Edit', edit_attachment_path(attachment) %></td>
