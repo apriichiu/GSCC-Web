@@ -1,0 +1,40 @@
+<h1>Listing entries</h1>
+
+<table>
+  <tr>
+
+    <th>Title</th>
+
+    <th>Description</th>
+
+    <th># of Attachments</th>
+
+    <th>Folder ID</th>
+
+  </tr>
+
+<% @entries.each do |entry| %>
+  <tr>
+
+    <td><%=h entry.title %></td>
+
+    <td><%=h entry.description %></td>
+
+    <td><%=h entry.attachments.size %></td>
+    
+    <% if entry.folder.nil? %>
+    <td></td>
+    <% else %>
+    <td><%=h entry.folder.name %></td>
+    <% end %>
+
+    <td><%= link_to 'Show', entry %></td>
+    <td><%= link_to 'Edit', edit_entry_path(entry) %></td>
+    <td><%= link_to 'Destroy', entry, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New entry', new_entry_path %>
