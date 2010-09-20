@@ -21,8 +21,12 @@
     <td><%=h entry.description %></td>
 
     <td><%=h entry.attachments.size %></td>
-
-    <td><%=h entry.folder_id %></td>
+    
+    <% if entry.folder.nil? %>
+    <td></td>
+    <% else %>
+    <td><%=h entry.folder.name %></td>
+    <% end %>
 
     <td><%= link_to 'Show', entry %></td>
     <td><%= link_to 'Edit', edit_entry_path(entry) %></td>

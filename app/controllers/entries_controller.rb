@@ -3,7 +3,7 @@ class EntriesController < ApplicationController
   # GET /entries
   # GET /entries.xml
   def index
-    @entries = Entry.all
+    @entries = Entry.all;
 
     respond_to do |format|
       format.html # index.html.erb
@@ -26,6 +26,7 @@ class EntriesController < ApplicationController
   # GET /entries/new.xml
   def new
     @entry = Entry.new
+    @folders = Folder.find(:all, :order => "updated_at").map { |f| [f.name, f.id] }
 
     respond_to do |format|
       format.html # new.html.erb
@@ -36,6 +37,7 @@ class EntriesController < ApplicationController
   # GET /entries/1/edit
   def edit
     @entry = Entry.find(params[:id])
+    @folders = Folder.find(:all, :order => "updated_at").map { |f| [f.name, f.id] }
   end
 
   # POST /entries
