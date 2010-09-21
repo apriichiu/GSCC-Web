@@ -3,42 +3,12 @@
 <h1>Resources</h1>
 
 <script type='text/javascript' src='/javascripts/jquery.dataTables.min.js'> </script>
-<script type='text/javascript'>
-//<![CDATA[
-$(document).ready(function() {
-    $('.datatable').dataTable({
-        'aaSorting': [[0, 'desc']],
-        "aoColumns": [
-            {
-                'sType': 'html',
-                'bSortable':true,
-                'bSearchable':true
-                
-            },{
-                'sType': 'html',
-                'bSortable':true,
-                'bSearchable':true
-                
-            },{
-                'sType': 'string',
-                'bSortable':true,
-                'bSearchable':true
-                
-            },{
-                'sType': 'html',
-                'bSortable':true,
-                'bSearchable':true
-                
-            }
-        ]
-    });
-}
-//]]>
-</script>
 <script type='text/javascript' src='/javascripts/jquery.dataTables.plugins.js'> </script>
+<link href='/stylesheets/demo_table_jui.css' rel='stylesheet' type='text/css'> 
+<link href='/stylesheets/jquery-custom.css' rel='stylesheet' type='text/css'> 
 <link href='/stylesheets/datatable.css' rel='stylesheet' type='text/css'> 
 
-<table class='datatable'>
+<table class='display datatable' cellpadding="0" cellspacing="0" border="0">
   <thead>
     <tr>
       <th>Title</th>
@@ -46,7 +16,7 @@ $(document).ready(function() {
       <th>Folder ID</th>
       <% if admin? %>
       <th>Attachments</th>
-      <th class="last">Admin</th>
+      <th class="last ui-state-default nonclickable">Admin</th>
       <% else %>
       <th class="last">Attachments</th>
       <% end %>
@@ -71,12 +41,14 @@ $(document).ready(function() {
   </tbody>
   <tbody> 
     <tr> 
-      <th><input type="text" name="search_title" value="Filter by title" class="search_init" /></th> 
-      <th><input type="text" name="search_description" value="Filter by description" class="search_init" /></th> 
-      <th><input type="text" name="search_folder" value="Filter by folder" class="search_init" /></th> 
-      <th><input type="text" name="search_attachments" value="Filter by filetype" class="search_init" /></th> 
+      <th class="ui-state-default"><input type="text" name="search_title" value="Filter by title" class="search_init" /></th> 
+      <th class="ui-state-default"><input type="text" name="search_description" value="Filter by description" class="search_init" /></th> 
+      <th class="ui-state-default"><input type="text" name="search_folder" value="Filter by folder" class="search_init" /></th> 
       <% if admin? %>
-      <th class="last"></th>
+      <th class="ui-state-default"><input type="text" name="search_attachments" value="Filter by filetype" class="search_init" /></th> 
+      <th class="last ui-state-default"></th>
+      <% else %>
+      <th class="last ui-state-default"><input type="text" name="search_attachments" value="Filter by filetype" class="search_init" /></th> 
       <% end %>
     </tr> 
   </tbody> 
