@@ -40,7 +40,7 @@ end
 def fetch_attachments (entry)
   output = "";
   entry.attachments.each do |a|
-    output += link_to(get_filetype_image(a), a.object.url);
+    output += link_to(get_filetype_image(a), a.object.url, :title => a.name+" - "+a.object_file_name);
     output += "&nbsp;"
   end
   return output;
