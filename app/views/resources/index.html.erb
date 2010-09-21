@@ -30,7 +30,7 @@
     <% @entries.each do |entry| %>
     <tr>
 
-      <td><%=h entry.title %></td>
+      <td><%= link_to entry.title, entry%></td>
 
       <td><%=h entry.description %></td>
 
@@ -39,7 +39,7 @@
       <% if entry.folder.nil? %>
       <td></td>
       <% else %>
-      <td><%=h entry.folder.name %></td>
+      <td><%= link_to entry.folder.name, entry.folder%></td>
       <% end %>
       <% if admin? %>
       <td><%= link_to 'Show', entry %> | <%= link_to 'Edit', edit_entry_path(entry) %> | <%= link_to 'Destroy', entry, :confirm => 'Are you sure?', :method => :delete %></td>
