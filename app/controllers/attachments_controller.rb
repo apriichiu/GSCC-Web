@@ -54,6 +54,7 @@ class AttachmentsController < ApplicationController
         format.html { redirect_to(@attachment) }
         format.xml  { render :xml => @attachment, :status => :created, :location => @attachment }
       else
+        flash[:notice] = 'Attachment creation failed.'
         format.html { render :action => "new" }
         format.xml  { render :xml => @attachment.errors, :status => :unprocessable_entity }
       end

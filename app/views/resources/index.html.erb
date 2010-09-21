@@ -3,57 +3,78 @@
 <h1>Resources</h1>
 
 <script type='text/javascript' src='/javascripts/jquery.dataTables.min.js'> </script>
+<script type='text/javascript'>
+//<![CDATA[
+$(document).ready(function() {
+    $('.datatable').dataTable({
+        'aaSorting': [[0, 'desc']],
+        "aoColumns": [
+            {
+                'sType': 'html',
+                'bSortable':true,
+                'bSearchable':true
+                
+            },{
+                'sType': 'html',
+                'bSortable':true,
+                'bSearchable':true
+                
+            },{
+                'sType': 'string',
+                'bSortable':true,
+                'bSearchable':true
+                
+            },{
+                'sType': 'html',
+                'bSortable':true,
+                'bSearchable':true
+                
+            }
+        ]
+    });
+}
+//]]>
+</script>
 <script type='text/javascript' src='/javascripts/jquery.dataTables.plugins.js'> </script>
 <link href='/stylesheets/datatable.css' rel='stylesheet' type='text/css'> 
 
 <table class='datatable'>
   <thead>
     <tr>
-
       <th>Title</th>
-
       <th>Description</th>
-
-      <th># of Attachments</th>
-
-      <% if admin? %>
       <th>Folder ID</th>
+      <% if admin? %>
+      <th>Attachments</th>
       <th class="last">Admin</th>
       <% else %>
-      <th class="last">Folder ID</th>
+      <th class="last">Attachments</th>
       <% end %>
-
     </tr>
   </thead>
   <tbody class="items">
-
     <% @entries.each do |entry| %>
     <tr>
-
       <td><%= link_to entry.title, entry%></td>
-
       <td><%=h entry.description %></td>
-
-      <td><%=h entry.attachments.size %></td>
-      
       <% if entry.folder.nil? %>
       <td></td>
       <% else %>
       <td><%= link_to entry.folder.name, entry.folder%></td>
       <% end %>
+      <td><%= fetch_attachments(entry) %></td>
       <% if admin? %>
       <td><%= link_to 'Show', entry %> | <%= link_to 'Edit', edit_entry_path(entry) %> | <%= link_to 'Destroy', entry, :confirm => 'Are you sure?', :method => :delete %></td>
       <% end %>
     </tr>
     <% end %>
-
   </tbody>
   <tbody> 
     <tr> 
       <th><input type="text" name="search_title" value="Filter by title" class="search_init" /></th> 
       <th><input type="text" name="search_description" value="Filter by description" class="search_init" /></th> 
-      <th><input type="text" name="search_attachments" value="Filter by attachments" class="search_init" /></th> 
       <th><input type="text" name="search_folder" value="Filter by folder" class="search_init" /></th> 
+      <th><input type="text" name="search_attachments" value="Filter by filetype" class="search_init" /></th> 
       <% if admin? %>
       <th class="last"></th>
       <% end %>

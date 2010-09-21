@@ -97,3 +97,11 @@
 	float: right;
 	text-align: right;
 }
+
+.datatable tbody input{
+    color: #aaa;
+}
+
+.datatable tbody input:focus{
+    color: #222;
+}

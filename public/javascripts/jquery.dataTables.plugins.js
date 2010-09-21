@@ -1,37 +1,10 @@
 
 $(document).ready(function() {
-
     var oTable = $('.datatable').dataTable({
-        "bSortClasses" : false,
 	"sDom" : 'fltpi',
-        "bLengthChange" : true,
-        'aaSorting': [[0, 'desc']],
-        "aoColumns": [
-            {
-                'sType': 'html',
-                'bSortable':true,
-                'bSearchable':true
-                
-            },{
-                'sType': 'html',
-                'bSortable':true,
-                'bSearchable':true
-                
-            },{
-                'sType': 'html',
-                'bSortable':true,
-                'bSearchable':true
-                
-            },{
-                'sType': 'html',
-                'bSortable':true,
-                'bSearchable':true
-                
-            }
-        ]
+        "bSortClasses" : false,
+        "bLengthChange" : true
     });
-
-
 
     var asInitVals = new Array();
 
