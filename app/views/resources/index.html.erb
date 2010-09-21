@@ -1,3 +1,5 @@
+<%= login_link %>
+
 <h1>Resources</h1>
 
 <script type='text/javascript' src='/javascripts/jquery.dataTables.min.js'> </script>
@@ -14,9 +16,12 @@
 
       <th># of Attachments</th>
 
+      <% if admin? %>
       <th>Folder ID</th>
-
-      <th class="last">Options</th>
+      <th class="last">Admin</th>
+      <% else %>
+      <th class="last">Folder ID</th>
+      <% end %>
 
     </tr>
   </thead>
@@ -36,8 +41,9 @@
       <% else %>
       <td><%=h entry.folder.name %></td>
       <% end %>
-
+      <% if admin? %>
       <td><%= link_to 'Show', entry %> | <%= link_to 'Edit', edit_entry_path(entry) %> | <%= link_to 'Destroy', entry, :confirm => 'Are you sure?', :method => :delete %></td>
+      <% end %>
     </tr>
     <% end %>
 
@@ -48,10 +54,11 @@
       <th><input type="text" name="search_description" value="Filter by description" class="search_init" /></th> 
       <th><input type="text" name="search_attachments" value="Filter by attachments" class="search_init" /></th> 
       <th><input type="text" name="search_folder" value="Filter by folder" class="search_init" /></th> 
+      <% if admin? %>
       <th class="last"></th>
+      <% end %>
     </tr> 
   </tbody> 
 </table>
 <br />
 
-<%= link_to 'New entry', new_entry_path %>

@@ -1,3 +1,5 @@
+<%= login_link %>
+
 <h1>Listing attachments</h1>
 
 <table>
@@ -38,14 +40,15 @@
     <% else %>
     <td><%=h attachment.entry.title %></td>
     <% end %>
-
+    
+    <% if admin? %>
     <td><%= link_to 'Show', attachment %></td>
     <td><%= link_to 'Edit', edit_attachment_path(attachment) %></td>
     <td><%= link_to 'Destroy', attachment, :confirm => 'Are you sure?', :method => :delete %></td>
+    <% end %>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New attachment', new_attachment_path %>

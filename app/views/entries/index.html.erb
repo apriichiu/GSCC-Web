@@ -1,3 +1,5 @@
+<%= login_link %>
+
 <h1>Listing entries</h1>
 
 <table>
@@ -28,13 +30,13 @@
     <td><%=h entry.folder.name %></td>
     <% end %>
 
+    <% if admin? %>
     <td><%= link_to 'Show', entry %></td>
     <td><%= link_to 'Edit', edit_entry_path(entry) %></td>
     <td><%= link_to 'Destroy', entry, :confirm => 'Are you sure?', :method => :delete %></td>
+    <% end %>
   </tr>
 <% end %>
 </table>
 
 <br />
-
-<%= link_to 'New entry', new_entry_path %>

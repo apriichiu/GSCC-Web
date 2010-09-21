@@ -1,5 +1,7 @@
 class EntriesController < ApplicationController
   layout "application"
+  before_filter :authorize, :except => [:index, :show]
+
   # GET /entries
   # GET /entries.xml
   def index

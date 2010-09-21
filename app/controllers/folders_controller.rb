@@ -1,5 +1,7 @@
 class FoldersController < ApplicationController
   layout "application"
+  before_filter :authorize, :except => [:index, :show]
+
   # GET /folders
   # GET /folders.xml
   def index

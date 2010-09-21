@@ -1,5 +1,8 @@
 class AttachmentsController < ApplicationController
   layout "application"
+  before_filter :authorize, :except => [:index, :show]
+
+
   # GET /attachments
   # GET /attachments.xml
   def index

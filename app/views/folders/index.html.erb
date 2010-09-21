@@ -1,3 +1,4 @@
+<%= login_link %>
 <h1>Listing folders</h1>
 
 <table>
@@ -18,14 +19,15 @@
     <td><%=h folder.description %></td>
 
     <td><%=h folder.entries.size %></td>
-
+    
+    <% if admin? %>
     <td><%= link_to 'Show', folder %></td>
     <td><%= link_to 'Edit', edit_folder_path(folder) %></td>
     <td><%= link_to 'Destroy', folder, :confirm => 'Are you sure?', :method => :delete %></td>
+    <% end %>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New folder', new_folder_path %>

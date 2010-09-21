@@ -4,7 +4,7 @@
 <% if flash[:notice] -%> <div id="notice"><%= flash[:notice] %></div>
 <% end -%>
 
-<% form_tag sessions_path do %>
+<% form_tag sessions_path+"?redirect="+params[:redirect] do %>
   Password <%= password_field_tag :password %>
 <% end %>
 

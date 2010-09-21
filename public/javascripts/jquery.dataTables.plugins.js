@@ -1,66 +1,11 @@
 
 $(document).ready(function() {
 
-
-// $('.datatable').dataTable({
-//                   "oLanguage": {
-//                     "sSearch": "Search",
-                    
-//                     "sProcessing": 'Processing'
-//                   },
-//                   "sPaginationType": "full_numbers",
-//                   "iDisplayLength": 2,
-//                   "bProcessing": true,
-//                   "bServerSide": false,
-//                   "bLengthChange": false,
-//                   "bStateSave": true,
-//                   "bFilter": true,
-//                   "bAutoWidth": true,
-//                   "bSortClasses" : false,
-//                   'aaSorting': [[0, 'desc']],
-                  
-//                   "aoColumns": [
-//               			{
-//                   'sType': 'html',
-//                   'bSortable':true,
-//                   'bSearchable':true
-                  
-//                   },{
-//                   'sType': 'html',
-//                   'bSortable':true,
-//                   'bSearchable':true
-                  
-//                   },{
-//                   'sType': 'html',
-//                   'bSortable':true,
-//                   'bSearchable':true
-                  
-//                   },{
-//                   'sType': 'html',
-//                   'bSortable':true,
-//                   'bSearchable':true
-                  
-//                   },{
-//                   'sType': 'string',
-//                   'bSortable':false,
-//                   'bSearchable':false
-//                   ,'sClass':'last'
-//                   }
-//               				],
-              		
-//                   "fnServerData": function ( sSource, aoData, fnCallback ) {
-//                     aoData.push(  );
-//                     $.getJSON( sSource, aoData, function (json) {
-//               				fnCallback(json);
-//               			} );
-//                   }
-//                 });
     var oTable = $('.datatable').dataTable({
         "bSortClasses" : false,
 	"sDom" : 'fltpi',
         "bLengthChange" : true,
         'aaSorting': [[0, 'desc']],
-        
         "aoColumns": [
             {
                 'sType': 'html',
@@ -82,11 +27,6 @@ $(document).ready(function() {
                 'bSortable':true,
                 'bSearchable':true
                 
-            },{
-                'sType': 'string',
-                'bSortable':false,
-                'bSearchable':false
-                ,'sClass':'last'
             }
         ]
     });
