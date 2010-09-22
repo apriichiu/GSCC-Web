@@ -25,7 +25,6 @@ Rails::Initializer.run do |config|
   config.gem "rest-client"
   config.gem "oauth2"
   config.gem "fb_graph"
-  config.gem "mime-types"
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
