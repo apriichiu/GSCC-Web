@@ -13,15 +13,19 @@ Rails::Initializer.run do |config|
 
   # Add additional load paths for your own custom dirs
   # config.load_paths += %W( #{RAILS_ROOT}/extras )
+  config.load_paths += %W( #{RAILS_ROOT}/app/middleware )
+
 
   # Specify gems that this application depends on and have them installed with rake gems:install
   # config.gem "bj"
   # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"
-  config.gem "json", :lib => "#{RAILS_ROOT}/vendor/gems/json-1.4.6/lib/json"
-  config.gem "rest-client", :lib => "#{RAILS_ROOT}/vendor/gems/rest-client-1.6.1/lib/rest-client"
-  config.gem "oauth2", :lib => "#{RAILS_ROOT}/vendor/gems/oauth2-0.0.13/lib/oauth2"
+  config.gem "json"
+  config.gem "rest-client"
+  config.gem "oauth2"
+  config.gem "fb_graph"
+  config.gem "mime-types"
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
