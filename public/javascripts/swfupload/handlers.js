@@ -36,10 +36,12 @@ function fileQueueError(file, errorCode, message) {
 function fileDialogComplete(numFilesSelected, numFilesQueued) {
 	try {
 		if (numFilesQueued > 0) {
-// 		    ADDED THIS TO GET THE ENTRY ID FROM THE ENTRY_ID_FIELD - ILIU
+		    // 		    ADDED THIS TO GET THE ENTRY ID FROM THE ENTRY_ID_FIELD - ILIU
 		    var sel = document.getElementById("attachment_entry_id");
-		    var eid = sel.options[sel.selectedIndex].value;
-		    this.addPostParam("entry_id", eid);
+		    if (sel) {
+			var eid = sel.options[sel.selectedIndex].value;
+			this.addPostParam("entry_id", eid);
+		    }
 			this.startUpload();
 		}
 	} catch (ex) {
