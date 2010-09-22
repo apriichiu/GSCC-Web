@@ -51,4 +51,4 @@
 <% if admin? %>
 <%= link_to 'Edit', edit_attachment_path(@attachment) %> |
 <% end %>
-<%= link_to 'Back', attachments_path %>
+<%= link_to 'Back', request.referer %>

@@ -6,6 +6,7 @@ $(document).ready(function() {
         "bLengthChange" : true,
         "bJQueryUI": true,
         "sPaginationType": "full_numbers",
+	"bAutoWidth": false,
         "aoColumns": [
             {
                 'sType': 'html',

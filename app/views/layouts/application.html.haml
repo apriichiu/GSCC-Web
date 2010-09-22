@@ -44,12 +44,16 @@
           map &amp; directions
     #outer-container.container
       #content.span-18.last
-        - if flash[:notice]  
-          .notice
-            = flash[:notice]
         - if flash[:error]  
+          %script{:type => "text/javascript"}
+            $(function() { $('.notice').delay(2500).fadeOut(); });
           %div{ :class => "notice error" }
             = flash[:error]
+        - elsif flash[:notice]  
+          %script{:type => "text/javascript"}
+            $(function() { $('.notice').delay(2500).fadeOut(); });
+          .notice
+            = flash[:notice]
         = yield
       #sidebar.span-6
         %ul#navigation

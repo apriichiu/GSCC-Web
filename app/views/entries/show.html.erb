@@ -53,4 +53,4 @@
 <% if admin? %>
 <%= link_to 'Edit', edit_entry_path(@entry) %> |
 <% end %>
-<%= link_to 'Back', entries_path %>
+<%= link_to 'Back', request.referer %>

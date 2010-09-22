@@ -31,8 +31,10 @@ class AttachmentsController < ApplicationController
     @attachment = Attachment.new
     @entries = Entry.find(:all, :order => "updated_at DESC").map { |e| [e.title, e.id] }
 
+    @new = true;
+    
     respond_to do |format|
-      format.html # new.html.erb
+      format.html { render "edit" } # edit.html.erb
       format.xml  { render :xml => @attachment }
     end
   end

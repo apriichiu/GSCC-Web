@@ -1,43 +1,47 @@
+<% if @new %>
+<h1>New attachment</h1>
+<% else %>
 <h1>Editing attachment</h1>
-
-<% form_for @attachment, :html => { :multipart => true } do |f| %>
-  <%= f.error_messages %>
-
-
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-
-  <p>
-    <%= f.label :description %><br />
-    <%= f.text_field :description %>
-  </p>
-
-  <p>
-    <%= f.label :object %><br />
-    <% if @attachment.object %> 
-    <%=link_to @attachment.object_file_name, @attachment.object.url %><br />
-    <% end %>
-    or choose new attachment: <br />
-    <%= f.file_field :object %>
-  </p>
-
-  <p>
-    <%= f.label :entry_id %><br />
-    <%= f.text_field :entry_id %>
-  </p>
-
-  <p>
-    Entry<br />
-    <%= f.select :entry_id, @entries, :include_blank => true %>
-  </p>
-
-
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
 <% end %>
 
+<% form_for @attachment, :html => { :multipart => true } do |f| %>
+<%= f.error_messages %>
+<p>
+  <%= f.label :name %><br />
+  <%= f.text_field :name %>
+</p>
+
+<p>
+  <%= f.label :description %><br />
+  <%= f.text_area :description %>
+</p>
+
+<p>
+  <%= f.label :object %><br />
+  <% if @new.nil? %>
+    <% if @attachment.object? %> 
+     <%=link_to @attachment.object_file_name, @attachment.object.url %><br />
+    <% end %>
+    or choose new attachment: <br />
+  <% end %>
+  <%= f.file_field :object %>
+</p>
+
+<p>
+  Entry<br />
+  <%= f.select :entry_id, @entries, :include_blank => true %>
+</p>
+
+<p>
+  <% if @new %>
+  <%= f.submit 'Create' %>
+  <% else %>
+  <%= f.submit 'Update' %>
+  <% end %>
+</p>
+<% end %>
+
+<% if @new.nil? %>
 <%= link_to 'Show', @attachment %> |
-<%= link_to 'Back', attachments_path %>
+<% end %>
+<%= link_to 'Back', request.referer %>

@@ -29,9 +29,10 @@ class EntriesController < ApplicationController
   def new
     @entry = Entry.new
     @folders = Folder.find(:all, :order => "updated_at DESC").map { |f| [f.name, f.id] }
+    @new = true;
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html { render "edit" }
       format.xml  { render :xml => @entry }
     end
   end

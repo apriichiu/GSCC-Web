@@ -1,7 +1,6 @@
 class Attachment < ActiveRecord::Base
 
   belongs_to :entry
-
   has_attached_file :object, :styles => {:thumbnail => "50x50", :small => "150x150"},
                     :path => ":rails_root/public/assets/:id/:basename_:style.:extension",
                     :url => "/assets/:id/:basename_:style.:extension"

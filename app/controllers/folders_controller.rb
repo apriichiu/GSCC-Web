@@ -39,9 +39,9 @@ class FoldersController < ApplicationController
   # GET /folders/new.xml
   def new
     @folder = Folder.new
-
+    @new = true;
     respond_to do |format|
-      format.html # new.html.erb
+      format.html { render "edit" }
       format.xml  { render :xml => @folder }
     end
   end

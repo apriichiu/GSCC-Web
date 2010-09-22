@@ -12,7 +12,7 @@
 
 <p>
   <b>Description:</b>
-  <%=h @folder.description %>
+  <%= @folder.description %>
 </p>
 
 
@@ -30,4 +30,4 @@
 <% if admin? %>
 <%= link_to 'Edit', edit_folder_path(@folder) %> |
 <% end %>
-<%= link_to 'Back', folders_path %>
+<%= link_to 'Back', request.referer %>

@@ -15,7 +15,7 @@
 
 table.display thead th.admin-column{
     cursor: default;
-    width: 50px;
+    width: 60px;
 }
 
 #content .datatable tbody td a{
