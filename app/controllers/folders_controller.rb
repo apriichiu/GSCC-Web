@@ -2,6 +2,17 @@ class FoldersController < ApplicationController
   layout "application"
   before_filter :authorize, :except => [:index, :show]
 
+  HIDDEN_FTYPE = 0
+  OTHERS_FTYPE = 1
+  SERMONSERIES_FTYPE = 2
+  FORMS_FTYPE = 3
+  EVENTS_FTYPE = 4
+
+  @@folder_type_string = { HIDDEN_FTYPE => "Hidden", OTHERS_FTYPE => "Others" , SERMONSERIES_FTYPE => "Sermon Series" , FORMS_FTYPE => "Forms", EVENTS_FTYPE => "Events"}
+
+  helper_method :get_folder_type_selection_object
+  helper_method :get_folder_type_string
+
   # GET /folders
   # GET /folders.xml
   def index
@@ -44,6 +55,7 @@ class FoldersController < ApplicationController
   # POST /folders.xml
   def create
     @folder = Folder.new(params[:folder])
+    puts @folder.inspect
 
     respond_to do |format|
       if @folder.save
@@ -85,4 +97,13 @@ class FoldersController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  def get_folder_type_selection_object
+    return @@folder_type_string.keys.map {|k| [@@folder_type_string[k], k] }
+  end  
+
+  def get_folder_type_string(k)
+    return @@folder_type_string[k]
+  end  
+
 end

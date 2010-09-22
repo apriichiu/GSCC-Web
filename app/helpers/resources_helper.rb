@@ -1,5 +1,8 @@
 module ResourcesHelper
 
+
+
+
 def login_link
 template = <<-eos
 <div id="login-link">
@@ -21,17 +24,17 @@ def get_filetype_image(attachment)
   if attachment.object_content_type == "application/pdf"
     return image_tag( "/images/filetypes/pdf.png", :size => "25x25");
   elsif attachment.object_content_type == "application/msword"
-    return image_tag ("/images/filetypes/word.png", :size => "25x25");
+    return image_tag("/images/filetypes/word.png", :size => "25x25");
   elsif attachment.object_content_type == "audio/mp3"
-    return image_tag ("/images/filetypes/mp3.png", :size => "35x35");
+    return image_tag("/images/filetypes/mp3.png", :size => "35x35");
   elsif attachment.object_content_type == "text/plain"
-    return image_tag ("/images/filetypes/txt.png", :size => "25x25");
+    return image_tag("/images/filetypes/txt.png", :size => "25x25");
   elsif attachment.object_content_type == "image/png"
-    return image_tag ("/images/filetypes/png.png", :size => "25x25");
+    return image_tag("/images/filetypes/png.png", :size => "25x25");
   elsif attachment.object_content_type == "application/zip"
-    return image_tag ("/images/filetypes/zip.png", :size => "25x25");
+    return image_tag("/images/filetypes/zip.png", :size => "25x25");
   elsif attachment.object_content_type == "image/jpeg"
-    return image_tag ("/images/filetypes/jpeg.png", :size => "25x25");
+    return image_tag("/images/filetypes/jpeg.png", :size => "25x25");
   else 
     return image_tag("/images/filetypes/others.png", :size => "25x25");
   end

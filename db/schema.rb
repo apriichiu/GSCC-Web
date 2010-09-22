@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(:version => 20100922011042) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "type"
+    t.integer  "folder_type"
   end
 
 end

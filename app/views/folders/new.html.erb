@@ -10,6 +10,12 @@
   </p>
 
   <p>
+    <%= f.label :folder_type %><br />
+    <%= f.select :folder_type, get_folder_type_selection_object %>
+
+  </p>
+
+  <p>
     <%= f.label :description %><br />
     <%= f.text_area :description %>
   </p>
