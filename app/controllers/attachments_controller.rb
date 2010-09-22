@@ -2,11 +2,11 @@ class AttachmentsController < ApplicationController
   layout "application"
   before_filter :authorize, :except => [:index, :show]
 
-
   # GET /attachments
   # GET /attachments.xml
   def index
-    @attachments = Attachment.all
+    @attachments = Attachment.find(:all, :order => "updated_at DESC");
+    puts Attachment.column_names
 
     respond_to do |format|
       format.html # index.html.erb
@@ -48,18 +48,23 @@ class AttachmentsController < ApplicationController
   # POST /attachments
   # POST /attachments.xml
   def create
-    @attachment = Attachment.new(params[:attachment])
+    @attachment = Attachment.new
+    @entries = Entry.find(:all, :order => "updated_at DESC").map { |e| [e.title, e.id] }
 
-    respond_to do |format|
-      if @attachment.save
-        flash[:notice] = 'Attachment was successfully created.'
-        format.html { redirect_to(@attachment) }
-        format.xml  { render :xml => @attachment, :status => :created, :location => @attachment }
-      else
-        flash[:notice] = 'Attachment creation failed.'
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @attachment.errors, :status => :unprocessable_entity }
+    params[:Filedata].content_type = MIME::Types.type_for(params[:Filename]).to_s
+    @attachment.object = params[:Filedata]
+    @attachment.entry_id = params[:entry_id]
+
+    if @attachment.save
+      flash[:notice] = 'Attachment was successfully created.'
+      output = @attachment.object_file_name + " successfully uploaded";
+      if params[:entry_id]
+        output += " to "+Entry.find(params[:entry_id]).title
       end
+      render :text => output
+    else
+      flash[:error] = 'Attachment creation failed.'
+      render :action => "edit"
     end
   end
 

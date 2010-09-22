@@ -1,3 +1,4 @@
+
 <% if @new %>
 <h1>New entry</h1>
 <% else %>
@@ -55,7 +56,6 @@
     Folder<br />
     <%= f.select :folder_id, @folders, :include_blank => true %>
   </p>
-
 
   <p>
     <% if @new %>

@@ -1,8 +1,5 @@
 module ResourcesHelper
 
-
-
-
 def login_link
 template = <<-eos
 <div id="login-link">
@@ -23,7 +20,7 @@ def get_filetype_image(attachment)
     return image_tag( "/images/filetypes/pdf.png", :size => "25x25");
   elsif attachment.object_content_type == "application/msword"
     return image_tag("/images/filetypes/word.png", :size => "25x25");
-  elsif attachment.object_content_type == "audio/mp3"
+  elsif attachment.object_content_type == "audio/mp3" || attachment.object_content_type == "audio/mpeg"
     return image_tag("/images/filetypes/mp3.png", :size => "35x35");
   elsif attachment.object_content_type == "text/plain"
     return image_tag("/images/filetypes/txt.png", :size => "25x25");
@@ -41,7 +38,7 @@ end
 def fetch_attachments (entry)
   output = "";
   entry.attachments.each do |a|
-    output += link_to(get_filetype_image(a), a.object.url, :title => a.name+" - "+a.object_file_name);
+    output += link_to(get_filetype_image(a), a.object.url, :title => a.object_file_name);
     output += "&nbsp;"
   end
   return output;

@@ -9,17 +9,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100922011042) do
+ActiveRecord::Schema.define(:version => 20100922222343) do
 
   create_table "attachments", :force => true do |t|
-    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "object_file_name"
     t.string   "object_content_type"
     t.integer  "object_file_size"
     t.datetime "object_updated_at"
-    t.string   "description"
     t.integer  "entry_id"
   end
 
