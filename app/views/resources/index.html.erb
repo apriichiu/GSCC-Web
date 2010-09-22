@@ -16,7 +16,7 @@
       <th>Folder ID</th>
       <% if admin? %>
       <th>Attachments</th>
-      <th class="last ui-state-default nonclickable">Admin</th>
+      <th class="last ui-state-default admin-column">Admin</th>
       <% else %>
       <th class="last">Attachments</th>
       <% end %>
@@ -34,7 +34,8 @@
       <% end %>
       <td><%= fetch_attachments(entry) %></td>
       <% if admin? %>
-      <td><%= link_to 'Show', entry %> | <%= link_to 'Edit', edit_entry_path(entry) %> | <%= link_to 'Destroy', entry, :confirm => 'Are you sure?', :method => :delete %></td>
+      <td> <%= link_to image_tag("datatable/edit.png", :size => "20x20"), edit_entry_path(entry), :title => "edit" %>
+	<%= link_to image_tag("datatable/delete.png", :size=> "20x20"), entry, :confirm => 'Are you sure?', :method => :delete, :title => "delete"%></td>
       <% end %>
     </tr>
     <% end %>

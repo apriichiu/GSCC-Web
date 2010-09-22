@@ -13,8 +13,9 @@
     padding-bottom: 0px;
 }
 
-table.display thead th.nonclickable{
+table.display thead th.admin-column{
     cursor: default;
+    width: 65px;
 }
 
 #content .datatable tbody td a{

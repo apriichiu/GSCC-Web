@@ -14,10 +14,9 @@
     <%= f.text_area :description %>
   </p>
 
-
   <p>
     Folder<br />
-    <%= f.select :folder_id, @folders %>
+    <%= f.select :folder_id, @folders, :include_blank => true %>
   </p>
 
   <p>
