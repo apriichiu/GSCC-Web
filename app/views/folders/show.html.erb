@@ -27,7 +27,7 @@
 
 <% end %>
 
-
-
+<% if admin? %>
 <%= link_to 'Edit', edit_folder_path(@folder) %> |
+<% end %>
 <%= link_to 'Back', folders_path %>

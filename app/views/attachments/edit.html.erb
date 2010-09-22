@@ -16,6 +16,10 @@
 
   <p>
     <%= f.label :object %><br />
+    <% if @attachment.object %> 
+    <%=link_to @attachment.object_file_name, @attachment.object.url %><br />
+    <% end %>
+    or choose new attachment: <br />
     <%= f.file_field :object %>
   </p>
 

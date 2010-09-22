@@ -1,5 +1,12 @@
 <h1>New entry</h1>
 
+<link href='/stylesheets/jquery-custom.css' rel='stylesheet' type='text/css'> 
+<script type='text/javascript' src='/javascripts/jquery-ui.custom.min.js'> </script>
+<script> 
+	$(function() {
+		$( "#datepicker" ).datepicker();
+	});
+</script> 
 <% form_for(@entry) do |f| %>
   <%= f.error_messages %>
 
@@ -7,6 +14,19 @@
   <p>
     <%= f.label :title %><br />
     <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :entry_date %><br />
+    <%= f.text_field :entry_date, :id => "datepicker" %>
+  </p>
+
+  <p>
+    <%= f.label :verse %><br />
+    <%= f.text_field :verse %>
+  </p>
+  <p>
+    <%= f.label :tags %><br />
+    <%= f.text_field :tags %>
   </p>
 
   <p>

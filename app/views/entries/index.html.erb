@@ -5,8 +5,10 @@
 <table>
   <tr>
 
+    <th>Date</th>
     <th>Title</th>
-
+    <th>Verse</th>
+    <th>Tags</th>
     <th>Description</th>
 
     <th># of Attachments</th>
@@ -18,8 +20,14 @@
 <% @entries.each do |entry| %>
   <tr>
 
+    <td>
+      <% if entry.entry_date %>
+      <%=h entry.entry_date.strftime("%m/%d/%y") %>
+      <% end %>
+    </td>
     <td><%=h entry.title %></td>
-
+    <td><%=h entry.verse %></td>
+    <td><%=h entry.tags %></td>
     <td><%=h entry.description %></td>
 
     <td><%=h entry.attachments.size %></td>

@@ -43,7 +43,14 @@
                       :target =>'_blank'}
           map &amp; directions
     #outer-container.container
-      #content.span-18.last= yield
+      #content.span-18.last
+        - if flash[:notice]  
+          .notice
+            = flash[:notice]
+        - if flash[:error]  
+          %div{ :class => "notice error" }
+            = flash[:error]
+        = yield
       #sidebar.span-6
         %ul#navigation
           %li.home

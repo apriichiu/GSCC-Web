@@ -16,14 +16,23 @@ $(document).ready(function() {
                 'sType': 'html',
                 'bSortable':true,
                 'bSearchable':true
-                
             },{
-                'sType': 'string',
+                'sType': 'html',
                 'bSortable':true,
                 'bSearchable':true
                 
             },{
                 'sType': 'html',
+                'bSortable':true,
+                'bSearchable':true
+                
+            },{
+                'sType': 'html',
+                'bSortable':true,
+                'bSearchable':true
+                
+            },{
+                'sType': 'string',
                 'bSortable':true,
                 'bSearchable':true
                 
@@ -44,7 +53,8 @@ $(document).ready(function() {
       ***************************/
     $("tbody input").keyup( function () {
 	/* Filter on the column (the index) of this element */
-	oTable.fnFilter( this.value, $("tbody input").index(this) );
+// 	ADDED A HACK BECAUSE THIS IS BASED ON THE ASSUMPTION THAT ALL COLUMNS HAVE FILTER INPUT
+	oTable.fnFilter( this.value, $("tbody input").index(this) + 1  );
     } );
     
     

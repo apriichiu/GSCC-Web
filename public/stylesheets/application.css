@@ -380,3 +380,18 @@ body {
     position: relative;
 }
 
+.notice {
+    width: 95%;
+    margin-top: 10px;
+    padding: 10px;
+    border: 3px solid #353;
+    background-color: #9b9;
+    color: #353;
+    font-weight: bold;
+}
+
+.error {
+    background-color: #b99;
+    border: 3px solid #533;
+    color: #533;
+}

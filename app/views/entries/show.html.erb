@@ -5,6 +5,23 @@
 </p>
 
 <p>
+  <b>Date:</b>
+  <% if @entry.entry_date %>
+  <%=h @entry.entry_date.strftime("%m/%d/%y") %>
+  <% end %>
+</p>
+
+<p>
+  <b>Verse:</b>
+  <%=h @entry.verse %>
+</p>
+<p>
+  <b>Tags:</b>
+  <%=h @entry.tags %>
+</p>
+
+
+<p>
   <b>Folder ID:</b>
   <%=h @entry.folder_id%>
 </p>
@@ -33,6 +50,7 @@
 <% end %>
 
 
-
+<% if admin? %>
 <%= link_to 'Edit', edit_entry_path(@entry) %> |
+<% end %>
 <%= link_to 'Back', entries_path %>

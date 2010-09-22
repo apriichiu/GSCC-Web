@@ -15,7 +15,7 @@
 
 table.display thead th.admin-column{
     cursor: default;
-    width: 65px;
+    width: 50px;
 }
 
 #content .datatable tbody td a{
@@ -28,8 +28,10 @@ table.display thead th.admin-column{
 
 .datatable tbody th input{
     color: #aaa;
+    width: 95%;
 }
 
 .datatable tbody th input:focus{
     color: #222;
 }
+

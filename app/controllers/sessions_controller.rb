@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       redirect_to params[:redirect]
     else
       session[:password] = ""
-      flash[:notice] = "Incorrect password"
+      flash[:error] = "Incorrect password"
       redirect_to params[:redirect]
     end
 
