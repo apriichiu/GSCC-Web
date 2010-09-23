@@ -31,10 +31,8 @@ class AttachmentsController < ApplicationController
     @attachment = Attachment.new
     @entries = Entry.find(:all, :order => "updated_at DESC").map { |e| [e.title, e.id] }
 
-    @new = true;
-    
     respond_to do |format|
-      format.html { render "edit" } # edit.html.erb
+      format.html
       format.xml  { render :xml => @attachment }
     end
   end
@@ -50,9 +48,13 @@ class AttachmentsController < ApplicationController
   def create
     @attachment = Attachment.new
     @entries = Entry.find(:all, :order => "updated_at DESC").map { |e| [e.title, e.id] }
-
+    #Since we're using swfUpload, the file will be in params[:Filedata]
+    #We need to change the content_type since swfUpload messes it up
     params[:Filedata].content_type = MIME::Types.type_for(params[:Filename]).to_s
+
+    #Set the object to be the file uploaded
     @attachment.object = params[:Filedata]
+    #Set the entry_id if there is one
     @attachment.entry_id = params[:entry_id]
 
     if @attachment.save
