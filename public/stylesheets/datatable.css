@@ -1,7 +1,7 @@
-.datatable tr.even td{
+table.datatable tr.even td{
     background-color: #white;
 }
-.datatable tr.odd td{
+table.datatable tr.odd td{
     background-color: #efe;
 }
 

@@ -4,6 +4,8 @@ body {
 .pharkir {
   text-indent: -5000px; }
 
+a {color: #9bda5e;}
+
 #header {
   text-transform: uppercase;
   background: #000 url(/images/header-bkg.jpg);
@@ -211,9 +213,6 @@ body {
       font-weight: bold; }
       .interior #content .subsection-navigation a:hover {
         color: #9bda5e; }
-    .interior #content a {
-      color: #9bda5e;
-      font-weight: bold; }
 
 
 .interior #content #login-link {
@@ -275,68 +274,23 @@ body {
 #copyright {
   text-align: center; }
 
-#events_list_container .event_item_wrap {
-    border: 1px solid #bbb;
-    margin-bottom: 10px;
-}
 
-#events_list_container .event_item_space {
-    clear:both;
-}
-#events_list_container .event_title a{
-    font-size: 2em;
+ .event_title a{
+    font-size: 1.4em;
     text-decoration: none;
 }
-#events_list_container .event_title a:hover{
-    color: #ffffff;
+#content .event_title a:hover{
+    text-decoration: underline;
 }
-#events_list_container .event_time_location table *{
+.event_time_location *{
+    vertical-align: top;
     padding: 0;
-}
-#events_list_container .event_time_location td{
-    padding-left: 0px;
-}
-#events_list_container .event_time ,#events_list_container .event_location {
-    margin: 0px; 
-    padding: 0px;
-}
-#events_list_container .event_image {
-    width: 80px;
-    height: 100px;
-    padding: 0px 0px 0px 10px;
-    float:left;
-
-}
-#events_list_container .event_info {
-    width: 80%;
-    float:left;
-    padding: 0px 0px 0px 15px;
-}
-#events_list_container .event_date_top {
-    width: 100%;
-    height: 25px;
-    background-color: #333;
-    border-bottom: 1px solid #bbb;
-}
-#events_list_container .event_date_top strong{
-    padding-left: 10px;
-    line-height: 25px;
-}
-#events_list_container #past_events_container{
-    display: none;
-}
-#events_list_container #show_past_events_link{
-    clear: both;
-}
-#events_list_container #show_past_events_link strong{
-    color: #79aa3c;
-}
-#events_list_container #show_past_events_link strong:hover{
-    border-bottom: 1px dotted #999;
-    color: #999;
-    cursor: pointer;
+    margin: 0;
 }
 
+.event_time_location th{
+    height: 30px;
+}
 
 .upcoming-events-icon {
     position: absolute:
@@ -381,19 +335,9 @@ body {
 }
 
 .notice {
-    width: 95%;
+    width: 90%;
     margin-top: 10px;
     padding: 10px;
-    border: 3px solid #353;
-    background-color: #9b9;
-    color: #353;
-    font-weight: bold;
-}
-
-.error {
-    background-color: #b99;
-    border: 3px solid #533;
-    color: #533;
 }
 
 table#show-view-table {

@@ -1,32 +1,23 @@
 <h1>Events</h1>
-<div id="events_list_container">
-  <strong>Upcoming:</strong>
-  <hr />
-  <% @upcoming_events.each do |event| %>
-    <%= event_list_block(event); %>
-  <% end %>
-
-<div id="show_past_events_link"><strong>Past Events</strong></div>
-<div id="past_events_container">
-<hr />
-  <% @past_events.each do |event| %>
-    <%= event_list_block(event); %>
-  <% end %>
+<script>
+	$(function() {
+		$( "#accordion" ).accordion({ autoHeight: false });
+	});
+</script>
+<div id="accordion">
+    <h3><a href="#">Upcoming Events</a></h3>
+    <div>
+        <% @upcoming_events.each do |event| %>
+	<%= event_list_block(event); %>
+	<% end %>
+    </div>
+    <h3><a href="#">Past Events</a></h3>
+    <div>
+      <% @past_events.each do |event| %>
+      <%= event_list_block(event); %>
+      <% end %>
+  </div>
 </div>
-</div>
-<script type="text/javascript"> 
-//<![CDATA[
-	  $('#show_past_events_link').click(function(){
-	  $('#past_events_container').slideToggle('slow');
-	  });
-//]]>
-</script> 
-
-
-
-<br />
-
-
 
 
 

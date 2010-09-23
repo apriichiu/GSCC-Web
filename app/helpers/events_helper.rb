@@ -22,31 +22,33 @@ HTML
 
   def event_list_block (event)
     <<-HTML
-  <div class="event_item_wrap">
-  <div class="event_item">
-    <p class="event_date_top">
-         <strong>#{event.start_time.getlocal.strftime("%A, %B %d")}</strong>
-    </p>
-    <div class="event_image"> 
-      #{image_tag(event.picture, :size => "80x80")}
-    </div>
-    <div class="event_info">
-      <div class="event_title">
-        #{facebook_event_link event.identifier, event.name}
-      </div>
-      <div class="event_time_location">
-        <table><tr>
-        <th><strong>When:</strong></th><td> <span class="event_time">#{get_short_time(event.start_time.getlocal, event.end_time.getlocal)}</span></td>
+     <table cellpadding="0" cellspacing="0" border="0">
+       <tr>
+         <th class="ui-widget-header ui-corner-top">
+           #{event.start_time.getlocal.strftime("%A, %B %d, %Y")}
+         </th>
+       </tr>
+       <tr>
+         <td class="ui-state-default ui-corner-bottom">
+        <table class="event_time_location" cellpadding="0" cellspacing="0">
+        <tr>
+            <td rowspan="4" width="85px">#{image_tag(event.picture, :size => "80x80")}</td>
+            <th colspan="2"><span class="event_title">#{facebook_event_link event.identifier, event.name}</span></th>
         </tr>
         <tr>
-        <th><strong>Where:</strong></th><td> <span class="event_location">#{event.location}</span></td>
+        <td><strong>When:</strong></td><td> <span class="event_time">#{get_short_time(event.start_time.getlocal, event.end_time.getlocal)}</span></td>
         </tr>
+        <tr>
+        <td><strong>Where:</strong></td><td> <span class="event_location">#{event.location}</span></td>
+        </tr>
+        <tr>
+        <td>&nbsp;</td><td></td>
+        </tr>
+
         </table>
-      </div>
-     </div>
-  </div>
-  <div class="event_item_space"></div>
-  </div>
+         </td>
+       </tr>
+     </table>
 HTML
   end 
 

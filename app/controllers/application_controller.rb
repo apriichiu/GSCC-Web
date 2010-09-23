@@ -62,7 +62,7 @@ class ApplicationController < ActionController::Base
   protected
   def get_events
     page = FbGraph::Page.new(session[:page_id], :access_token => session[:access_token]).fetch;
-    event_gscc = page.events.sort_by{|e| e.start_time};;
+    event_gscc = page.events.sort_by{|e| e.start_time};
     @upcoming_events = event_gscc.find_all{|e| e.start_time >= Time.now};
     @past_events = event_gscc.find_all{|e| e.start_time < Time.now}.reverse;
   end

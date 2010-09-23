@@ -17,15 +17,11 @@
     To reference a footnote:<br /> <a target="_blank" href="http://www.textpattern.com/help/?item=footnote_reference" onclick="window.open(this.href, 'popupwindow', 'width=500,height=500,scrollbars,resizable'); return false;">[<em>n</em>]</a><br /></p>	
 </div>	
 
-
-<link href='/stylesheets/jquery-custom.css' rel='stylesheet' type='text/css'> 
-<script type='text/javascript' src='/javascripts/jquery-ui.custom.min.js'> </script>
 <script> 
 	$(function() {
 		$( "#datepicker" ).datepicker();
 	});
 </script> 
-
 
 <% form_for(@entry) do |f| %>
   <%= f.error_messages %>
