@@ -1,13 +1,7 @@
 <%= login_link %>
 
 <h1>Resources</h1>
-
-<script type='text/javascript' src='/javascripts/jquery.dataTables.min.js'> </script>
-<script type='text/javascript' src='/javascripts/jquery.dataTables.plugins.js'> </script>
-<link href='/stylesheets/demo_table_jui.css' rel='stylesheet' type='text/css'> 
-<link href='/stylesheets/jquery-custom.css' rel='stylesheet' type='text/css'> 
-<link href='/stylesheets/datatable.css' rel='stylesheet' type='text/css'> 
-
+<%= render "/layouts/datatable_setup" %>
 <table class='display datatable' cellpadding="0" cellspacing="0" border="0">
   <thead>
     <tr>
@@ -15,7 +9,7 @@
       <th>Title</th>
       <th>Verse</th>
       <th>Tags</th>
-      <th>Folder ID</th>
+      <th>Series</th>
       <% if admin? %>
       <th>Files</th>
       <th class="ui-state-default admin-column">Admin</th>
@@ -54,7 +48,7 @@
       <th class="ui-state-default"><input type="text" name="search_title" value="filter title" class="search_init" /></th> 
       <th class="ui-state-default"><input type="text" name="search_verse" value="filter verse" class="search_init" /></th> 
       <th class="ui-state-default"><input type="text" name="search_tags" value="filter tags" class="search_init" /></th> 
-      <th class="ui-state-default"><input type="text" name="search_folder" value="filter folder" class="search_init" /></th> 
+      <th class="ui-state-default"><input type="text" name="search_series" value="filter series" class="search_init" /></th> 
       <% if admin? %>
       <th class="ui-state-default"><input type="text" name="search_attachments" value="filter filetype" class="search_init" /></th> 
       <th class="ui-state-default"></th>
