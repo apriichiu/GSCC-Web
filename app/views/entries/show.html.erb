@@ -1,0 +1,76 @@
+<%= login_link %>
+<link href='/stylesheets/jquery-custom.css' rel='stylesheet' type='text/css'> 
+<h1> Resources </h1>
+
+<table id='show-view-table' cellpadding="0" cellspacing="0" border="0">
+  <tbody>
+  <tr>
+    <th colspan="2" class="ui-widget-header ui-corner-tl ui-corner-tr">
+      Sermon Entry
+      <% if admin? %>
+      <span style="float:right"><%= link_to image_tag("datatable/edit.png", :size => "20x20"), edit_entry_path(@entry), :title => "Edit" %>&nbsp;
+	<%= link_to image_tag("datatable/delete.png", :size=> "20x20"), @entry, :confirm => 'Are you sure?', :method => :delete, :title => "delete"%></span>
+      <% end %>
+    </th>
+  </tr>
+  </tr>
+  <tr class="odd">
+    <th class="ui-state-default"> Title </th>
+    <td>  
+      <%=h @entry.title %>
+    </td>
+  </tr>
+
+  <tr class="even">
+    <th class="ui-state-default"> Sermon Date </th>
+    <td>  
+      <% if @entry.entry_date %>
+      <%=h @entry.entry_date.strftime("%m/%d/%y") %>
+      <% end %>
+    </td>
+  </tr>
+  <tr class="odd">
+    <th class="ui-state-default"> Sermon Series </th>
+    <td>  
+      <% if @entry.folder %>
+      <%= link_to @entry.folder.name, @entry.folder %> 
+      <% end %>
+    </td> 
+  </tr>
+  <tr class="even">
+    <th class="ui-state-default"> Theme Verse </th><td><%=h @entry.verse %></td> 
+  </tr>
+  <tr class="odd">
+    <th class="ui-state-default"> Tags </th><td><%=h @entry.tags %></td> 
+  </tr>
+  <tr class="even">
+    <th class="ui-state-default"> Files </th>
+    <td>
+      <% @entry.attachments.each do |a| %>
+      <%= get_filetype_image(a) %> - <%= link_to a.object_file_name, a.object.url %> - <%= readable_file_size(a.object_file_size, 0) %> <br />
+      <% end %>
+    </td> 
+  </tr>
+  <tr>
+    <th colspan="2" class="ui-widget-header">Description </th>
+  </tr>
+
+  <% if admin? %>
+  <tr class="odd">
+    <td colspan="2"> <%= @entry.description %> </td>
+  </tr>
+  <tr>
+    <th colspan="2" class="ui-widget-header">Add Attachments </th>
+  </tr>
+  <tr class="even">
+    <td colspan="2" class="ui-corner-bl ui-corner-br"><%= render "/layouts/swfupload_form" %></td>
+  </tr>
+  <% else %>
+  <tr class="odd">
+    <td colspan="2" class="ui-corner-bl ui-corner-br"> <%= @entry.description %> </td>
+  </tr>
+  <% end %>
+
+ </tbody>
+</table>
+<%= link_to 'Back', request.referer %>

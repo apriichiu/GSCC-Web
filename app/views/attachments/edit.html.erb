@@ -1,0 +1,18 @@
+<h1>Editing attachment</h1>
+
+<% form_for @attachment, :html => { :multipart => true } do |f| %>
+<%= f.error_messages %>
+
+    <p><%=h @attachment.object_file_name %></p>
+    <p><%=h @attachment.object_file_size %></p>
+    <p><%=h @attachment.object_updated_at %></p>
+
+<p>
+  Change Entry:<br />
+  <%= f.select :entry_id, @entries, :include_blank => true %>
+</p>
+<%= f.submit 'Update' %>
+<% end %>
+
+<%= link_to 'Show', @attachment %> |
+<%= link_to 'Back', request.referer %>

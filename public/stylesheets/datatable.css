@@ -1,0 +1,37 @@
+.datatable tr.even td{
+    background-color: #white;
+}
+.datatable tr.odd td{
+    background-color: #efe;
+}
+
+.datatable tbody td{
+    color: #333;
+}
+.datatable th{
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+table.display thead th.admin-column{
+    cursor: default;
+    width: 60px;
+}
+
+#content .datatable tbody td a{
+    color: #575; 
+}
+
+.datatable tr.odd td.highlighted, .datatable tr.even td.highlighted{
+    background-color: #ffd;
+}
+
+.datatable tbody th input{
+    color: #aaa;
+    width: 95%;
+}
+
+.datatable tbody th input:focus{
+    color: #222;
+}
+

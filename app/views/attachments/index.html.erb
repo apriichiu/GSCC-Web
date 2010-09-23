@@ -1,0 +1,38 @@
+<%= login_link %>
+
+<h1>Listing attachments</h1>
+
+<table>
+  <tr>
+    <th>Type</th>
+    <th>File</th>
+    <th width="45px">Size</th>
+    <th>Date</th>
+
+    <th>Entry id </th>
+  </tr>
+
+<% @attachments.each do |attachment| %>
+  <tr>
+    <td><%= link_to(get_filetype_image(attachment), attachment.object.url)%></td>
+    <td><%=h attachment.object_file_name %></td>
+    <td><%=h readable_file_size(attachment.object_file_size, 0) %></td>
+    <td><%=h attachment.object_updated_at.strftime("%m/%d/%y") %></td>
+
+    <% if attachment.entry.nil? %>
+    <td></td>
+    <% else %>
+    <td><%=h attachment.entry.title %></td>
+    <% end %>
+    
+    <% if admin? %>
+    <td><%= link_to 'Show', attachment %></td>
+    <td><%= link_to 'Edit', edit_attachment_path(attachment) %></td>
+    <td><%= link_to 'Destroy', attachment, :confirm => 'Are you sure?', :method => :delete %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+
+<br />
+

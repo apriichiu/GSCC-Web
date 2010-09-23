@@ -1,0 +1,45 @@
+<%= login_link %>
+<link href='/stylesheets/jquery-custom.css' rel='stylesheet' type='text/css'> 
+<h1> Resources </h1>
+
+<table id='show-view-table' cellpadding="0" cellspacing="0" border="0">
+</tbody>
+  <tr>
+    <th colspan="2" class="ui-widget-header ui-corner-tl ui-corner-tr">
+      Sermon Series
+      <% if admin? %>
+      <span style="float:right"><%= link_to image_tag("datatable/edit.png", :size => "20x20"), edit_folder_path(@folder), :title => "Edit" %>&nbsp;
+	<%= link_to image_tag("datatable/delete.png", :size=> "20x20"), @folder, :confirm => 'Are you sure?', :method => :delete, :title => "delete"%></span>
+      <% end %>
+    </th>
+  </tr>
+  <tr class="odd">
+    <th class="ui-state-default"> Name </th>
+    <td><%=h @folder.name %></td>
+  </tr>
+  <tr class="even">
+    <th class="ui-state-default" width="50px"> Type </th>
+    <td> <%=h get_folder_type_string @folder.folder_type %></td>
+  </tr>
+  <tr>
+    <th colspan="2" class="ui-widget-header">Description </th>
+  </tr>
+  <tr class="odd">
+    <td colspan="2">   <%= @folder.description %> </td>
+  </tr>
+  <tr>
+    <th colspan="2" class="ui-widget-header"> Sermons </th>
+  </tr>
+  <tr class="even">
+    <td colspan="2" class="ui-corner-bl ui-corner-br">
+      <% if @folder.entries.size > 0 %>
+	<% @folder.entries.each do |e| %>
+	<%=h e.entry_date.strftime("%m/%d/%y") %> - <%= link_to e.title, e%> <br />
+	<% end %>
+      <% end %>
+    </td>
+  </tr>
+  </tbody>
+</table>
+<%= link_to 'Back', request.referer %>
+

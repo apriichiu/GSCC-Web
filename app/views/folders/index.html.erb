@@ -1,0 +1,32 @@
+<%= login_link %>
+<h1>Listing folders</h1>
+
+<table>
+  <tr>
+
+    <th>Name</th>
+    <th>Type</th>
+    <th>Description</th>
+    <th># of Entries </th>
+  </tr>
+
+<% @folders.each do |folder| %>
+  <tr>
+
+    <td><%=h folder.name %></td>
+    <td><%=h get_folder_type_string folder.folder_type %></td>
+    <td><%=h folder.description %></td>
+
+    <td><%=h folder.entries.size %></td>
+    
+    <% if admin? %>
+    <td><%= link_to 'Show', folder %></td>
+    <td><%= link_to 'Edit', edit_folder_path(folder) %></td>
+    <td><%= link_to 'Destroy', folder, :confirm => 'Are you sure?', :method => :delete %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+
+<br />
+

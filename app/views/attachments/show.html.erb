@@ -1,0 +1,42 @@
+<p>
+  <b>Entry ID:</b>
+  <%=h @attachment.entry_id%>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%=h @attachment.object_content_type %>
+</p>
+
+
+<p>
+  <b>Size:</b>
+  <%=h @attachment.object_file_size %>
+</p>
+
+
+<p>
+  <b>Date:</b>
+  <%=h @attachment.object_updated_at %>
+</p>
+
+
+<p>
+  <b>File name:</b>
+  <%=h @attachment.object_file_name %>
+</p>
+
+
+<p>
+  <b>Object:</b>
+  <% if @attachment.is_image? then %>
+  <p><%=image_tag @attachment.object.url(:small) %></p>
+  <% else %>
+  <p><%=link_to "permalink", @attachment.object.url %></p>
+  <% end %> 
+</p>
+
+<% if admin? %>
+<%= link_to 'Edit', edit_attachment_path(@attachment) %> |
+<% end %>
+<%= link_to 'Back', request.referer %>

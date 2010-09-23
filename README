@@ -30,4 +30,7 @@ production:
 -------------------------------------------------
 
 
-
+This website also uses jquery datatable and several plugins. It also
+uses swfupload with ruby on rails. The code was adopted from the
+example shown in:
+http://jetpackweb.com/blog/2009/10/21/rails-2-3-4-and-swfupload-rack-middleware-for-flash-uploads-that-degrade-gracefully/

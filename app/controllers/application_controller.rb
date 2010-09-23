@@ -4,6 +4,7 @@
 class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
   require "fb_graph"
+  
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
   before_filter :get_facebook_info, :get_events
   
@@ -34,8 +35,12 @@ class ApplicationController < ActionController::Base
   protected
   def authorize
     unless admin?
-      flash[:notice] = "unauthorized access"
-      redirect_to events_path
+      flash[:error] = "Unauthorized Access"
+      if request.referer.nil?
+        redirect_to root_path
+      else
+        redirect_to request.referer
+      end
       false
     end
   end

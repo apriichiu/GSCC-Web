@@ -3,10 +3,8 @@
   %head
     %link{:rel => "shortcut icon", :href => "/favicon.ico", :type => "image/x-icon"}/
     %title
+      Good Shepherd Christian Community - 
       = page_title
-      Good Shepherd Christian Community -
-
-
     /Blueprint CSS
     %link{:rel => "stylesheet",
           :href => "/stylesheets/blueprint/screen.css",
@@ -45,7 +43,18 @@
                       :target =>'_blank'}
           map &amp; directions
     #outer-container.container
-      #content.span-18.last= yield
+      #content.span-18.last
+        - if flash[:error]  
+          %script{:type => "text/javascript"}
+            $(function() { $('.notice').delay(2500).fadeOut(); });
+          %div{ :class => "notice error" }
+            = flash[:error]
+        - elsif flash[:notice]  
+          %script{:type => "text/javascript"}
+            $(function() { $('.notice').delay(2500).fadeOut(); });
+          .notice
+            = flash[:notice]
+        = yield
       #sidebar.span-6
         %ul#navigation
           %li.home

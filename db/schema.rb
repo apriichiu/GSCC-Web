@@ -9,16 +9,35 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100501011944) do
+ActiveRecord::Schema.define(:version => 20100922222343) do
 
-  create_table "events", :force => true do |t|
-    t.string   "title"
-    t.string   "description"
-    t.text     "page"
-    t.datetime "startdate"
+  create_table "attachments", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "location"
+    t.string   "object_file_name"
+    t.string   "object_content_type"
+    t.integer  "object_file_size"
+    t.datetime "object_updated_at"
+    t.integer  "entry_id"
+  end
+
+  create_table "entries", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "folder_id"
+    t.string   "verse"
+    t.datetime "entry_date"
+    t.string   "tags"
+  end
+
+  create_table "folders", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "folder_type"
   end
 
 end
