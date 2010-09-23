@@ -1,6 +1,6 @@
-Entry.find(:all).each do |a|
-  puts a.title
-end
+# Entry.find(:all).each do |a|
+#   puts a.title
+# end
 
 # event = FacebookEvent.new
 # event.name = "test event 2"
@@ -13,15 +13,21 @@ end
 # event.save
 ## run this with script/runner
 
+puts "--------------------------"
+puts " Updating facebook events "
+puts "--------------------------"
+
 t1 = Time.now
 puts "================"
 puts Time.now.strftime("%Y%m%d-%H%M%S") + " : " + __FILE__ + " starting..."
 
+puts "grabbing file lock....."
 if File.new(__FILE__).flock(File::LOCK_EX | File::LOCK_NB) == false
   puts "*** can't lock file, another instance of script running?  exiting"
   exit 1
 end
 
+puts "obtained file lock... starting facebook api calls..."
 # do the processing...
 # ...
 
@@ -34,6 +40,9 @@ page = FbGraph::Page.new(page_id, :access_token => access_token).fetch;
 puts "Accessing facebook page - "+page.name
 event_gscc = page.events.sort_by{|e| e.start_time};
 
+puts "grabbed facebook events. now updating database...."
+
+puts "done."
 
 t2 = Time.now
 puts Time.now.strftime("%Y%m%d-%H%M%S") + " : " + __FILE__ + " finished  #{t2 - t1} secs"
