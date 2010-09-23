@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   require "fb_graph"
   
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
-  before_filter :get_facebook_info, :get_events
+  before_filter :get_events
   
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
@@ -50,23 +50,10 @@ class ApplicationController < ActionController::Base
   end
 
   protected
-  def get_facebook_info
-#     if (!session[:access_token] || !session[:page_id])
-#       config = YAML::load(File.open("#{RAILS_ROOT}/config/facebook.yml"));
-#       gscc_app = FbGraph::Application.new(config['production']['app_id']);
-#       session[:access_token] = gscc_app.get_access_token(config['production']['client_secret']);
-#       session[:page_id] = config['production']['page_id'];
-#     end
-  end
-
-  protected
   def get_events
-#     page = FbGraph::Page.new(session[:page_id], :access_token => session[:access_token]).fetch;
-#     event_gscc = page.events.sort_by{|e| e.start_time};
-#     @upcoming_events = event_gscc.find_all{|e| e.start_time >= Time.now};
-#     @past_events = event_gscc.find_all{|e| e.start_time < Time.now}.reverse;
-      @upcoming_events = FacebookEvent.find(:all);
-      @past_events = FacebookEvent.find(:all);
+    event_gscc = FacebookEvent.find(:all).sort_by{|e| e.start_time};
+    @upcoming_events = event_gscc.find_all{|e| e.start_time >= Time.now};
+    @past_events = event_gscc.find_all{|e| e.start_time < Time.now}.reverse;
   end
 
 end
