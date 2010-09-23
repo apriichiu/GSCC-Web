@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100922222343) do
+ActiveRecord::Schema.define(:version => 20100923194917) do
 
   create_table "attachments", :force => true do |t|
     t.datetime "created_at"
@@ -30,6 +30,19 @@ ActiveRecord::Schema.define(:version => 20100922222343) do
     t.string   "verse"
     t.datetime "entry_date"
     t.string   "tags"
+  end
+
+  create_table "facebook_events", :force => true do |t|
+    t.string   "name"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.string   "location"
+    t.text     "description"
+    t.datetime "updated_time"
+    t.string   "identifier"
+    t.string   "picture"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "folders", :force => true do |t|
