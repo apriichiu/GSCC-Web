@@ -395,3 +395,27 @@ body {
     border: 3px solid #533;
     color: #533;
 }
+
+table#show-view-table {
+    color: #333;
+}
+table#show-view-table th{
+    vertical-align: top;
+}
+table#show-view-table img{
+    vertical-align: middle;
+}
+
+table#show-view-table tr.even td
+{
+    background-color: white;
+}
+table#show-view-table tr.odd td
+{
+    background-color: #efe;
+}
+
+#content table#show-view-table a{
+    color: #353;
+}
+
