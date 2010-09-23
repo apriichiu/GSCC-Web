@@ -5,6 +5,7 @@ body {
   text-indent: -5000px; }
 
 a {color: #9bda5e;}
+a:hover {color: #ccc;}
 
 #header {
   text-transform: uppercase;
