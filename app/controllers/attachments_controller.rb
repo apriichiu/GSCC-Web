@@ -1,6 +1,7 @@
 class AttachmentsController < ApplicationController
   layout "application"
-  before_filter :authorize, :except => [:index, :show]
+  before_filter :authorize
+  before_filter :in_resources
 
   # GET /attachments
   # GET /attachments.xml
@@ -98,4 +99,9 @@ class AttachmentsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  def in_resources
+    @in_resources = true;
+  end
+
 end

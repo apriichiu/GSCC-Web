@@ -1,6 +1,7 @@
 class FoldersController < ApplicationController
   layout "application"
-  before_filter :authorize, :except => [:index, :show]
+  before_filter :authorize, :except => [:show]
+  before_filter :in_resources
 
   HIDDEN_FTYPE = 0
   OTHERS_FTYPE = 1
@@ -105,5 +106,9 @@ class FoldersController < ApplicationController
   def get_folder_type_string(k)
     return @@folder_type_string[k]
   end  
+
+  def in_resources
+    @in_resources = true;
+  end
 
 end

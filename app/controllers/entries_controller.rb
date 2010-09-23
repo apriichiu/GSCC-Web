@@ -1,6 +1,7 @@
 class EntriesController < ApplicationController
   layout "application"
-  before_filter :authorize, :except => [:index, :show]
+  before_filter :authorize, :except => [:show]
+  before_filter :in_resources
 
   # GET /entries
   # GET /entries.xml
@@ -88,4 +89,9 @@ class EntriesController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  def in_resources
+    @in_resources = true;
+  end
+
 end
