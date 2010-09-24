@@ -5,5 +5,12 @@ basedir=$(pwd -L)
 popd > /dev/null
 export RAILS_ROOT=`dirname ${basedir}`
 
-ruby $RAILS_ROOT/script/runner ${basedir}/update_facebook.rb
+# detect if we're on the web server
+sname=`basename $RAILS_ROOT`
+if [ $sname == "gschristian.org" ]
+then
+    echo "===On web server, changing rails environment==="
+    export RAILS_ENV=production
+fi
 
+ruby $RAILS_ROOT/script/runner ${basedir}/update_facebook.rb
