@@ -1,18 +1,37 @@
-<h1>Editing attachment</h1>
+<%= login_link %>
+<h1> Resources </h1>
 
-<% form_for @attachment, :html => { :multipart => true } do |f| %>
-<%= f.error_messages %>
+<table id='show-view-table' cellpadding="0" cellspacing="0" border="0">
+</tbody>
+  <tr>
+    <th colspan="2" class="ui-widget-header ui-corner-tl ui-corner-tr">
+      <%= @attachment.object_file_name%> 
+      <% if admin? %>
+      <span style="float:right"><%= link_to image_tag("datatable/edit.png", :size => "20x20"), edit_attachment_path(@attachment), :title => "Edit" %>&nbsp;
+	<%= link_to image_tag("datatable/delete.png", :size=> "20x20"), @attachment, :confirm => 'Are you sure?', :method => :delete, :title => "delete"%></span>
+      <% end %>
+    </th>
+  </tr>
+  <tr class="odd">
+    <th class="ui-state-default"> Type </th>
+    <td><%=h @attachment.object_content_type %></td>
+  </tr>
+  <tr class="even">
+    <th class="ui-state-default" width="50px"> Size </th>
+    <td> <%=h @attachment.object_file_size %></td>
+  </tr>
+  <tr class="odd">
+    <th class="ui-state-default" width="50px"> Date </th>
+    <td> <%=h @attachment.object_updated_at.strftime("%m/%d/%y") %></td>
+  </tr>
+  <tr class="even">
+    <th class="ui-state-default" width="50px"> Entry ID </th>
+	<td><% form_for @attachment, :html => { :multipart => true } do |f| %>
+	  <%= f.select :entry_id, @entries, :include_blank => true %>
+	  <% end %>
+	</td>
+  </tr>
+  </tbody>
+</table>
+<%= link_to 'Back to list', resources_path %>
 
-    <p><%=h @attachment.object_file_name %></p>
-    <p><%=h @attachment.object_file_size %></p>
-    <p><%=h @attachment.object_updated_at %></p>
-
-<p>
-  Change Entry:<br />
-  <%= f.select :entry_id, @entries, :include_blank => true %>
-</p>
-<%= f.submit 'Update' %>
-<% end %>
-
-<%= link_to 'Show', @attachment %> |
-<%= link_to 'Back', request.referer %>

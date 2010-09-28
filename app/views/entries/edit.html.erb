@@ -4,54 +4,57 @@
 <% else %>
 <h1>Editing entry</h1>
 <% end %>
-
+<!--
 <div id="textile-bar">
   <b>Textile Markup Syntax:</b>
-  <p>Quick block modifiers:<br /> <a target="_blank" href="http://www.textpattern.com/help/?item=header" onclick="window.open(this.href, 'popupwindow', 'width=400,height=400,scrollbars,resizable'); return false;">Header: <strong>h<em>n</em>.</strong></a><br /> <a target="_blank" href="http://www.textpattern.com/help/?item=blockquote" onclick="window.open(this.href, 'popupwindow', 'width=400,height=400,scrollbars,resizable'); return false;">Blockquote: <strong>bq.</strong></a><br /> <a target="_blank" href="http://www.textpattern.com/help/?item=footnote" onclick="window.open(this.href, 'popupwindow', 'width=400,height=400,scrollbars,resizable'); return false;">Footnote: <strong>fn<em>n</em>.</strong></a><br /> <a target="_blank" href="http://www.textpattern.com/help/?item=numeric" onclick="window.open(this.href, 'popupwindow', 'width=400,height=400,scrollbars,resizable'); return false;">Numeric list: <strong>#</strong></a><br /> <a target="_blank" href="http://www.textpattern.com/help/?item=bulleted" onclick="window.open(this.href, 'popupwindow', 'width=400,height=400,scrollbars,resizable'); return false;">Bulleted list: <strong>*</strong></a><br />
-    Quick phrase modifiers:<br /> <a target="_blank" href="http://www.textpattern.com/help/?item=italic" onclick="window.open(this.href, 'popupwindow', 'width=400,height=400,scrollbars,resizable'); return false;">_<em>emphasis</em>_</a><br /> <a target="_blank" href="http://www.textpattern.com/help/?item=bold" onclick="window.open(this.href, 'popupwindow', 'width=400,height=400,scrollbars,resizable'); return false;">*<strong>strong</strong>*</a><br /> <a target="_blank" href="http://www.textpattern.com/help/?item=cite" onclick="window.open(this.href, 'popupwindow', 'width=500,height=300,scrollbars,resizable'); return false;">??<cite>citation</cite>??</a><br /> <a target="_blank" href="http://www.textpattern.com/help/?item=delete" onclick="window.open(this.href, 'popupwindow', 'width=400,height=300,scrollbars,resizable'); return false;">-deleted text-</a><br /> <a target="_blank" href="http://www.textpattern.com/help/?item=insert" onclick="window.open(this.href, 'popupwindow', 'width=400,height=300,scrollbars,resizable'); return false;">+inserted text+</a><br /> <a target="_blank" href="http://www.textpattern.com/help/?item=super" onclick="window.open(this.href, 'popupwindow', 'width=400,height=300,scrollbars,resizable'); return false;">^superscript^</a><br /> <a target="_blank" href="http://www.textpattern.com/help/?item=sub" onclick="window.open(this.href, 'popupwindow', 'width=400,height=400,scrollbars,resizable'); return false;">~subscript~</a><br /> <a target="_blank" href="http://www.textpattern.com/help/?item=span" onclick="window.open(this.href, 'popupwindow', 'width=400,height=400,scrollbars,resizable'); return false;">%span%</a><br />
+  <p>Quick block modifiers:<br /> <a target="_blank" href="http://www.textpattern.com/help/?item=header" onclick="window.open(this.href, 'popupwindow', 'width=400,height=400,scrollbars,resizable'); return false;">Header: <strong>h<em>n</em>.</strong></a><br /> <a target="_blank" href="http://www.textpattern.com/help/?item=blockquote" onclick="window.open(this.href, 'popupwindow', 'width=400,height=400,scrollbars,resizable'); return false;">Blockquote: <strong>bq.</strong></a><br /> <a target="_blank" href="http://www.textpattern.com/help/?item=footnote" onclick="window.open(this.href, 'popupwindow', 'width=400,height=400,scrollbars,resizable'); return false;">Footnote: <strong>fn<em>n</em>.</strong></a><br /> <a target="_blank" href="http://www.textpattern.com/help/?item=numeric" onclick="window.open(this.href, 'popupwindow', 'width=400,height=400,scrollbars,resizable'); return false;">Numeric list: <strong>#</strong></a><br /> <a target="_blank" href="http://www.textpattern.com/help/?item=bulleted" onclick="window.open(this.href, 'popupwindow', 'width=400,height=400,scrollbars,resizable'); return false;">Bulleted list: <strong>*</strong></a><br />   Quick phrase modifiers:<br /> <a target="_blank" href="http://www.textpattern.com/help/?item=italic" onclick="window.open(this.href, 'popupwindow', 'width=400,height=400,scrollbars,resizable'); return false;">_<em>emphasis</em>_</a><br /> <a target="_blank" href="http://www.textpattern.com/help/?item=bold" onclick="window.open(this.href, 'popupwindow', 'width=400,height=400,scrollbars,resizable'); return false;">*<strong>strong</strong>*</a><br /> <a target="_blank" href="http://www.textpattern.com/help/?item=cite" onclick="window.open(this.href, 'popupwindow', 'width=500,height=300,scrollbars,resizable'); return false;">??<cite>citation</cite>??</a><br /> <a target="_blank" href="http://www.textpattern.com/help/?item=delete" onclick="window.open(this.href, 'popupwindow', 'width=400,height=300,scrollbars,resizable'); return false;">-deleted text-</a><br /> <a target="_blank" href="http://www.textpattern.com/help/?item=insert" onclick="window.open(this.href, 'popupwindow', 'width=400,height=300,scrollbars,resizable'); return false;">+inserted text+</a><br /> <a target="_blank" href="http://www.textpattern.com/help/?item=super" onclick="window.open(this.href, 'popupwindow', 'width=400,height=300,scrollbars,resizable'); return false;">^superscript^</a><br /> <a target="_blank" href="http://www.textpattern.com/help/?item=sub" onclick="window.open(this.href, 'popupwindow', 'width=400,height=400,scrollbars,resizable'); return false;">~subscript~</a><br /> <a target="_blank" href="http://www.textpattern.com/help/?item=span" onclick="window.open(this.href, 'popupwindow', 'width=400,height=400,scrollbars,resizable'); return false;">%span%</a><br />
     To align blocks:<br /> <a target="_blank" href="http://www.textpattern.com/help/?item=attributes" onclick="window.open(this.href, 'popupwindow', 'width=400,height=400,scrollbars,resizable'); return false;">&#60; right<br />&#62; left<br />= center<br />&#60;&#62; justify</a><br />
     To insert a table:<br /> <a target="_blank" href="http://www.textpattern.com/help/?item=table" onclick="window.open(this.href, 'popupwindow', 'width=400,height=500,scrollbars,resizable'); return false;">|a|table|row|<br />|a|table|row|</a><br />
     To insert a link:<br /> <a target="_blank" href="http://www.textpattern.com/help/?item=link" onclick="window.open(this.href, 'popupwindow', 'width=400,height=500,scrollbars,resizable'); return false;">"linktext":url</a><br />
     To insert an image:<br /> <a target="_blank" href="http://www.textpattern.com/help/?item=image" onclick="window.open(this.href, 'popupwindow', 'width=500,height=500,scrollbars,resizable'); return false;">!imageurl!</a><br />
     To define an acronym:<br /> <a target="_blank" href="http://www.textpattern.com/help/?item=acronym" onclick="window.open(this.href, 'popupwindow', 'width=500,height=500,scrollbars,resizable'); return false;">ABC(Always Be Closing)</a><br />
     To reference a footnote:<br /> <a target="_blank" href="http://www.textpattern.com/help/?item=footnote_reference" onclick="window.open(this.href, 'popupwindow', 'width=500,height=500,scrollbars,resizable'); return false;">[<em>n</em>]</a><br /></p>	
-</div>	
+</div>
+-->
 
 <script> 
 	$(function() {
 		$( "#datepicker" ).datepicker();
 	});
 </script> 
-
+<%= login_link %>
 <% form_for(@entry) do |f| %>
   <%= f.error_messages %>
-
-  <p>
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </p>
-  <p>
-    <%= f.label :entry_date %><br />
-    <%= f.text_field :entry_date, :id => "datepicker", :value => @entry.entry_date ? @entry.entry_date.strftime("%m/%d/%y") : "" %>
-  </p>
-  <p>
-    <%= f.label :verse %><br />
-    <%= f.text_field :verse %>
-  </p>
-  <p>
-    <%= f.label :tags %><br />
-    <%= f.text_field :tags %>
-  </p>
-
-  <p>
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </p>
-
-  <p>
-    Folder<br />
-    <%= f.select :folder_id, @folders, :include_blank => true %>
-  </p>
+  
+  
+<table id='show-view-table' cellpadding="0" cellspacing="0" border="0">
+</tbody>
+  <tr class="odd">
+    <th class="ui-state-default"> Title </th>
+    <td><%= f.text_field :title %></td>
+  </tr>
+  <tr class="even">
+    <th class="ui-state-default" width="50px"> Entry Date </th>
+    <td><%= f.text_field :entry_date, :id => "datepicker", :value => @entry.entry_date ? @entry.entry_date.strftime("%m/%d/%y") : "" %></td>
+  </tr>
+  <tr class="odd">
+    <th class="ui-state-default" width="50px"> Verse </th>
+    <td> <%= f.text_field :verse %></td>
+  </tr>
+  <tr class="even">
+    <th class="ui-state-default" width="50px"> Tags </th>
+    <td> <%= f.text_field :tags %></td>
+  </tr>
+  <tr class="odd">
+    <th class="ui-state-default" width="50px"> Description </th>
+    <td><%= f.text_area :description %>	</td>
+  </tr>
+  <tr class="even">
+    <th class="ui-state-default" width="50px"> Folder </th>
+    <td><%= f.select :folder_id, @folders, :include_blank => true %></td>
+  </tr>
+  </tbody>
+</table>
 
   <p>
     <% if @new %>
