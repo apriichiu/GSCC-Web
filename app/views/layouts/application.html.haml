@@ -75,9 +75,13 @@
 
         %h3.upcoming-events 
         %ul.upcoming-events.vcalendar
+          - added = 3;
           - @upcoming_events.each do |e|
-            %li.vevent
-              = upcoming_events_block(e)
+            - added -= 1;
+            - if added >= 0
+              %li.vevent
+                = upcoming_events_block(e)
+          
       
     .container
       #footer.span-24.last
