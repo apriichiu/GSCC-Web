@@ -1,16 +1,19 @@
 module EventsHelper
   def upcoming_events_block( event )
     <<HTML
-      <div class="upcoming-events-item">
-           <div class ="upcoming-events-icon">
+      <table class="upcoming-events-item">
+          <tr>
+           <td class ="upcoming-events-icon">
              <p><strong>#{event.start_time.day}</strong><span>#{event.start_time.strftime("%b")}</span></p>
-           </div>
+           </td>
+            <td>
          <div class="upcoming-events-text">
       #{facebook_event_link(event.identifier, event.name)}
       <div>#{event.start_time.getlocal.strftime("%a, %I:%M%p")}</div>
       <div><b>@</b> #{event.location}</div>
-          </div>
-      </div>     
+          </td>
+      </tr>
+     </table>     
 HTML
   end
 

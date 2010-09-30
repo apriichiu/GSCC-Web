@@ -297,24 +297,18 @@ a:hover {color: #ccc;}
     position: absolute:
     top: 0;
     left: 0;
-    width: 51px;
+    width: 52px;
     height: 52px;
     background-image: url(/images/homeUpcomingDate_bg.png);
     background-position: top right;
     background-repeat: no-repeat;
+    padding: 0px;
+    vertical-align: top;
 }
 
-.upcoming-events-text {
-    
-   padding-top: 10px;
-   position: absolute;
-   top: 0;
-   padding-left: 52px;
-
-}
 
 .upcoming-events-icon p{
-    padding-top: 6px;
+    padding-top: 5px;
     text-align: center;
 }
 
@@ -331,8 +325,8 @@ a:hover {color: #ccc;}
 
 
 .upcoming-events-item {
-    padding-bottom: 15px;
-    position: relative;
+    margin-bottom: 8px;
+    
 }
 
 .notice {
