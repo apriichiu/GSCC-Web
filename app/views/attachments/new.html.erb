@@ -1,29 +1,35 @@
 <%= login_link %>
-<h1> Resources </h1>
+<h1> New Attachment </h1>
 
 <table id='show-view-table' cellpadding="0" cellspacing="0" border="0">
 </tbody>
-
+  <tr>
+  <th colspan="2" class="ui-widget-header ui-corner-tl ui-corner-tr">Attachment </th>
+  </tr>
   <tr class="odd">
     <th class="ui-state-default"> Choose File </th>
-    <td><p>
-	<% form_for @attachment, :html => { :multipart => true } do |f| %>
+  <td>  
+  <% form_for @attachment, :html => { :multipart => true } do |f| %>
   <%= render "/layouts/swfupload_form" %>
   <div id="swfupload_degraded_container">
   <%= f.label :object %><br />
   <%= f.file_field :object %> <br />
   <%= f.submit 'Create' %>
   </div>
-  <% end %>
-</p></td>
+  </td>
   </tr>
-  <tr class="even">
-    <th class="ui-state-default" width="50px"> Add to Entry</th>
-    <td>  	<% form_for @attachment, :html => { :multipart => true } do |f| %>
+  <tr>
+    <th colspan="2" class="ui-widget-header"> Add to Entry</th>
+  </tr>
+  <tr class= "even"> 
+  <td colspan="2" class="ui-corner-bottom">
+   <% form_for @attachment, :html => { :multipart => true } do |f| %>
 	<%= f.select :entry_id, @entries, :include_blank => true %>
 	<% end %>
-	</td>
+  </td>
   </tr>
   </tbody>
 </table>
-<%= link_to 'Back to list', resources_path %>
+
+
+<% end %>

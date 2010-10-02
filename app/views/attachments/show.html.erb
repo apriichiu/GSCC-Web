@@ -26,7 +26,11 @@
   </tr>
   <tr class="even">
     <th class="ui-state-default" width="50px"> Entry ID </th>
+	<% if @attachment.entry.nil? %>
+	<td></td>
+	<% else %>
     <td> <%=h @attachment.entry.title %></td>
+	<% end %>
   </tr>
   </tbody>
 </table>
