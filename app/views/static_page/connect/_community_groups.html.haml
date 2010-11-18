@@ -1,0 +1,138 @@
+:javascript
+  $(function() {
+  var $sgtabs = $("#groups").tabs();
+
+  $("#antioch-link").click(function() {
+  $sgtabs.tabs('select', 1);
+  return false;
+  });
+  $("#caleb-link").click(function() {
+  $sgtabs.tabs('select', 2);
+  return false;
+  });
+  $("#galilee-link").click(function() {
+  $sgtabs.tabs('select', 3);
+  return false;
+  });
+  $("#genesis-link").click(function() {
+  $sgtabs.tabs('select', 4);
+  return false;
+  });
+  $("#joshua-link").click(function() {
+  $sgtabs.tabs('select', 5);
+  return false;
+  });
+  $("#jordan-link").click(function() {
+  $sgtabs.tabs('select', 6);
+  return false;
+  });
+  });
+
+
+%div{:id => "groups"}
+  %ul
+    %li 
+      %a{:href => "#group-home"}Overview
+    - ["Antioch", "Caleb", "Galilee", "Genesis", "Joshua", "Jordan"].each do |g|
+      %li
+        %a{:href => "#"+g.dehumanize} 
+          = g
+  %div{:id => "group-home"}
+    At GSCC one of our values is growing in community: caring for one another and holding one another accountable as we study God's word, share, pray and outreach together.
+    %p
+    GSCC has small groups that gather by different ages and life stages, speak different languages, in different cities, and on different days of the week. If you are looking for a community to grow with, we invite you to visit our small groups and find one that is right for you.
+    %br
+    %br
+    %p
+      %strong By Location
+      %br
+      %strong Cupertino/San Jose
+      \ - 
+      %a{:href => "javascript:void(0);", :id => "caleb-link"} Caleb 
+      \/ 
+      %a{:href => "javascript:void(0);", :id => "galilee-link"} Galilee 
+      \/ 
+      %a{:href => "javascript:void(0);", :id => "genesis-link"} Genesis
+      \/ 
+      %a{:href => "javascript:void(0);", :id => "jordan-link"} Jordan
+
+      %br
+      %strong Fremont/Milpitas
+      \ - 
+      %a{:href => "javascript:void(0);", :id => "antioch-link"} Antioch
+      \/ 
+      %a{:href => "javascript:void(0);", :id => "joshua-link"} Joshua
+      %p
+      %strong By Meeting Day
+      %br
+      %strong Tuesday
+      \ - 
+      %a{:href => "javascript:void(0);", :id => "jordan-link"} Jordan
+      %br
+
+      %strong Thursday
+      \ - 
+      %a{:href => "javascript:void(0);", :id => "galilee-link"} Galilee
+      %br
+      %strong Friday
+      \ - 
+      %a{:href => "javascript:void(0);", :id => "caleb-link"} Caleb 
+      \/ 
+      %a{:href => "javascript:void(0);", :id => "genesis-link"} Genesis 
+      \/ 
+      %a{:href => "javascript:void(0);", :id => "joshua-link"} Joshua
+      %br
+      %strong Sunday
+      \ - 
+      %a{:href => "javascript:void(0);", :id => "antioch-link"} Antioch
+      
+      %p
+      %strong By Age Group
+      %br
+      %strong Students
+      \ - 
+      %a{:href => "javascript:void(0);", :id => "antioch-link"} Antioch 
+      \/ 
+      %a{:href => "javascript:void(0);", :id => "caleb-link"} Caleb
+      %br
+      %strong Young Adult
+      \ - 
+      %a{:href => "javascript:void(0);", :id => "antioch-link"} Antioch 
+      \/ 
+      %a{:href => "javascript:void(0);", :id => "galilee-link"} Galilee 
+      \/ 
+      %a{:href => "javascript:void(0);", :id => "genesis-link"} Genesis 
+      \/ 
+      %a{:href => "javascript:void(0);", :id => "joshua-link"} Joshua
+      \/ 
+      %a{:href => "javascript:void(0);", :id => "jordan-link"} Jordan
+      %br
+      %strong Family
+      \ - 
+      %a{:href => "javascript:void(0);", :id => "genesis-link"} Genesis
+
+      %p
+      %strong By Language
+      %br
+      %strong English
+      \ - 
+      %a{:href => "javascript:void(0);", :id => "antioch-link"} Antioch 
+      \/ 
+      %a{:href => "javascript:void(0);", :id => "galilee-link"} Galilee 
+      \/ 
+      %a{:href => "javascript:void(0);", :id => "joshua-link"} Joshua
+      \/ 
+      %a{:href => "javascript:void(0);", :id => "jordan-link"} Jordan
+      %br
+      %strong Mandarin
+      \ - 
+      %a{:href => "javascript:void(0);", :id => "caleb-link"} Caleb 
+      \/ 
+      %a{:href => "javascript:void(0);", :id => "genesis-link"} Genesis
+
+
+  - ["Antioch", "Caleb", "Galilee", "Genesis", "Joshua", "Jordan"].each do |g|
+    %div{:id => g.dehumanize}
+      = render "/static_page/groups/"+g.dehumanize
+
+

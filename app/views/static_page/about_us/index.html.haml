@@ -1,19 +1,35 @@
-%h1 About Us
-.subsection-navigation
-.subsection-navigation
-  %a{:href => subsection_path(:section => "about_us", :subsection => "welcome_from_the_pastor")} Welcome from the Pastor
-  \/
-  %a{:href => subsection_path(:section => "about_us", :subsection => "vision_&_values")} Vision & Values 
-  \/
-  %a{:href => subsection_path(:section => "about_us", :subsection => "our_beliefs")} Our Beliefs
-  \/
-  %a{:href => subsection_path(:section => "about_us", :subsection => "staff")} Staff
+%br
+:javascript
+  $(function() {
+  $("#about-us").tabs();
+  });
 
-%p
-Good Shepherd Christian Community began its ministry in Fremont with a small group of students meeting in the living room of Joseph and Jane Chiu's house. As these young people continued to gather in their home, Joseph and Jane realized that there was a need for a church where this generation could worship and encounter God together, grow in intimacy and love for one another, and learn to serve each other and their communities, and so Good Shepherd was born in 2002. In 2007, we moved to our current location at 940 S Stelling Rd in Cupertino, which has given us the opportunity to expand our ministry to meet the needs of the community around us and to continue to build a church that equips young people to raise healthy families, become leaders in their communities, and worship God in Spirit and in truth!
+%div{:id => "about-us"}
+  %ul
+    %li 
+      %a{:href => "#about"} About Us
+    %li 
+      %a{:href => "#welcome"} Welcome from the Pastor
+    %li 
+      %a{:href => "#vision"} Vision & Values
+    %li 
+      %a{:href => "#beliefs"} Our Beliefs
+    %li 
+      %a{:href => "#staff"} Staff
 
-%p
-We welcome you to come join us for 
-%a{:href => subsection_path('connect', 'worship_service')}Sunday Service 
-or visit a 
-%a{:href => section_path('connect')}Community Group
+  %div{:id => "about"}
+    Good Shepherd Christian Community began its ministry in Fremont with a small group of students meeting in the living room of Joseph and Jane Chiu's house. As these young people continued to gather in their home, Joseph and Jane realized that there was a need for a church where this generation could worship and encounter God together, grow in intimacy and love for one another, and learn to serve each other and their communities, and so Good Shepherd was born in 2002. In 2007, we moved to our current location at 940 S Stelling Rd in Cupertino, which has given us the opportunity to expand our ministry to meet the needs of the community around us and to continue to build a church that equips young people to raise healthy families, become leaders in their communities, and worship God in Spirit and in truth!
+    %p
+    We welcome you to come join us for 
+    %a{:href => section_path('connect')+"#worship"}Sunday Service 
+    or visit a 
+    %a{:href => section_path('connect')}Community Group
+
+  %div{:id => "welcome"}
+    = render "/static_page/about_us/welcome_from_the_pastor"
+  %div{:id => "vision"}
+    = render "/static_page/about_us/vision_values"
+  %div{:id => "beliefs"}
+    = render "/static_page/about_us/our_beliefs"
+  %div{:id => "staff"}
+    = render "/static_page/about_us/staff"
