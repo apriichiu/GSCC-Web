@@ -1,17 +1,35 @@
-<h1>New attachment</h1>
-<% form_for @attachment, :html => { :multipart => true } do |f| %>
-<p>
-  Add to Entry:<br />
-  <%= f.select :entry_id, @entries, :include_blank => true %>
-</p>
-<p>
+<%= login_link %>
+<h1> New Attachment </h1>
+
+<table id='show-view-table' cellpadding="0" cellspacing="0" border="0">
+</tbody>
+  <tr>
+  <th colspan="2" class="ui-widget-header ui-corner-tl ui-corner-tr">Attachment </th>
+  </tr>
+  <tr class="odd">
+    <th class="ui-state-default"> Choose File </th>
+  <td>  
+  <% form_for @attachment, :html => { :multipart => true } do |f| %>
   <%= render "/layouts/swfupload_form" %>
   <div id="swfupload_degraded_container">
   <%= f.label :object %><br />
   <%= f.file_field :object %> <br />
   <%= f.submit 'Create' %>
   </div>
-</p>
-<% end %>
+  </td>
+  </tr>
+  <tr>
+    <th colspan="2" class="ui-widget-header"> Add to Entry</th>
+  </tr>
+  <tr class= "even"> 
+  <td colspan="2" class="ui-corner-bottom">
+   <% form_for @attachment, :html => { :multipart => true } do |f| %>
+	<%= f.select :entry_id, @entries, :include_blank => true %>
+	<% end %>
+  </td>
+  </tr>
+  </tbody>
+</table>
 
-<%= link_to 'Back', request.referer %>
+
+<% end %>

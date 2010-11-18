@@ -1,18 +1,47 @@
-<h1>Editing attachment</h1>
+<%= login_link %>
+<h1>Editing Attachment </h1>
+<% form_for(@attachment) do |f| %>
+  <%= f.error_messages %>
+  
+<table id='show-view-table' cellpadding="0" cellspacing="0" border="0">
+</tbody>
+  <tr>
+    <th colspan="2" class="ui-widget-header ui-corner-tl ui-corner-tr"> Attachment </th>
+  </tr>
+  <tr class="even">
+	<th class="ui-state-default"> Name </th>
+    <td><%=f.text_field :object_file_name %><br /> 
+		</div>
+	</td>
+  </tr>
+  <tr class="odd">
+    <th class="ui-state-default"> Type </th>
+    <td><%=@attachment.object_content_type %></td>
+  </tr>
+  <tr class="even">
+    <th class="ui-state-default" width="50px"> Size </th>
+    <td> <%=@attachment.object_file_size %></td>
+  </tr>
+  <tr class="odd">
+    <th class="ui-state-default" width="50px"> Date </th>
+    <td> <%=f.text_field :object_updated_at, :id => "datepicker", :value => @attachment.object_updated_at ? @attachment.object_updated_at.strftime("%m/%d/%y") : "" %></td>
+  </tr>
+  <tr class="even">
+    <th class="ui-state-default" width="50px"> Entry ID </th>
+	<td><% form_for @attachment, :html => { :multipart => true } do |f| %>
+	  <%= f.select :entry_id, @entries, :include_blank => true %>
+	  <% end %>
+	</td>
+  </tr>
+  </tbody>
+</table>
 
-<% form_for @attachment, :html => { :multipart => true } do |f| %>
-<%= f.error_messages %>
+<p style = "float:right;">
+    <%= f.submit 'Update' %>
+	<br />
+	<span style = "float:right;">
+	<%= link_to 'Show', @attachment %> | <%= link_to 'Back', request.referer %>
+	</span>
+</p> 
 
-    <p><%=h @attachment.object_file_name %></p>
-    <p><%=h @attachment.object_file_size %></p>
-    <p><%=h @attachment.object_updated_at %></p>
-
-<p>
-  Change Entry:<br />
-  <%= f.select :entry_id, @entries, :include_blank => true %>
-</p>
-<%= f.submit 'Update' %>
 <% end %>
-
-<%= link_to 'Show', @attachment %> |
-<%= link_to 'Back', request.referer %>
