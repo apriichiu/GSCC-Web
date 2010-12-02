@@ -1,0 +1,9 @@
+<h1> Registration Confirmation </h1>
+<% if @newregistrant == 1 %>
+Thank you for registering! Here is your registration confirmation, please print or save this page. <br />
+An email has also been mailed to you for your records.<br />
+<% end %>
+<% if params[:edit] != "1" %>
+If you wish to edit this registration, click <a href="/events/<%= @reg.id %>/reg_conf?pw=<%= @reg.password %>&edit=1">here</a>
+<% end %>
+<%= render :partial => "/events/registration_info_table", :locals => {:edit => params[:edit] == "1"} %>

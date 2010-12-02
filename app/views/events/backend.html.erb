@@ -1,0 +1,38 @@
+<h1> Events </h1>
+<form action="/events/backend" method="post">
+<table id='show-view-table' cellpadding="0" cellspacing="0" border="0">
+ <tr>
+  <th colspan="2" class="ui-widget-header ui-corner-tl ui-corner-tr">
+    Event List
+  </th>
+ </tr>
+ <tr>
+   <th class="ui-state-default"> Title</th> 
+   <th class="ui-state-default"> Reigsterable? </th>
+ <tr>
+
+ <% count = 0 %>
+ <% @upcoming_events.each do |event| %>
+ <% if count % 2 == 0 %>
+ <tr class="odd">
+ <% else %>
+ <tr class="even">
+ <% end %>
+ <% count += 1 %>
+   <td> <%= event.name %></td> 
+   <td> 
+     <INPUT TYPE=CHECKBOX NAME="checkbox[<%= event.id %>]" <%= event.reg ? "CHECKED" : "" %> >
+     <% if event.reg %>
+     | <a href="/events/<%= event.id %>/registrants">registrants</a>
+     <% end %>
+   </td>
+ </tr>
+  <% end %>
+  <tr>
+    <th colspan="2" class="ui-widget-header ui-corner-bottom">
+      <input type="submit" value="submit">
+    </th>
+</tr>
+</table>
+</form>
+<%= link_to 'Back', events_path %>

@@ -1,6 +1,6 @@
 class ResourcesController < ApplicationController
   layout "application"
-  before_filter :in_resources
+  before_filter :in_resources  
   
   def index
     @entries = Entry.all;

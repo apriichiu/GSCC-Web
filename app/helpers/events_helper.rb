@@ -28,6 +28,7 @@ HTML
      <table cellpadding="0" cellspacing="0" border="0">
        <tr>
          <th class="ui-widget-header ui-corner-top">
+           <span style="float:right"> #{ event.reg ? link_to('Register Online!', '/events/'+event.id.to_s+'/registration') : ""} #{admin? && event.reg ? "|" : ""} #{admin? && event.reg ? link_to('Registrants ('+get_registrant_count(event.id).to_s+')', '/events/'+event.id.to_s+'/registrants') : "" }</span>           
            #{event.start_time.getlocal.strftime("%A, %B %d, %Y")}
          </th>
        </tr>
@@ -67,4 +68,49 @@ HTML
     output += end_time.strftime("%I:%M %p");
     return output;
   end
+
+  def events_login_link
+    template = <<-eos
+<div id="login-link">
+  <% if admin? %>
+  <%= link_to 'Admin', '/events/backend' %> | <%= link_to 'Logout', logout_path %>
+  <% else %>
+  <%= link_to 'Login', login_path+"?redirect="+request.env['PATH_INFO'] %> to make events registerable
+  <% end %>
+</div>
+eos
+    return render_to_string(:inline => template, :type => :erb)
+end
+
+  def get_registrant_count(id)
+    registrants = Registration.find(:all, :conditions => ["event_id = ?", id]);
+    return registrants.size
+  end
+
+  def reg_form_value_field(edit, value, type, name)
+    if edit == true
+      if value.nil?
+        value = ""
+      end
+      if type == "input"
+        return "<input type='text' name='"+name+"' value='"+value+"'>"
+      elsif type == "textarea"
+        return '<textarea name="'+name+'" style="height:3em">'+value+'</textarea>'
+      else
+        output = '<select name="'+name+'">'
+        (0..9).each do |n|
+          if value == n
+            output += '<option value="'+n.to_s+'" SELECTED>'+n.to_s+'</option>'
+          else
+            output += '<option value="'+n.to_s+'">'+n.to_s+'</option>'
+          end
+        end
+        output += '</select>'
+        return output
+      end
+    else
+      return value
+    end
+  end
+
 end

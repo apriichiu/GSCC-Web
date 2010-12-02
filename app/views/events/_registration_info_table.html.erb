@@ -1,0 +1,172 @@
+<% if edit == true %>
+<form action="/events/register" method="post">
+<input type="hidden" name="eid" value="<%= @event.id %>">
+<% if !@reg.nil? %>
+<input type="hidden" name="rid" value="<%= @reg.id %>">
+<% end %>
+<% end %>
+<table id='show-view-table' cellpadding="0" cellspacing="0" border="0">
+ <tr>
+  <th colspan="2" class="ui-widget-header ui-corner-top">
+    <%= @event.name %>
+  </th>
+ </tr>
+ <tr>
+   <th class="ui-state-default"> Date</th>
+   <th class="ui-state-default"> <%= get_short_time(@event.start_time.getlocal, @event.end_time.getlocal) %> </th>
+ </tr>
+ <tr>
+   <th class="ui-state-default"> Location</th>
+   <th class="ui-state-default"> <%= @event.location %>  </th>
+ </tr>
+ <% if !@reg.nil? %>
+ <tr>
+  <th colspan="2" class="ui-widget-header">
+    Registration Info
+  </th>
+ </tr>
+ <tr>
+   <th class="ui-state-default"> Registration ID</th>
+   <th class="ui-state-default"> <%= @reg.id%>
+   </th>
+ </tr>
+ <tr>
+   <th class="ui-state-default"> Password</th>
+   <th class="ui-state-default"> <%= @reg.password%>
+   </th>
+ </tr>
+<% end %>
+<% if @reg.nil? %>
+<% @reg = Registration.new %>
+<% end %>
+
+ <tr>
+  <th colspan="2" class="ui-widget-header">
+    Register 
+  </th>
+ </tr>
+ <tr>
+   <th class="ui-state-default"> Full Name</th>
+   <th class="ui-state-default"> <%= reg_form_value_field(edit, @reg.fullname, "input", "reg[fullname]") %>
+     
+   </th>
+ <tr>
+ <tr>
+   <th class="ui-state-default"> Email</th>
+   <th class="ui-state-default"> <%= reg_form_value_field(edit, @reg.email, "input", "reg[email]") %>
+     
+   </th>
+ <tr>
+
+ <tr>
+   <th class="ui-state-default"> Phone Number </th>
+   <th class="ui-state-default"> <%= reg_form_value_field(edit, @reg.phone, "input", "reg[phone]") %>
+     
+   </th>
+ <tr>
+ <tr>
+   <th class="ui-state-default"> Address </th>
+   <th class="ui-state-default"> <%= reg_form_value_field(edit, @reg.address, "textarea", "reg[address]") %>
+     
+   </th>
+ <tr>
+
+ <tr>
+   <th class="ui-state-default"> Home Church </th>
+   <th class="ui-state-default"> <%= reg_form_value_field(edit, @reg.church, "input", "reg[church]") %>
+     
+   </th>
+ <tr>
+
+ <tr>
+   <th class="ui-state-default"> Guests? </th>
+   <th class="ui-state-default"> <%= reg_form_value_field(edit, @reg.guests, "dropdown", "reg[guests]") %>
+   </th>
+ <tr>
+ <tr>
+   <th class="ui-state-default"> Guest Names</th>
+   <th class="ui-state-default"> <%= reg_form_value_field(edit, @reg.guests_names, "textarea", "reg[guests_names]") %>
+     
+   </th>
+ <tr>
+ <tr>
+   <th class="ui-state-default"> Guest Relationship 
+   <th class="ui-state-default"> <%= reg_form_value_field(edit, @reg.guests_relation, "textarea", "reg[guests_relation]") %>
+   </th>
+ <tr>
+
+<% if !@reg.id.nil? %>
+ <tr>
+  <th colspan="2" class="ui-widget-header">
+    Payment 
+  </th>
+ </tr>
+
+ <tr>
+   <th class="ui-state-default"> Payment Status</th>
+   <th class="ui-state-default"> 
+     <% if @reg.paid == 0 %>
+     Not paid in full (Payment status is usually updated within 48 hours of payment)
+     <% else %>
+     Paid in full, Thank you!
+     <% end %>
+   </th>
+ <tr>
+
+<% if @reg.paid == 0 %>
+ <tr>
+  <th class="ui-state-default">
+    Paypal
+  </th>
+  <th class="ui-state-default">
+<form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="DXXKQRZ7R9H3W">
+<table>
+<tr><td><input type="hidden" name="on0" value="Registration Option">Registration Option</td></tr><tr><td><select name="os0">
+    <option value="Early Registration (GSCC Members before Feb 1))">Early Registration (GSCC Members before Feb 1)) $110.00</option>
+    <option value="Regular Registration (After Feb 1 or Non GSCC Member)">Regular Registration (After Feb 1 or Non GSCC Member) $130.00</option>
+    <option value="Child (4-12)">Child (4-12) $80.00</option>
+</select> </td></tr>
+</table>
+<input type="hidden" name="currency_code" value="USD">
+<input type="image" src="https://www.paypal.com/en_US/i/btn/btn_cart_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+
+<form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+">
+<input type="image" src="https://www.paypal.com/en_US/i/btn/btn_viewcart_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+
+  </th>
+ </tr>
+ <tr>
+  <th class="ui-state-default">
+    Check or Cash
+  </th>
+  <th class="ui-state-default">
+   Please mail payment to church address (940 SOUTH STELLING ROAD, CUPERTINO, CA 95014) or turn it in during church service or small groups.
+  </th>
+</tr>
+<% end %>
+<% end %>
+ <tr>
+  <th colspan="2" class="ui-widget-header ui-corner-bottom" style="text-align:right">
+    <% if edit == true %>
+    <input type='submit' value='submit'>
+    <% end %>
+    <%= link_to 'Return to events', events_path %>
+  </th>
+ </tr>
+
+</table>
+<% if edit == true %>
+</form>
+<% end %>
+
+
+

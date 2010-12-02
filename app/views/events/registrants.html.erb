@@ -1,0 +1,62 @@
+<script type='text/javascript' src='/javascripts/jquery.dataTables.min.js'> </script>
+<link href='/stylesheets/demo_table_jui.css' rel='stylesheet' type='text/css'> 
+<link href='/stylesheets/jquery-custom.css' rel='stylesheet' type='text/css'> 
+<link href='/stylesheets/datatable.css' rel='stylesheet' type='text/css'> 
+
+<h1> <%= @event.name %> </h1>
+
+<script type='text/javascript'>
+  $(function() {
+  rTable = $('#show-view-table').dataTable({
+  "bSortClasses": false,
+  "bJQueryUI": true,
+  "bAutoWidth": false,
+  "bPaginate": false,
+  "sScrollY": 500,
+  "sScrollX": "100%",
+  "sScrollXInner": "130%",
+  "bScrollCollapse": true,
+  "fnDrawCallback": function(){
+  $('td').bind('mouseenter', function () { $(this).parent().children().each(function(){$(this).addClass('highlighted');}); });
+  $('td').bind('mouseleave', function () { $(this).parent().children().each(function(){$(this).removeClass('highlighted');}); });
+  },
+  "aaSorting": [[ 1, "desc" ]],
+  });
+  });
+</script>
+<form action="/events/<%= @event.id %>/registrants" method='post'>
+<table id='show-view-table' class='display datatable' cellpadding="0" cellspacing="0" border="0">
+  <thead>
+    <tr>
+      <th>Del</th>
+      <th>ID</th>
+      <th>Reg/Update Time</th>
+      <th>Name</th>
+      <th>Paid</th>
+      <th>Notes</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Guests</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%- @registrants.each do |r| %>
+    <tr>
+      <td><input type=checkbox name="delete[<%= r.id %>]"</td>
+      <td><%= r.id %></td>
+      <td><%= r.updated_at.localtime.strftime("%m/%d %I:%M %p") %></td>
+      <td><%= link_to (r.fullname, '/events/'+r.id.to_s+'/reg_conf?pw='+r.password) %></td>
+      <td><input type=checkbox name="paying[<%= r.id %>]" <%= r.paid == 1 ? "CHECKED" : "" %> ></td>
+      <td><input type=text name="notes[<%= r.id %>]"> </td>
+      <td><%= r.email %></td>
+      <td><%= r.phone %></td>
+      <td><%= r.guests %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<input type=submit name='submit' value='submit'>
+</form>
+<%= link_to 'Return to events', events_path %>
+
+

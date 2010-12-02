@@ -44,3 +44,14 @@ Rails::Initializer.run do |config|
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
   # config.i18n.default_locale = :de
 end
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.smtp_settings = {
+    :address => "mail.gschristian.org",
+    :domain => "gschristian.org",
+    :authentication => :login,
+    :user_name => "events@gschristian.org",
+    :password => "gsccgscc"
+  }
+  ActionMailer::Base.default_url_options = {:host => "gschristian.org"}
+  ActionMailer::Base.perform_deliveries = true
+  ActionMailer::Base.raise_delivery_errors = true

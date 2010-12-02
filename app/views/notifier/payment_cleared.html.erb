@@ -1,0 +1,31 @@
+Thank you for paying for [<%= @event.name %>]! Please keep this email as a record. 
+
+---------------------------------------
+Here is your registration information:
+
+Registration ID: <%= @reg.id %>
+Registration Password: <%= @reg.password %>
+link: <%= @event_url %>
+-------------------------------------------
+Here is the details of the event
+<%= @event.name %>
+Time: <%= @event.start_time.getlocal.strftime("%Y/%m/%d %I:%M %p") %> - <%= @event.end_time.getlocal.strftime("%Y/%m/%d %I:%M %p") %> 
+Location: <%= @event.location %>
+-------------------------------------------
+
+Your payment status has been cleared. If you wish to see your
+registration status or information, click the link below or 
+copy and paste it in your browser.
+<%= @event_url %> 
+
+Payment status is usually cleared within 48 hours of your payment. 
+
+If you have any questions, feel free to reply to this email and 
+someone will be with you shortly.
+
+We look forward to seeing you at [<%= @event.name %>], thanks again for your payment.
+
+GSCC
+
+
+

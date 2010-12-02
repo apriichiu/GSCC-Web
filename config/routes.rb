@@ -1,4 +1,10 @@
 ActionController::Routing::Routes.draw do |map|
+  map.connect 'events/backend', :controller => 'events', :action => 'backend'
+  map.connect 'events/:id/registration', :controller => 'events', :action => 'registration'
+  map.connect 'events/:eid/registrants', :controller => 'events', :action => 'registrants'
+  map.connect 'events/:id/reg_conf', :controller => 'events', :action => 'registration_confirmation'
+  map.connect 'events/register', :controller => 'events', :action => 'register'
+
   map.resources :attachments
   map.resources :entries
   map.resources :folders
