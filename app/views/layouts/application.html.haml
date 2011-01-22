@@ -111,7 +111,7 @@
                 Connect
               %ul
                 - static_pages()['Connect'].each do |subsection|
-                  = li_link_to(subsection, subsection_path('connect', subsection.dehumanize))
+                  = li_link_to(subsection, "/connect#"+subsection.split(/[' ]/)[0].dehumanize)
 
           %ul
             %li

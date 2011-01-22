@@ -14,10 +14,6 @@
   $sgtabs.tabs('select', 3);
   return false;
   });
-  $("#genesis-link").click(function() {
-  $sgtabs.tabs('select', 4);
-  return false;
-  });
   $("#joshua-link").click(function() {
   $sgtabs.tabs('select', 5);
   return false;
@@ -33,7 +29,7 @@
   %ul
     %li 
       %a{:href => "#group-home"}Overview
-    - ["Antioch", "Caleb", "Galilee", "Genesis", "Joshua", "Jordan"].each do |g|
+    - ["Antioch", "Caleb", "Galilee", "Joshua", "Jordan"].each do |g|
       %li
         %a{:href => "#"+g.dehumanize} 
           = g
@@ -51,8 +47,6 @@
       %a{:href => "javascript:void(0);", :id => "caleb-link"} Caleb 
       \/ 
       %a{:href => "javascript:void(0);", :id => "galilee-link"} Galilee 
-      \/ 
-      %a{:href => "javascript:void(0);", :id => "genesis-link"} Genesis
       \/ 
       %a{:href => "javascript:void(0);", :id => "jordan-link"} Jordan
 
@@ -78,8 +72,6 @@
       \ - 
       %a{:href => "javascript:void(0);", :id => "caleb-link"} Caleb 
       \/ 
-      %a{:href => "javascript:void(0);", :id => "genesis-link"} Genesis 
-      \/ 
       %a{:href => "javascript:void(0);", :id => "joshua-link"} Joshua
       %br
       %strong Sunday
@@ -101,16 +93,9 @@
       \/ 
       %a{:href => "javascript:void(0);", :id => "galilee-link"} Galilee 
       \/ 
-      %a{:href => "javascript:void(0);", :id => "genesis-link"} Genesis 
-      \/ 
       %a{:href => "javascript:void(0);", :id => "joshua-link"} Joshua
       \/ 
       %a{:href => "javascript:void(0);", :id => "jordan-link"} Jordan
-      %br
-      %strong Family
-      \ - 
-      %a{:href => "javascript:void(0);", :id => "genesis-link"} Genesis
-
       %p
       %strong By Language
       %br
@@ -131,7 +116,7 @@
       %a{:href => "javascript:void(0);", :id => "genesis-link"} Genesis
 
 
-  - ["Antioch", "Caleb", "Galilee", "Genesis", "Joshua", "Jordan"].each do |g|
+  - ["Antioch", "Caleb", "Galilee", "Joshua", "Jordan"].each do |g|
     %div{:id => g.dehumanize}
       = render "/static_page/groups/"+g.dehumanize
 
