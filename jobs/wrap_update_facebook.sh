@@ -13,4 +13,4 @@ then
     export RAILS_ENV=production
 fi
 
-ruby $RAILS_ROOT/script/runner ${basedir}/update_facebook.rb
+ruby -W0 $RAILS_ROOT/script/runner ${basedir}/update_facebook.rb
