@@ -16,10 +16,19 @@ class EventsController < ApplicationController
     if !params["checkbox"].nil?
       @upcoming_events.each do |e|
         if params["checkbox"].find{ |c| e.id == c[0].to_i }
-          e.reg = true
+          e.reg = 1
           e.save
         else
-          e.reg = false
+          e.reg = 0
+          e.save
+        end
+      end
+    end
+    if !params["paypal"].nil?
+      puts params["paypal"].inspect
+      @upcoming_events.each do |e|
+        if params["paypal"].find{ |c| e.id == c[0].to_i }
+          e.paypal = params["paypal"][e.id.to_s]
           e.save
         end
       end

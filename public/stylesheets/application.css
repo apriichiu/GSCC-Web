@@ -7,6 +7,7 @@ body {
 a {color: #9bda5e;}
 a:hover {color: #ccc;}
 
+
 #header {
   text-transform: uppercase;
   background: #000 url(/images/header-bkg.jpg);
@@ -358,3 +359,9 @@ table#show-view-table tr.odd td
     color: #353;
 }
 
+#content table#show-view-table textarea
+{
+	width:inherit;
+	height:inherit;
+	
+}

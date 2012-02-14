@@ -27,10 +27,24 @@
      <% end %>
    </td>
  </tr>
+ <% if event.reg %>
+ <% if count % 2 == 0 %>
+ <tr class="odd">
+ <% else %>
+ <tr class="even">
+ <% end %>
+ 	<td>PayPal Link</td>
+ 	<td>
+ 		<textarea rows="6" cols="40" name="paypal[<%= event.id %>]"><%= event.paypal %></textarea>
+	</td>
+ </tr>
+  <% end %>
   <% end %>
   <tr>
     <th colspan="2" class="ui-widget-header ui-corner-bottom">
       <input type="submit" value="submit">
+      <input type="hidden" name="checkbox['hidden']">
+      <input type="hidden" name="paypal['hidden']">
     </th>
 </tr>
 </table>
