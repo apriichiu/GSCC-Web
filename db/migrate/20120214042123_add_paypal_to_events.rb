@@ -1,6 +1,6 @@
 class AddPaypalToEvents < ActiveRecord::Migration
   def self.up
-    add_column :facebook_events, :paypal, :string
+    add_column :facebook_events, :paypal, :text
   end
 
   def self.down

@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(:version => 20120214042123) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "reg",          :default => false
-    t.string   "paypal"
+    t.text     "paypal"
   end
 
   create_table "folders", :force => true do |t|
