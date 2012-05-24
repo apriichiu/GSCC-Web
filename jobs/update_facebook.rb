@@ -42,27 +42,27 @@ puts "\nSearching for dirty events..."
 
 page.events.each do |e|
   ie = FbGraph::Event.new(e.identifier, :access_token => access_token).fetch;
-  if ie.updated_time > lutdatabase
-    puts "\n**found dirty facebook event - "+ie.name
-    edatabase = FacebookEvent.find(:first, :conditions => [ "identifier = ?", ie.identifier ]);
-    if edatabase
-      puts "***found database entry, updating the entry "+edatabase.name
-      edatabase.name = ie.name
-      edatabase.start_time = ie.start_time
-      edatabase.end_time = ie.end_time
-      edatabase.location = ie.location
-      edatabase.description = ie.description
-      edatabase.updated_time = ie.updated_time
-      edatabase.identifier = ie.identifier
-      edatabase.picture = ie.picture
-      edatabase.save
-      puts "***updated "+edatabase.name
-    else
-      puts "***database entry not found, adding to database "+ie.name
-      edatabase = FacebookEvent.new( :name => ie.name, :start_time => ie.start_time, :end_time => ie.end_time, :location => ie.location, :description => ie.description, :updated_time => ie.updated_time, :identifier => ie.identifier, :picture => ie.picture )
-      edatabase.save
-      puts "***saved "+edatabase.name
+  existing_event = FacebookEvent.find(:first, :conditions => [ "identifier = ?", ie.identifier ]);
+  if existing_event 
+    puts "***found database entry "+existing_event.name
+    if ie.updated_time > lutdatabase
+      puts "\n**found dirty facebook event - "+ie.name
+      existing_event.name = ie.name
+      existing_event.start_time = ie.start_time
+      existing_event.end_time = ie.end_time
+      existing_event.location = ie.location
+      existing_event.description = ie.description
+      existing_event.updated_time = ie.updated_time
+      existing_event.identifier = ie.identifier
+      existing_event.picture = ie.picture
+      existing_event.save
+      puts "***updated "+existing_event.name
     end
+  else
+    puts "***database entry not found, adding to database "+ie.name
+    existing_event = FacebookEvent.new( :name => ie.name, :start_time => ie.start_time, :end_time => ie.end_time, :location => ie.location, :description => ie.description, :updated_time => ie.updated_time, :identifier => ie.identifier, :picture => ie.picture )
+    existing_event.save
+    puts "***saved "+existing_event.name
   end
 end
 
