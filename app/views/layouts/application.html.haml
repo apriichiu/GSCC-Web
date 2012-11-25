@@ -72,15 +72,6 @@
           =navigation_item('events')
           =navigation_item('serve')
           =navigation_item('resources')
-
-        %h3.upcoming-events 
-        %ul.upcoming-events.vcalendar
-          - added = 3;
-          - @upcoming_events.each do |e|
-            - added -= 1;
-            - if added >= 0
-              %li.vevent
-                = upcoming_events_block(e)
           
       
     .container
