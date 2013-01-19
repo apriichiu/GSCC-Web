@@ -24,26 +24,23 @@ rvm install rubygems 1.3.6
 6. Install necessary gems
 
 rake gems:install
+(NOTE: if this command doesn't work for you and it is complaining about a deprecation rdoc thing,
+then you probably have newer version of rake than the one we use, which is 0.8.7.  What you will need to do is the following:
+* install the correct rake version: gem install rake -v 0.8.7
+* run rake with that SPECIFIC version, like this: rake _0.8.7_ gems:install)
 
-7. run the server
+7. Install these other gems
 
-ruby script/server
+gem install haml -v 3.1.7
+gem install sqlite3 -v 1.3.7
+gem install json -v 1.7.6
+gem install rest-client -v 1.6.7
+gem install oauth2 -v 0.8.0
+gem install fb_graph -v 2.6.1
+gem install sass -v 3.2.5
+gem install rack -v 1.1.0
 
-8. check if the site appears at localhost:3000!
-
-It is possible that gems may be missing or you may have the incorrect version. If so, install each gem that is missing, using:  gem install <gem name>. It may be helpful to compare your gem list: gem list, with this list:
-
-minimum gem list:
-  "haml"
-  "sqlite3"
-  "json"
-  "rest-client"
-  "oauth2"
-  "fb_graph"
-  "sass"
-
-full gem list:
-
+Here is the whole gem list, please compare (run gem list):
 actionmailer (2.3.3)
 actionpack (2.3.3)
 activerecord (2.3.3)
@@ -73,3 +70,10 @@ rvm (1.11.3.5)
 sass (3.2.5)
 sqlite3 (1.3.7)
 tzinfo (0.3.35)
+
+
+8. run the server
+
+ruby script/server
+
+9. check if the site appears at localhost:3000!
