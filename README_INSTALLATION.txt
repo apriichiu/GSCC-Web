@@ -15,7 +15,7 @@ rvm gemset use gscc-web
 
 4. Get the right version of rails:
 
-gem install rails 2.3.3
+gem install rails -v 2.3.3
 
 5. Get the right version of ruby gems:
 
