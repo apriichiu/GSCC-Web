@@ -1,0 +1,13 @@
+development: &defaults
+  app_id: 
+  client_id: 
+  client_secret: 
+  perms: offline_access,manage_pages
+  page_id: 
+
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults

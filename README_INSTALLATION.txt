@@ -78,3 +78,5 @@ tzinfo (0.3.35)
 ruby script/server
 
 10. check if the site appears at localhost:3000 (in safari or any browser)
+
+11. *OPTION* if you want to run the facebook update script (wrap_facebook_update.sh) that pulls events from a facebook page, copy config/facebook.yml.sample to config/facebook.yml and fill in the information accordingly (if you don't know the information, ask your webmaster for it)
