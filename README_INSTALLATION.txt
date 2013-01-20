@@ -29,9 +29,10 @@ then you probably have newer version of rake than the one we use, which is 0.8.7
 * install the correct rake version: gem install rake -v 0.8.7
 * run rake with that SPECIFIC version, like this: rake _0.8.7_ gems:install)
 
-7. update database first
+7. copy the database configuration stuff
 
-rake db:migrate (or rake _0.8.7_ db:migrate)
+* database connection settings by copying database.yml from someone and copy it into your config/ directory
+* rename the seeded development database: mv db/development.sqlite3.sample db/development.sqlite3
 
 8. Install these other gems
 
