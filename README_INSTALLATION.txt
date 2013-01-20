@@ -12,4 +12,6 @@ Once RVM is installed, do the following commands to setup the ruby, rails, gems 
 * rvm gemset create gscc-web
 * rvm gemset use gscc-web
 
-4. Get the right version of rails:
+4. Get the dependency software via bundler!
+* gem install bundler
+* bundle install
