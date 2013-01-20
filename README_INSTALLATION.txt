@@ -29,7 +29,11 @@ then you probably have newer version of rake than the one we use, which is 0.8.7
 * install the correct rake version: gem install rake -v 0.8.7
 * run rake with that SPECIFIC version, like this: rake _0.8.7_ gems:install)
 
-7. Install these other gems
+7. update database first
+
+rake db:migrate (or rake _0.8.7_ db:migrate)
+
+8. Install these other gems
 
 gem install haml -v 3.1.7
 gem install sqlite3 -v 1.3.7
@@ -72,8 +76,8 @@ sqlite3 (1.3.7)
 tzinfo (0.3.35)
 
 
-8. run the server
+9. run the server
 
 ruby script/server
 
-9. check if the site appears at localhost:3000!
+10. check if the site appears at localhost:3000!
