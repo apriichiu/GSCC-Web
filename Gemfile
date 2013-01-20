@@ -37,6 +37,11 @@ group :development do
   #gem "factory_girl_rails", ">= 4.1.0"
 end
 
+# 3rd party gems to integrate with other services
+gem "fb_graph"
+gem "rest-client"
+
+
 # Deploy with Capistrano
 gem 'capistrano', :group => :development
 gem 'rvm-capistrano', "1.3.0.rc1"
