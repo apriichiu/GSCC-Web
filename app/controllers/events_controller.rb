@@ -12,7 +12,7 @@ class EventsController < ApplicationController
   end
 
   def backend
-    #we already have @upcoming_events from the controller
+    #we already have @upcoming_events from the applicaiton controller
     if !params["checkbox"].nil?
       @upcoming_events.each do |e|
         if params["checkbox"].find{ |c| e.id == c[0].to_i }
@@ -57,15 +57,19 @@ class EventsController < ApplicationController
       @reg = Registration.new(params[:reg])
       @reg.password = Digest::SHA256.hexdigest(Time.now.to_s);
       @reg.event_id = params[:eid]
-      @reg.save
-      @reg.deliver_confirmation
+      begin
+        @reg.deliver_confirmation      
+        @reg.save
+      rescue Exception => e
+        flash[:error] = "Registration not completed. Please enter valid email."
+        redirect_to :back
+      end          
     else
       @reg = Registration.find(params[:rid])
       @reg.update_attributes(params[:reg])
       @reg.save
     end
-
-    @newregistrant = 1
+    @newregistrant = 1        
   end
 
   def registrants
