@@ -1,23 +1,30 @@
-puts "***Updating facebook events***"
+require 'logger'
+
+script_dir = File.expand_path(File.dirname(__FILE__))
+logfile = script_dir+"/../log/update_facebook.log"
+file = File.open(logfile, File::WRONLY | File::APPEND)
+logger = Logger.new(file, 'weekly')
+
 
 t1 = Time.now
-puts "================"
-puts Time.now.strftime("%Y%m%d-%H%M%S") + " : " + __FILE__ + " starting..."
+logger.info "================"
+logger.info Time.now.strftime("%m/%d/%Y-%H:%M:%S") + " : " + __FILE__ + " starting..."
+logger.info "================"
 
-puts "\ngrabbing file lock....."
+logger.info "\ngrabbing file lock....."
 if File.new(__FILE__).flock(File::LOCK_EX | File::LOCK_NB) == false
-  puts "*** can't lock file, another instance of script running?  exiting"
+  logger.error "*** can't lock file, another instance of script running?  exiting"
   exit 1
 end
 
-puts "obtained file lock... starting facebook api calls...\n"
+logger.info "obtained file lock... starting facebook api calls...\n"
 # do the processing...
 # ...
 
 ##################
 # DATABASE ACCESS
 ##################
-puts "\nGetting last update time"
+logger.info "\nGetting last update time"
 #lut - last update time
 query = FacebookEvent.find(:first, :order => "updated_time DESC");
 if query.nil?
@@ -25,7 +32,7 @@ if query.nil?
 else
   lutdatabase = query.updated_time;
 end
-puts lutdatabase
+logger.info lutdatabase
 
 ##################
 # FACEBOOK ACCESS
@@ -36,17 +43,17 @@ access_token = gscc_app.get_access_token(config['production']['client_secret']);
 page_id = config['production']['page_id'];
 
 page = FbGraph::Page.new(page_id, :access_token => access_token).fetch;
-puts "\nAccessing facebook page - "+page.name
+logger.info "\nAccessing facebook page - "+page.name
 #need to fetch event by identifier so you get all the information
-puts "\nSearching for dirty events..."
+logger.info "\nSearching for dirty events..."
 
 page.events.each do |e|
   ie = FbGraph::Event.new(e.identifier, :access_token => access_token).fetch;
   existing_event = FacebookEvent.find(:first, :conditions => [ "identifier = ?", ie.identifier ]);
   if existing_event 
-    puts "***found database entry "+existing_event.name
+    logger.info "***found database entry "+existing_event.name
     if ie.updated_time > lutdatabase
-      puts "\n**found dirty facebook event - "+ie.name
+      logger.info "\n**found dirty facebook event - "+ie.name
       existing_event.name = ie.name
       existing_event.start_time = ie.start_time
       existing_event.end_time = ie.end_time
@@ -56,13 +63,13 @@ page.events.each do |e|
       existing_event.identifier = ie.identifier
       existing_event.picture = ie.picture
       existing_event.save
-      puts "***updated "+existing_event.name
+      logger.info "***updated "+existing_event.name
     end
   else
-    puts "***database entry not found, adding to database "+ie.name
+    logger.info "***database entry not found, adding to database "+ie.name
     existing_event = FacebookEvent.new( :name => ie.name, :start_time => ie.start_time, :end_time => ie.end_time, :location => ie.location, :description => ie.description, :updated_time => ie.updated_time, :identifier => ie.identifier, :picture => ie.picture )
     existing_event.save
-    puts "***saved "+existing_event.name
+    logger.info "***saved "+existing_event.name
   end
 end
 
@@ -70,27 +77,23 @@ end
 ##################
 # Deleting events 
 ##################
-puts "\nLooking for deleted facebook events..."
+logger.info "\nLooking for deleted facebook events..."
 all_events = FacebookEvent.find(:all);
 page.events.each do |e|
   all_events.delete_if { |ae| ae.identifier == e.identifier }
 end
 if all_events.size > 0
-  puts "Found deleted events! Deleting events from database..."
+  logger.info "Found deleted events! Deleting events from database..."
   all_events.each do |e|
-    puts "\n***deleting event "+e.name
+    logger.info "\n***deleting event "+e.name
     e.delete
-    puts "****deleted."
+    logger.info "****deleted."
   end
 end
 
-
-
-
-
-puts "\nUpdate complete."
+logger.info "\nUpdate complete."
 
 t2 = Time.now
-puts Time.now.strftime("%Y%m%d-%H%M%S") + " : " + __FILE__ + " finished  #{t2 - t1} secs"
-puts "================"
+logger.info Time.now.strftime("%m/%d/%Y-%H:%M:%S") + " : " + __FILE__ + " finished  #{t2 - t1} secs"
+logger.info "================\n\n"
 
