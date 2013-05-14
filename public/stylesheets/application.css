@@ -241,6 +241,7 @@ a:hover {color: #ccc;}
 
 }
 
+.ui-tabs .ui-tabs-nav li a {font-size:.9em;}
 
 #footer {
   background: url(/images/footer-bkg.png) repeat-y 230px 0;
