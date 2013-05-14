@@ -25,6 +25,9 @@
           :type => "text/css",
           :media => "screen, projection"}
     %link{:rel => "stylesheet",
+          :href => "/stylesheets/bootstrap.css",
+          :type => "text/css"}
+    %link{:rel => "stylesheet",
           :href => "/stylesheets/application.css",
           :type => "text/css"}
     %link{:rel => "stylesheet",
@@ -34,7 +37,6 @@
           :type => "text/javascript"}
     %script{:src => "/javascripts/jquery-ui.custom.min.js",
           :type => "text/javascript"}
-
 
   %body{:class => params[:action] == 'frontpage' ? 'frontpage' : 'interior'}
     #header
@@ -63,7 +65,7 @@
             %span{ :class => "ui-icon ui-icon-circle-check", :style => "float: left; margin-right: .3em;"}
             = flash[:notice]
         = yield
-      #sidebar.span-6
+      #sidebar.span-4
         %ul#navigation
           %li.home
             %a{:href => root_path()} Home
@@ -93,7 +95,7 @@
               = link_to('About Us', section_path('about_us'))
               %ul
                 - static_pages()['About Us'].each do |subsection|
-                  = li_link_to(subsection, subsection_path('about_us', subsection.dehumanize))
+                  = li_link_to(subsection, "/about_us#"+subsection.split(/[' ]/)[0].dehumanize)
 
         .span-6
           %ul
@@ -111,7 +113,7 @@
               %ul
                 - static_pages()['Serve'].each do |subsection|
                   = li_link_to(subsection, subsection_path('serve', subsection.dehumanize))
-        .span-6.last
+        .span-4.last
           %ul
             %li
               %a{:href => section_path('give')}
@@ -119,12 +121,12 @@
               %ul
                 - static_pages()['Give'].each do |subsection|
                   = li_link_to(subsection, subsection_path('give', subsection.dehumanize))
-            %li
-              %a{:href => section_path('resources')}
-                Resources
-              %ul
-                - static_pages()['Resources'].each do |subsection|
-                  = li_link_to(subsection, subsection_path('resources', subsection.dehumanize))
+            /%li
+            /  %a{:href => section_path('resources')}
+            /    Resources
+            /  %ul
+            /    - static_pages()['Resources'].each do |subsection|
+            /      = li_link_to(subsection, subsection_path('resources', subsection.dehumanize))
       .span-24.last
         %p#copyright.incr
           &copy;2010 Good Shepherd Christian Community &lt;3
