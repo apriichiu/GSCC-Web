@@ -1,6 +1,58 @@
-#frontpage-promo
-  %div{:style => 'background: #fff url(/images/promobanner_gs.jpg); height: 205px'} 
+%script{ :src =>"http://code.jquery.com/jquery-1.9.0.js"}
+%script{ :src => "/javascripts/bootstrap.js"}
+%script{ :scrc=> "/javascripts/bootstrap-carousel.js"}
+%script{:type => "text/javascript"}
+  $(function() { $('#myCarousel').carousel({interval: 6000}); });
 
+#frontpage-promo
+  /%div{:style => 'background: #fff url(/images/promobanner_gs.jpg); height: 205px'} 
+  #myCarousel{:class=>"carousel slide", :style=>'height:324px'}
+    / Carousel items
+    .carousel-inner
+      .item.active
+        %a{:href=>"/resources"}
+          %img{:src=>"images/carousel/slide_bluerocks.jpg"}
+        .carousel-caption
+          %h4 Loving Obedience
+          %p
+            Sermon Series for April and May.
+          %p
+            %em "If you love me, you will keep my commandments" John 14:15
+      /.item
+      /  %a{:href=>"/resources"}
+      /    %img{:src=>"images/carousel/slide_mothersday.jpg"}
+      /  .carousel-caption
+      /    %h4 Sunday, May 19, 2013
+      /    %p
+      /      Mother's Day Service.
+      /    %p
+      /      %em "I remember your genuine faith, for you share the faith that first filled your grandmother Lois and your mother, Eunice. And I know that same faith continues strong in you." 2 Timothy 1:5
+      .item
+        %a{:href=>"/connect"}
+          %img{:src=>"images/carousel/slide_connect.jpg"}
+        .carousel-caption
+          %h4 Connect
+          %p
+            Plug in to a small group!
+          %p
+            %em "Your love for one another will prove to the world that you are my disciples." John 13:35
+      .item
+        %a{:href=>"/events"}
+          %img{:src=>"images/carousel/slide_yellowleaves.jpg"}
+        .carousel-caption
+          %h4 The Purpose, Thanksgiving Retreat.
+          %p
+            A time for rest, fellowship, outreach, and renewing of your mind.
+          %p
+            %em "And we know that God causes everything to work together for the good of those who love God and are called according to his purpose for them." Romans 8:28
+    / Carousel nav
+    %a.carousel-control.left{ :href=>"#myCarousel","data-slide"=>"prev"} &lsaquo;
+    %a.carousel-control.right{ :href=>"#myCarousel","data-slide"=>"next"} &rsaquo;
+  / #carousel-indicator
+  /   %ol.inline{:class=>"carousel-indicators", :style=>"background-color: #777"}
+  /     %li{ "data-target"=>"#myCarousel", "data-slide-to"=>"0", :class=>"active"} +
+  /     %li{ "data-target"=>"#myCarousel", "data-slide-to"=>"1", :class=>"active"} +
+  /     %li{ "data-target"=>"#myCarousel", "data-slide-to"=>"2"} +
 #large-unit
   #sunday-services.span-6
     %h3.pharkir
@@ -12,15 +64,22 @@
       11:00 AM / Church Sanctuary
     %p
       %a{:href => "/connect#children"} <strong>Children's Program</strong>
+
       11:00 AM / Children's Room
+    /%a#new-callout.pharkir{:href => 'http://www.facebook.com/gscommunity'}
+    
+    %p.span1{:style=>"font-size: 1.1em; padding-right:5px; color:#7777"}
+      / #0abec7; padding-right: 5px;"}
+      Become a fan on facebook
+    %a.span1{:href => 'http://www.facebook.com/gscommunity', :style => "padding-top: 25px;"}
+      %img{:src=>"images/fb_icon.jpg"}
 
-    %a#new-callout.pharkir{:href => 'http://www.facebook.com/gscommunity'}
-
-  #plug-in.span-12.last
+  #plug-in.span-11.last
     %h3.pharkir
       Plug in
 
     %a{:href => subsection_path(:section => "plug-ins", :subsection => "student"), :id => 'plug-in-student'} 
     %a{:href => subsection_path(:section => "plug-ins", :subsection => "young_adult"), :id => 'plug-in-young-adults'} 
     %a{:href => subsection_path(:section => "plug-ins", :subsection => "family"), :id => 'plug-in-family'} 
-    %a{:href => subsection_path(:section => "plug-ins", :subsection => "international"), :id => 'plug-in-international'} 
+
+
