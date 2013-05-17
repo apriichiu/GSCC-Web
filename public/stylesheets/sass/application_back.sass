@@ -1,11 +1,11 @@
-=font-calibri
+@mixin font-calibri
   font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif
 
-=navigation-item(!pos)
-  background-position= 0 !pos * -36px
+@mixin navigation-item($pos)
+  background-position: 0 $pos * -36px
 
   &:hover
-    background-position= -240px !pos * -36px
+    background-position: -240px $pos * -36px
 
 body
   background: #fff url(/images/body-bkg.jpg) repeat-x top center
@@ -21,7 +21,7 @@ body
   background: #000 url(/images/header-bkg.jpg)
   color: #ddd
   margin-bottom: 1em
-  +font-calibri
+  @include font-calibri
 
   .container
     padding: .5em 0
@@ -50,7 +50,7 @@ body
     list-style: none
     margin: 0
     padding: 0
-    +font-calibri
+    @include font-calibri
     text-transform: uppercase
     font-size: 1.5em
 
@@ -60,17 +60,17 @@ body
       padding: 0
 
     li.home a
-      +navigation-item(0)
+      @include navigation-item(0)
     li.about-us a
-      +navigation-item(1)
+      @include navigation-item(1)
     li.connect a
-      +navigation-item(2)
+      @include navigation-item(2)
     li.create a
-      +navigation-item(3)
+      @include navigation-item(3)
     li.care a
-      +navigation-item(4)
+      @include navigation-item(4)
     li.resources a
-      +navigation-item(5)
+      @include navigation-item(5)
 
     li a
       display: block
