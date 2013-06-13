@@ -1,6 +1,6 @@
 %script{ :src =>"http://code.jquery.com/jquery-1.9.0.js"}
 %script{ :src => "/javascripts/bootstrap.js"}
-%script{ :scrc=> "/javascripts/bootstrap-carousel.js"}
+%script{ :src=> "/javascripts/bootstrap-carousel.js"}
 %script{:type => "text/javascript"}
   $(function() { $('#myCarousel').carousel({interval: 6000}); });
 
@@ -18,15 +18,13 @@
             Sermon Series for April and May.
           %p
             %em "If you love me, you will keep my commandments" John 14:15
-      /.item
-      /  %a{:href=>"/resources"}
-      /    %img{:src=>"images/carousel/slide_mothersday.jpg"}
-      /  .carousel-caption
-      /    %h4 Sunday, May 19, 2013
-      /    %p
-      /      Mother's Day Service.
-      /    %p
-      /      %em "I remember your genuine faith, for you share the faith that first filled your grandmother Lois and your mother, Eunice. And I know that same faith continues strong in you." 2 Timothy 1:5
+      .item
+        %a{:href=>"/resources"}
+          %img{:src=>"images/carousel/slide_fathersday2013.jpg"}
+        .carousel-caption
+          %h4 Sunday, June 16, 2013
+          %p
+            A Father's Day Service.
       .item
         %a{:href=>"/connect"}
           %img{:src=>"images/carousel/slide_connect.jpg"}
