@@ -1,0 +1,79 @@
+/*
+Syntax error: Invalid CSS after "(": expected variable (e.g. $foo), was "!pos)"
+        on line 4 of /Users/aprilchiu/GSCC-Web/public/stylesheets/sass/application_back.sass
+
+1: =font-calibri
+2:   font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif
+3: 
+4: =navigation-item(!pos)
+5:   background-position= 0 !pos * -36px
+6: 
+7:   &:hover
+8:     background-position= -240px !pos * -36px
+9: 
+
+Backtrace:
+/Users/aprilchiu/GSCC-Web/public/stylesheets/sass/application_back.sass:4
+/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/sass-3.2.5/lib/sass/../sass/scss/parser.rb:1136:in `expected'
+/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/sass-3.2.5/lib/sass/../sass/script/lexer.rb:199:in `expected!'
+/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/sass-3.2.5/lib/sass/../sass/script/parser.rb:476:in `assert_tok'
+/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/sass-3.2.5/lib/sass/../sass/script/parser.rb:351:in `defn_arglist!'
+/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/sass-3.2.5/lib/sass/../sass/script/parser.rb:348:in `loop'
+/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/sass-3.2.5/lib/sass/../sass/script/parser.rb:348:in `defn_arglist!'
+/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/sass-3.2.5/lib/sass/../sass/script/parser.rb:104:in `parse_mixin_definition_arglist'
+/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/sass-3.2.5/lib/sass/../sass/engine.rb:836:in `parse_mixin_definition'
+/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/sass-3.2.5/lib/sass/../sass/engine.rb:570:in `parse_line'
+/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/sass-3.2.5/lib/sass/../sass/engine.rb:471:in `build_tree'
+/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/sass-3.2.5/lib/sass/../sass/engine.rb:490:in `append_children'
+/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/sass-3.2.5/lib/sass/../sass/engine.rb:489:in `each'
+/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/sass-3.2.5/lib/sass/../sass/engine.rb:489:in `append_children'
+/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/sass-3.2.5/lib/sass/../sass/engine.rb:345:in `_to_tree'
+/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/sass-3.2.5/lib/sass/../sass/engine.rb:315:in `_render'
+/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/sass-3.2.5/lib/sass/../sass/engine.rb:263:in `render'
+/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/sass-3.2.5/lib/sass/../sass/util.rb:373:in `silence_sass_warnings'
+/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/sass-3.2.5/lib/sass/../sass/engine.rb:263:in `render'
+/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/sass-3.2.5/rails/../lib/sass/plugin/compiler.rb:341:in `update_stylesheet'
+/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/sass-3.2.5/rails/../lib/sass/plugin/compiler.rb:203:in `update_stylesheets'
+/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/sass-3.2.5/rails/../lib/sass/plugin/compiler.rb:201:in `each'
+/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/sass-3.2.5/rails/../lib/sass/plugin/compiler.rb:201:in `update_stylesheets'
+/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/sass-3.2.5/rails/../lib/sass/plugin.rb:81:in `update_stylesheets'
+/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/sass-3.2.5/rails/../lib/sass/plugin.rb:54:in `check_for_updates'
+/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/sass-3.2.5/rails/../lib/sass/plugin/rack.rb:51:in `call'
+/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/rack-1.1.0/lib/rack/head.rb:9:in `call'
+/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/rack-1.1.0/lib/rack/methodoverride.rb:24:in `call'
+/Users/aprilchiu/GSCC-Web/vendor/rails/actionpack/lib/action_controller/params_parser.rb:15:in `call'
+/Users/aprilchiu/GSCC-Web/vendor/rails/actionpack/lib/action_controller/session/cookie_store.rb:93:in `call'
+/Users/aprilchiu/GSCC-Web/app/middleware/flash_session_cookie_middleware.rb:14:in `call'
+/Users/aprilchiu/GSCC-Web/vendor/rails/actionpack/lib/action_controller/reloader.rb:29:in `call'
+/Users/aprilchiu/GSCC-Web/vendor/rails/actionpack/lib/action_controller/failsafe.rb:26:in `call'
+/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/rack-1.1.0/lib/rack/lock.rb:11:in `synchronize'
+/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+/Users/aprilchiu/GSCC-Web/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:106:in `call'
+/Users/aprilchiu/GSCC-Web/vendor/rails/railties/lib/rails/rack/static.rb:31:in `call'
+/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/rack-1.1.0/lib/rack/urlmap.rb:47:in `call'
+/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `each'
+/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `call'
+/Users/aprilchiu/GSCC-Web/vendor/rails/railties/lib/rails/rack/log_tailer.rb:17:in `call'
+/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/rack-1.1.0/lib/rack/content_length.rb:13:in `call'
+/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/rack-1.1.0/lib/rack/handler/webrick.rb:48:in `service'
+/Users/aprilchiu/.rvm/rubies/ruby-1.8.7-p371/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/Users/aprilchiu/.rvm/rubies/ruby-1.8.7-p371/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/Users/aprilchiu/.rvm/rubies/ruby-1.8.7-p371/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/Users/aprilchiu/.rvm/rubies/ruby-1.8.7-p371/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/Users/aprilchiu/.rvm/rubies/ruby-1.8.7-p371/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/Users/aprilchiu/.rvm/rubies/ruby-1.8.7-p371/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/Users/aprilchiu/.rvm/rubies/ruby-1.8.7-p371/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/Users/aprilchiu/.rvm/rubies/ruby-1.8.7-p371/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/Users/aprilchiu/.rvm/rubies/ruby-1.8.7-p371/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/Users/aprilchiu/.rvm/rubies/ruby-1.8.7-p371/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/rack-1.1.0/lib/rack/handler/webrick.rb:14:in `run'
+/Users/aprilchiu/GSCC-Web/vendor/rails/railties/lib/commands/server.rb:111
+/Users/aprilchiu/.rvm/rubies/ruby-1.8.7-p371/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/Users/aprilchiu/.rvm/rubies/ruby-1.8.7-p371/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Syntax error: Invalid CSS after \"(\": expected variable (e.g. $foo), was \"!pos)\"\A         on line 4 of /Users/aprilchiu/GSCC-Web/public/stylesheets/sass/application_back.sass\A \A 1: =font-calibri\A 2:   font-family: Frutiger, \"Frutiger Linotype\", Univers, Calibri, \"Gill Sans\", \"Gill Sans MT\", \"Myriad Pro\", Myriad, \"DejaVu Sans Condensed\", \"Liberation Sans\", \"Nimbus Sans L\", Tahoma, Geneva, \"Helvetica Neue\", Helvetica, Arial, sans-serif\A 3: \A 4: =navigation-item(!pos)\A 5:   background-position= 0 !pos * -36px\A 6: \A 7:   &:hover\A 8:     background-position= -240px !pos * -36px\A 9: "; }

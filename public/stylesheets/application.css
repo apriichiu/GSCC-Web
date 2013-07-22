@@ -33,6 +33,9 @@ a:hover {color: #ccc;}
         text-decoration: none; }
 
 #sidebar {
+  position: relative;
+  left: -60px;
+  display: block;
   z-index: 500; }
   #sidebar #navigation {
     list-style: none;
@@ -137,11 +140,14 @@ a:hover {color: #ccc;}
     background: none; }
 
 #content #frontpage-promo {
+  position: relative;
+  left: 0px;
   border: 4px solid #777;
-  margin-bottom: 1.5em; }
+  margin-bottom: 1em; }
 #content #large-unit {
-  background: url(/images/large-unit-bkg_2012.jpg) no-repeat;
+  background: url(/images/large-unit-bkg_2013.jpg) no-repeat;
   height: 360px; }
+
   #content #large-unit #sunday-services p {
     height: 36px;
     margin: 0;
@@ -235,6 +241,7 @@ a:hover {color: #ccc;}
 
 }
 
+.ui-tabs .ui-tabs-nav li a {font-size:.9em;}
 
 #footer {
   background: url(/images/footer-bkg.png) repeat-y 230px 0;
@@ -272,6 +279,18 @@ a:hover {color: #ccc;}
     font-weight: normal;
     color: #777; }
   #footer .span-6>ul>li li {
+    text-transform: none; }
+  #footer .span-4>ul>li {
+    margin: 1em 0; }
+  #footer .span-4>ul>li>a {
+    text-transform: uppercase;
+    font-weight: bold; }
+  #footer .span-4>ul>li>a small {
+    text-transform: lowercase;
+    font-size: 1em;
+    font-weight: normal;
+    color: #777; }
+  #footer .span-4>ul>li li {
     text-transform: none; }
 
 #copyright {
