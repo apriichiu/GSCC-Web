@@ -96,10 +96,12 @@ a:hover {color: #ccc;}
           background-position: 0 0; }
   #sidebar h3 {
     height: 54px;
+    width: 240px;
     margin: 0;
     background: url(/images/sidebar-titles.png) no-repeat;
     text-indent: -5000px; }
   #sidebar ul.upcoming-events {
+    width: 240px;
     margin: 0;
     padding: 0;
     list-style: none; }
@@ -335,7 +337,7 @@ a:hover {color: #ccc;}
 
 .upcoming-events-icon strong {
     display: block;
-    padding-top: 1px;
+    padding-top: 4px;
     font-size: 16px;
     color: #555;
 }
