@@ -93,9 +93,9 @@ end
         value = ""
       end
       if type == "input"
-        return "<input type='text' name='"+name+"' value='"+value+"'>"
+        return "<input type='text' name='"+name+"' value='"+value+"' required>"
       elsif type == "textarea"
-        return '<textarea name="'+name+'" style="height:3em">'+value+'</textarea>'
+        return '<textarea name="'+name+'" style="height:3em" required>'+value+'</textarea>'
       else
         output = '<select name="'+name+'">'
         (0..9).each do |n|
