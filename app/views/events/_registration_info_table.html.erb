@@ -42,55 +42,56 @@
 
  <tr>
   <th colspan="2" class="ui-widget-header">
-    Register 
+    Register * Required Fields
   </th>
  </tr>
  <tr>
-   <th class="ui-state-default"> Full Name</th>
+   <th class="ui-state-default"> Full Name *</th>
    <th class="ui-state-default"> <%= reg_form_value_field(edit, @reg.fullname, "input", "reg[fullname]") %>
      
    </th>
  <tr>
  <tr>
-   <th class="ui-state-default"> Email</th>
+   <th class="ui-state-default"> Email *</th>
    <th class="ui-state-default"> <%= reg_form_value_field(edit, @reg.email, "input", "reg[email]") %>
      
    </th>
  <tr>
 
  <tr>
-   <th class="ui-state-default"> Phone Number </th>
+   <th class="ui-state-default"> Phone Number *</th>
    <th class="ui-state-default"> <%= reg_form_value_field(edit, @reg.phone, "input", "reg[phone]") %>
      
    </th>
  <tr>
  <tr>
-   <th class="ui-state-default"> Address </th>
+   <th class="ui-state-default"> Address *</th>
    <th class="ui-state-default"> <%= reg_form_value_field(edit, @reg.address, "textarea", "reg[address]") %>
      
    </th>
  <tr>
 
  <tr>
-   <th class="ui-state-default"> Home Church </th>
+   <th class="ui-state-default"> Home Church *</th>
    <th class="ui-state-default"> <%= reg_form_value_field(edit, @reg.church, "input", "reg[church]") %>
      
    </th>
  <tr>
 
  <tr>
-   <th class="ui-state-default"> Additional Family Members? </th>
+
+   <th class="ui-state-default"> Additional Family Members? *</th>
    <th class="ui-state-default"> <%= reg_form_value_field(edit, @reg.guests, "dropdown", "reg[guests]") %>
    </th>
  <tr>
  <tr>
-   <th class="ui-state-default"> Family Members' Name and Age (e.g. John/18+, James/10, Mary/3) </th>
+   <th class="ui-state-default"> Family Members' Name/Age * (e.g. John/18+, James/10, Mary/3) </th>
    <th class="ui-state-default"> <%= reg_form_value_field(edit, @reg.guests_names, "textarea", "reg[guests_names]") %>
      
    </th>
  <tr>
  <tr>
-   <th class="ui-state-default">  Family Members' Relationship (e.g spouse, child, child </th>
+   <th class="ui-state-default">  Family Members' Relationship * (e.g wife, child, child) </th>
    <th class="ui-state-default"> <%= reg_form_value_field(edit, @reg.guests_relation, "textarea", "reg[guests_relation]") %>
    </th>
  <tr>
