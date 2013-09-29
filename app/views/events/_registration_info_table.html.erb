@@ -85,17 +85,26 @@
    </th>
  <tr>
  <tr>
-   <th class="ui-state-default"> Family Members' Name/Age * (e.g. John/18+, James/10, Mary/3) </th>
+   <th class="ui-state-default"> Family Members' Name/Age * (e.g. "Lisa/Adult, Igor/1, James/10/5th grade, Mary/3/Preschool, Priscilla/20/College Junior") </th>
    <th class="ui-state-default"> <%= reg_form_value_field(edit, @reg.guests_names, "textarea", "reg[guests_names]") %>
      
    </th>
  <tr>
  <tr>
-   <th class="ui-state-default">  Family Members' Relationship * (e.g wife, child, child) </th>
+   <th class="ui-state-default">  Family Members' Relationship * (in the order listed in previous field. e.g "wife, child, child, child, child") </th>
    <th class="ui-state-default"> <%= reg_form_value_field(edit, @reg.guests_relation, "textarea", "reg[guests_relation]") %>
    </th>
  <tr>
-
+ <tr>
+   <th class="ui-state-default">  Food Allergies? * (Please describe which foods to which the member(s) of your family are allergic. e.g. "Priscilla is allergic to peanuts.") </th>
+   <th class="ui-state-default"> <%= reg_form_value_field(edit, @reg.food_allergies, "textarea", "reg[food_allergies]") %>
+   </th>
+ <tr>
+ <tr>
+   <th class="ui-state-default">  Family Accomodations? *  </th>
+   <th class="ui-state-default"> <%= reg_form_value_field(edit, @reg.family_accomodations, "boolean", "reg[family_accomodations]") %>
+   </th>
+ <tr>
 <% if !@reg.id.nil? %>
  <tr>
   <th colspan="2" class="ui-widget-header">

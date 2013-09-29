@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120214042123) do
+ActiveRecord::Schema.define(:version => 20130928013153) do
 
   create_table "attachments", :force => true do |t|
     t.datetime "created_at"
@@ -62,8 +62,8 @@ ActiveRecord::Schema.define(:version => 20120214042123) do
     t.string   "email"
     t.string   "church"
     t.integer  "payment_type"
-    t.integer  "paid",            :default => 0
-    t.integer  "guests",          :default => 0
+    t.integer  "paid",                 :default => 0
+    t.integer  "guests",               :default => 0
     t.string   "guests_names"
     t.string   "guests_relation"
     t.string   "access_token"
@@ -71,6 +71,8 @@ ActiveRecord::Schema.define(:version => 20120214042123) do
     t.integer  "event_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "food_allergies"
+    t.boolean  "family_accomodations"
   end
 
 end

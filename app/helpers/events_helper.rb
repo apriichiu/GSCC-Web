@@ -96,6 +96,14 @@ end
         return "<input type='text' name='"+name+"' value='"+value+"' required>"
       elsif type == "textarea"
         return '<textarea name="'+name+'" style="height:3em" required>'+value+'</textarea>'
+      elsif type == "boolean"
+        output = '<select name="'+name+'">'
+          if value == 'true' || value == 'false'
+            output += '<option value ='+value+' SELECTED>'+value+'</option>'
+          else
+            output += '<option value="true">"Yes"</option><option value="false">"No"</option>'
+          end
+        return output     
       else
         output = '<select name="'+name+'">'
         (0..9).each do |n|
