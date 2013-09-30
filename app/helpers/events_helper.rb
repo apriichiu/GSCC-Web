@@ -101,7 +101,7 @@ end
           if value == 'true' || value == 'false'
             output += '<option value ='+value+' SELECTED>'+value+'</option>'
           else
-            output += '<option value="true">"Yes"</option><option value="false">"No"</option>'
+            output += '<option value="true">Yes</option><option value="false">No</option>'
           end
         return output     
       else
