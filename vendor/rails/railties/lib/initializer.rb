@@ -486,7 +486,7 @@ Run `rake gems:install` to install the missing gems.
           logger = ActiveSupport::BufferedLogger.new(configuration.log_path)
           logger.level = ActiveSupport::BufferedLogger.const_get(configuration.log_level.to_s.upcase)
           if configuration.environment == "production"
-            logger.auto_flushing = false
+            logger.auto_flushing = 1
           end
         rescue StandardError => e
           logger = ActiveSupport::BufferedLogger.new(STDERR)
