@@ -16,7 +16,6 @@ class StaticPageController < ApplicationController
                                  'Forms' ],
                'Groups'     => [ 'Galilee',
                                  'Joshua',
-                                 'Canaan',
                                  'Family Men',
                                  'Family Women'
                                ], 

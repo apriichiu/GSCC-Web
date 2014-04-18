@@ -10,16 +10,12 @@
   $sgtabs.tabs('select', 2);
   return false;
   });
-  $("#canaan-link").click(function() {
+  $("#familymen-link").click(function() {
   $sgtabs.tabs('select', 3);
   return false;
   });
-  $("#familymen-link").click(function() {
-  $sgtabs.tabs('select', 4);
-  return false;
-  });
   $("#familywomen-link").click(function() {
-  $sgtabs.tabs('select', 5);
+  $sgtabs.tabs('select', 4);
   return false;
   });
   });
@@ -29,7 +25,7 @@
   %ul
     %li 
       %a{:href => "#group-home"}Overview
-    - ["Galilee", "Joshua", "Canaan", "FamilyMen", "FamilyWomen"].each do |g|
+    - ["Galilee", "Joshua", "FamilyMen", "FamilyWomen"].each do |g|
       %li
         %a{:href => "#"+g.dehumanize} 
           = g
@@ -44,8 +40,6 @@
       %strong Cupertino and San Jose
       %br
       %a{:href => "javascript:void(0);", :id => "galilee-link"} Galilee 
-      \/ 
-      %a{:href => "javascript:void(0);", :id => "canaan-link"} Canaan
       \/
       %a{:href => "javascript:void(0);", :id => "familymen-link"} Family Men
       \/
@@ -85,7 +79,7 @@
     /   %a{:href => "javascript:void(0);", :id => "familywomen-link"} Family Women
     /   %br
 
-  - ["Galilee", "Joshua", "Canaan", "FamilyMen", "FamilyWomen"].each do |g|
+  - ["Galilee", "Joshua", "FamilyMen", "FamilyWomen"].each do |g|
     %div{:id => g.dehumanize}
       = render "/static_page/groups/"+g.dehumanize
 
