@@ -9,15 +9,15 @@
   #myCarousel{:class=>"carousel slide", :style=>'height:324px'}
     / Carousel items
     .carousel-inner
-      .item
+      .item.active
         %a{:href=>"/resources"}
-          %img{:src=>"images/carousel/slide_godslawsrocks.jpg"}
+          %img{:src=>"images/carousel/slide_gospelseries.jpg"}
         .carousel-caption
-          %h4 God's Covenant and His Laws
+          %h4 The Gospel and Gospel Living
           %p
-            Sermon Series
+            Sermon Series on Galations
           %p
-            %em "He declared to you his covenant, the Ten Commandments, which he commanded you to follow and then wrote them on two stone tablets."  Deuteronomy 4:13
+            %em "[Christ] gave himself for our sins to rescue us from the present evil age, according to the will of our God and Father." Galations 1:4
       .item
         %a{:href=>"/connect"}
           %img{:src=>"images/carousel/slide_connect.JPG"}
@@ -27,13 +27,13 @@
             Plug in to a small group!
           %p
             %em "Your love for one another will prove to the world that you are my disciples." John 13:35 
-      .item.active
-        %a{:href=>"/resources"}
-          %img{:src=>"images/carousel/fathersday_2014.jpg"}
-        .carousel-caption
-          %h4 Father's Day Service
-          %p
-            Join us for our special Father's Day Service on June 15 @ 11 AM!
+      / .item.active
+      /   %a{:href=>"/resources"}
+      /     %img{:src=>"images/carousel/fathersday_2014.jpg"}
+      /   .carousel-caption
+      /     %h4 Father's Day Service
+      /     %p
+      /       Join us for our special Father's Day Service on June 15 @ 11 AM!
           
     / Carousel nav
     %a.carousel-control.left{ :href=>"#myCarousel","data-slide"=>"prev"} &lsaquo;
