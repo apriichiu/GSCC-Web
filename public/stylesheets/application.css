@@ -7,6 +7,15 @@ body {
 a {color: #9bda5e;}
 a:hover {color: #ccc;}
 
+#building-banner {
+    height: 150px; 
+    width: 940px;
+    margin-bottom: 5px;
+    border-style: solid;
+    border-color: gray;
+    border-width: 5px;
+    margin-left: -10px;
+  }
 
 #header {
   text-transform: uppercase;
@@ -207,12 +216,25 @@ a:hover {color: #ccc;}
       background: url(/images/plugin_intl_active_2012.jpg) no-repeat;
   }
 
-  #content #large-unit #newsletter a{
+  #content #large-unit #newsletter {
     color: #91DAFF;
     font-size: 1.5em;
     line-height: 3;
-    display: block; 
+    display: block;
+    float: left; 
     margin-left: 30px;
+  }
+  
+  #content #large-unit #map {
+    position: relative;
+    left: -100px;
+    height: 200px;
+    width: 200px;
+    float: left;
+    display: block;
+    margin-left: 100px;
+    padding-left: 130px;
+    margin-top: 80px;
   }
 
 .interior #content {

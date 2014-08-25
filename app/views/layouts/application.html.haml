@@ -50,7 +50,11 @@
         %a.map-button{:href => 'http://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=940+S+Stelling+Rd,+Cupertino,+CA+95014&sll=37.0625,-95.677068&sspn=60.158465,134.912109&ie=UTF8&z=17&iwloc=A',
                       :target =>'_blank'}
           map &amp; directions
+
+
     #outer-container.container
+      #building-banner
+        %img{:src => "images/stelling4.jpg"}
       #content.span-18.last
         - if flash[:error]  
           %script{:type => "text/javascript"}
