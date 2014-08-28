@@ -1,0 +1,28 @@
+<script>
+  $(function() {
+  $("#resources").tabs();
+  });
+</script>
+
+<%= login_link %>
+
+<h1>Resources</h1>
+
+<div id = "resources">
+  <ul>
+    <li> 
+      <a href = "#sermons">Sermon Notes</a>
+    </li>
+    <li>
+      <a href = "#smallgroups">Small Group Material</a>
+    </li>
+  </ul>
+</div>
+
+  <div id = "sermons">
+    = render "/static_page/resources/sermons"
+  </div>
+
+  <div id = "smallgroups">
+    = render "/static_page/resources/smallgroups"
+  </div>
