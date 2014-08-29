@@ -10,20 +10,20 @@
 
 <div id = "resources">
   <ul>
-    <li> 
-      <a href = "#sermons">Sermon Notes</a>
-    </li>
     <li>
       <a href = "#smallgroups">Small Group Material</a>
     </li>
+    <li> 
+      <a href = "#sermons">Sermon Notes</a>
+    </li>
   </ul>
-
+  
+  <div id = "smallgroups">
+    <%=  render "/static_page/resources/smallgroup" %>
+  </div>
 
   <div id = "sermons">
     <%= render "/static_page/resources/sermons" %>
   </div>
 
-  <div id = "smallgroups">
-    <%=  render "/static_page/resources/smallgroup" %>
-  </div>
 </div>
