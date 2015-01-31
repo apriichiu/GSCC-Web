@@ -1,22 +1,104 @@
-%br
-:javascript
-  $(function() {
-  $("#connect").tabs();
-  });
-%div{:id => "connect"}
-  %ul
-    %li 
-      %a{:href => "#community"}Community Groups
-    %li
-      %a{:href => "#worship"}Worship Service
-    %li
-      %a{:href => "#children"}Children's Program
+%div.panel.panel-default{:style => "background-color: white; border: 5px solid gray; margin: 10px; padding: 20px"}
+  %div.panel-heading
+    %h1
+      Small Groups
+  %div.panel-body{:style => "height: 500px; overflow-y:scroll"}
+    %table.small-group
+      %tbody
+        %tr
+          %td
+            %h1.small-group
+              Galilee Group
+            %p.small-group
+              Tuesdays @ 7:30pm, Menlo Park
+              %br
+              Contact:
+              %br
+              %a{:href =>'mailto:keviekev23@gmail.com'} Kevin/June
+          %td
+            %image{:src => "/images/galileesgbw.jpg"}
+        %tr
+          %td
+            %h1.small-group
+              South Bay Women Group
+            %p.small-group
+              Tuesdays @ 10:00am, Cupertino
+              %br
+              Contact:
+              %br
+              %a{:href =>'mailto:jenlanchiu@gmail.com'} Jane
+          %td
+            %image{:src => "/images/conniesgbw.jpg"}
+        %tr
+          %td
+            %h1.small-group
+              East Bay Women Group
+            %p.small-group
+              Wednesdays @ 10:00am, Fremont
+              %br
+              Contact:
+              %br
+              %a{:href =>'mailto:conniestrang@gmail.com'} Connie
+          %td
+            %image{:src => "/images/conniesgbw.jpg"}
+        %tr
+          %td
+            %h1.small-group
+              Joshua Group
+            %p.small-group
+              Fridays @ 7:30pm, Fremont/San Jose
+              %br
+              Contact:
+              %br
+              %a{:href =>'mailto:liu.isaac@gmail.com'} Isaac Liu
+          %td
+            %image{:src => "/images/joshuasgbw.jpg"}
+        %tr
+          %td
+            %h1.small-group
+              Family Group
+            %p.small-group
+              Every other Friday @ 7:15pm, Cupertino
+              %br
+              Contact:
+              %br
+              %a{:href =>'mailto:mr.dave.strang@gmail.com'} David
+          %td
+            %image{:src => "/images/josephsgbw.jpg"}
+        %tr
+          %td
+            %h1.small-group
+              Mountain View Group
+            %p.small-group
+              Fridays @ 7:30pm
+              %br
+              Contact:
+              %br
+              %a{:href =>'mailto:ed4chrst@gmail.com'} Edward
+          %td
+            %image{:src => "/images/joshuasgbw.jpg"}
 
-  %div{:id => "community"}
-    = render "/static_page/connect/community_groups"
 
-  %div{:id => "worship"}
-    = render "/static_page/connect/worship_service"
+/ OLD JS TABS
+/ %br
+/ :javascript
+/   $(function() {
+/   $("#connect").tabs();
+/   });
+/ %div{:id => "connect"}
+/   %ul
+/     %li 
+/       %a{:href => "#community"}Community Groups
+/     %li
+/       %a{:href => "#worship"}Worship Service
+/     %li
+/       %a{:href => "#children"}Children's Program
 
-  %div{:id => "children"}
-    = render "/static_page/connect/childrens_program"
+/   %div{:id => "community"}
+/     = render "/static_page/connect/community_groups"
+
+/   %div{:id => "worship"}
+/     = render "/static_page/connect/worship_service"
+
+/   %div{:id => "children"}
+/     = render "/static_page/connect/childrens_program"

@@ -415,3 +415,19 @@ table#show-view-table tr.odd td
 	height:inherit;
 	
 }
+
+p.small-group,h1.small-group
+{
+  font-family: Arial, Helvetica;
+  color: black !important;
+  font-size: 26px !important;
+}
+h1.small-group
+{
+  font-size: 32px !important;
+}
+p.small-group
+{
+  font-size: 20px !important;
+}
+
