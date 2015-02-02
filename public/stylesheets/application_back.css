@@ -1,79 +1,212 @@
-/*
-Syntax error: Invalid CSS after "(": expected variable (e.g. $foo), was "!pos)"
-        on line 4 of /Users/aprilchiu/GSCC-Web/public/stylesheets/sass/application_back.sass
+body {
+  background: white url(/images/body-bkg.jpg) repeat-x top center; }
 
-1: =font-calibri
-2:   font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif
-3: 
-4: =navigation-item(!pos)
-5:   background-position= 0 !pos * -36px
-6: 
-7:   &:hover
-8:     background-position= -240px !pos * -36px
-9: 
+.pharkir {
+  text-indent: -5000px; }
 
-Backtrace:
-/Users/aprilchiu/GSCC-Web/public/stylesheets/sass/application_back.sass:4
-/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/sass-3.2.5/lib/sass/../sass/scss/parser.rb:1136:in `expected'
-/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/sass-3.2.5/lib/sass/../sass/script/lexer.rb:199:in `expected!'
-/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/sass-3.2.5/lib/sass/../sass/script/parser.rb:476:in `assert_tok'
-/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/sass-3.2.5/lib/sass/../sass/script/parser.rb:351:in `defn_arglist!'
-/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/sass-3.2.5/lib/sass/../sass/script/parser.rb:348:in `loop'
-/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/sass-3.2.5/lib/sass/../sass/script/parser.rb:348:in `defn_arglist!'
-/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/sass-3.2.5/lib/sass/../sass/script/parser.rb:104:in `parse_mixin_definition_arglist'
-/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/sass-3.2.5/lib/sass/../sass/engine.rb:836:in `parse_mixin_definition'
-/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/sass-3.2.5/lib/sass/../sass/engine.rb:570:in `parse_line'
-/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/sass-3.2.5/lib/sass/../sass/engine.rb:471:in `build_tree'
-/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/sass-3.2.5/lib/sass/../sass/engine.rb:490:in `append_children'
-/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/sass-3.2.5/lib/sass/../sass/engine.rb:489:in `each'
-/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/sass-3.2.5/lib/sass/../sass/engine.rb:489:in `append_children'
-/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/sass-3.2.5/lib/sass/../sass/engine.rb:345:in `_to_tree'
-/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/sass-3.2.5/lib/sass/../sass/engine.rb:315:in `_render'
-/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/sass-3.2.5/lib/sass/../sass/engine.rb:263:in `render'
-/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/sass-3.2.5/lib/sass/../sass/util.rb:373:in `silence_sass_warnings'
-/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/sass-3.2.5/lib/sass/../sass/engine.rb:263:in `render'
-/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/sass-3.2.5/rails/../lib/sass/plugin/compiler.rb:341:in `update_stylesheet'
-/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/sass-3.2.5/rails/../lib/sass/plugin/compiler.rb:203:in `update_stylesheets'
-/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/sass-3.2.5/rails/../lib/sass/plugin/compiler.rb:201:in `each'
-/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/sass-3.2.5/rails/../lib/sass/plugin/compiler.rb:201:in `update_stylesheets'
-/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/sass-3.2.5/rails/../lib/sass/plugin.rb:81:in `update_stylesheets'
-/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/sass-3.2.5/rails/../lib/sass/plugin.rb:54:in `check_for_updates'
-/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/sass-3.2.5/rails/../lib/sass/plugin/rack.rb:51:in `call'
-/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/rack-1.1.0/lib/rack/head.rb:9:in `call'
-/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/rack-1.1.0/lib/rack/methodoverride.rb:24:in `call'
-/Users/aprilchiu/GSCC-Web/vendor/rails/actionpack/lib/action_controller/params_parser.rb:15:in `call'
-/Users/aprilchiu/GSCC-Web/vendor/rails/actionpack/lib/action_controller/session/cookie_store.rb:93:in `call'
-/Users/aprilchiu/GSCC-Web/app/middleware/flash_session_cookie_middleware.rb:14:in `call'
-/Users/aprilchiu/GSCC-Web/vendor/rails/actionpack/lib/action_controller/reloader.rb:29:in `call'
-/Users/aprilchiu/GSCC-Web/vendor/rails/actionpack/lib/action_controller/failsafe.rb:26:in `call'
-/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
-/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/rack-1.1.0/lib/rack/lock.rb:11:in `synchronize'
-/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
-/Users/aprilchiu/GSCC-Web/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:106:in `call'
-/Users/aprilchiu/GSCC-Web/vendor/rails/railties/lib/rails/rack/static.rb:31:in `call'
-/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/rack-1.1.0/lib/rack/urlmap.rb:47:in `call'
-/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `each'
-/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `call'
-/Users/aprilchiu/GSCC-Web/vendor/rails/railties/lib/rails/rack/log_tailer.rb:17:in `call'
-/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/rack-1.1.0/lib/rack/content_length.rb:13:in `call'
-/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/rack-1.1.0/lib/rack/handler/webrick.rb:48:in `service'
-/Users/aprilchiu/.rvm/rubies/ruby-1.8.7-p371/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
-/Users/aprilchiu/.rvm/rubies/ruby-1.8.7-p371/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
-/Users/aprilchiu/.rvm/rubies/ruby-1.8.7-p371/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
-/Users/aprilchiu/.rvm/rubies/ruby-1.8.7-p371/lib/ruby/1.8/webrick/server.rb:162:in `start'
-/Users/aprilchiu/.rvm/rubies/ruby-1.8.7-p371/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
-/Users/aprilchiu/.rvm/rubies/ruby-1.8.7-p371/lib/ruby/1.8/webrick/server.rb:95:in `start'
-/Users/aprilchiu/.rvm/rubies/ruby-1.8.7-p371/lib/ruby/1.8/webrick/server.rb:92:in `each'
-/Users/aprilchiu/.rvm/rubies/ruby-1.8.7-p371/lib/ruby/1.8/webrick/server.rb:92:in `start'
-/Users/aprilchiu/.rvm/rubies/ruby-1.8.7-p371/lib/ruby/1.8/webrick/server.rb:23:in `start'
-/Users/aprilchiu/.rvm/rubies/ruby-1.8.7-p371/lib/ruby/1.8/webrick/server.rb:82:in `start'
-/Users/aprilchiu/.rvm/gems/ruby-1.8.7-p371@gscc_web/gems/rack-1.1.0/lib/rack/handler/webrick.rb:14:in `run'
-/Users/aprilchiu/GSCC-Web/vendor/rails/railties/lib/commands/server.rb:111
-/Users/aprilchiu/.rvm/rubies/ruby-1.8.7-p371/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
-/Users/aprilchiu/.rvm/rubies/ruby-1.8.7-p371/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
-script/server:3
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Syntax error: Invalid CSS after \"(\": expected variable (e.g. $foo), was \"!pos)\"\A         on line 4 of /Users/aprilchiu/GSCC-Web/public/stylesheets/sass/application_back.sass\A \A 1: =font-calibri\A 2:   font-family: Frutiger, \"Frutiger Linotype\", Univers, Calibri, \"Gill Sans\", \"Gill Sans MT\", \"Myriad Pro\", Myriad, \"DejaVu Sans Condensed\", \"Liberation Sans\", \"Nimbus Sans L\", Tahoma, Geneva, \"Helvetica Neue\", Helvetica, Arial, sans-serif\A 3: \A 4: =navigation-item(!pos)\A 5:   background-position= 0 !pos * -36px\A 6: \A 7:   &:hover\A 8:     background-position= -240px !pos * -36px\A 9: "; }
+#header {
+  text-transform: uppercase;
+  background: black url(/images/header-bkg.jpg);
+  color: #dddddd;
+  margin-bottom: 1em;
+  font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  #header .container {
+    padding: 0.5em 0; }
+    #header .container a, #header .container address {
+      font-style: normal;
+      margin: 0;
+      float: left;
+      display: block; }
+    #header .container a.map-button {
+      background: #555555;
+      padding: 0 0.3em;
+      margin-left: 1em;
+      color: white;
+      cursor: pointer;
+      text-decoration: underline; }
+      #header .container a.map-button:hover {
+        background: #777777;
+        text-decoration: none; }
+
+#sidebar {
+  z-index: 500; }
+  #sidebar #navigation {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    font-size: 1.5em; }
+    #sidebar #navigation li {
+      display: block;
+      margin: 0;
+      padding: 0; }
+    #sidebar #navigation li.home a {
+      background-position: 0 0px; }
+      #sidebar #navigation li.home a:hover {
+        background-position: -240px 0px; }
+    #sidebar #navigation li.about-us a {
+      background-position: 0 -36px; }
+      #sidebar #navigation li.about-us a:hover {
+        background-position: -240px -36px; }
+    #sidebar #navigation li.connect a {
+      background-position: 0 -72px; }
+      #sidebar #navigation li.connect a:hover {
+        background-position: -240px -72px; }
+    #sidebar #navigation li.create a {
+      background-position: 0 -108px; }
+      #sidebar #navigation li.create a:hover {
+        background-position: -240px -108px; }
+    #sidebar #navigation li.care a {
+      background-position: 0 -144px; }
+      #sidebar #navigation li.care a:hover {
+        background-position: -240px -144px; }
+    #sidebar #navigation li.resources a {
+      background-position: 0 -180px; }
+      #sidebar #navigation li.resources a:hover {
+        background-position: -240px -180px; }
+    #sidebar #navigation li a {
+      display: block;
+      height: 33px;
+      width: 220px;
+      padding-right: 20px;
+      margin: 0 -10px 3px 0;
+      line-height: 33px;
+      text-align: right;
+      text-decoration: none;
+      color: #eeeeee;
+      background-image: url(/images/navigation-bkg.jpg);
+      background-repeat: no-repeat; }
+      #sidebar #navigation li a:hover {
+        color: white; }
+      #sidebar #navigation li a.selected {
+        cursor: default;
+        color: #333333;
+        background: url(/images/selected-nav.png) no-repeat 0 0;
+        margin-right: -27px;
+        padding-right: 37px; }
+        #sidebar #navigation li a.selected:hover {
+          background-position: 0 0; }
+  #sidebar h3 {
+    height: 54px;
+    margin: 0;
+    background: url(/images/sidebar-titles.png) no-repeat;
+    text-indent: -5000px; }
+  #sidebar ul.upcoming-events {
+    background: #777777;
+    margin: 0;
+    padding: 0 10px;
+    list-style: none; }
+    #sidebar ul.upcoming-events abbr {
+      border: none;
+      color: white; }
+    #sidebar ul.upcoming-events a {
+      color: white; }
+    #sidebar ul.upcoming-events .vevent {
+      padding: 9px 0; }
+  #sidebar h3.subscribe {
+    background-position: 0 -54px; }
+  #sidebar form.subscribe input {
+    width: 218px; }
+  #sidebar form.subscribe button {
+    float: right;
+    margin: 0; }
+
+#outer-container {
+  background: url(/images/content-bkg.jpg) no-repeat right top; }
+  #outer-container #content {
+    background: #444444 url(/images/content-bkg.jpg) no-repeat right top; }
+    .frontpage #outer-container #content {
+      background: none; }
+  #outer-container #content, #outer-container #sidebar {
+    float: right; }
+  .frontpage #outer-container {
+    background: none; }
+
+#content #frontpage-promo {
+  border: 4px solid #777777;
+  margin-bottom: 1.5em; }
+#content #large-unit {
+  background: url(/images/large-unit-bkg_2012.jpg) no-repeat;
+  height: 360px; }
+  #content #large-unit #sunday-services p {
+    height: 36px;
+    margin: 0;
+    padding: 18px 40px 18px 10px;
+    color: white; }
+  #content #large-unit #sunday-services strong {
+    font-size: 1.5em;
+    line-height: 1;
+    display: block; }
+  #content #large-unit #sunday-services #new-callout {
+    display: block;
+    margin-top: 5em;
+    height: 100px; }
+  #content #large-unit #plug-in a {
+    display: block;
+    height: 46px;
+    line-height: 46px;
+    padding: 8px 0 8px 120px;
+    margin-bottom: 10px;
+    color: #89c4c2;
+    background: white; }
+    #content #large-unit #plug-in a:hover {
+      color: white;
+      background: #89c4c2; }
+
+.interior #content {
+  color: #dddddd;
+  padding: 0 20px 1.5em;
+  width: 670px; }
+  .interior #content h1 {
+    margin: 0.5em 0 0;
+    color: #9bda5e; }
+  .interior #content .subsection-navigation {
+    color: white;
+    margin-bottom: 1.5em; }
+    .interior #content .subsection-navigation a {
+      color: white;
+      font-weight: bold; }
+      .interior #content .subsection-navigation a:hover {
+        color: #9bda5e; }
+
+#footer {
+  background: url(/images/footer-bkg.png) repeat-y 230px 0;
+  margin: 6em 0 1.5em; }
+  #footer .contact {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    text-align: right; }
+    #footer .contact h3 {
+      font-weight: bold;
+      font-size: 1em;
+      line-height: 1.5;
+      margin: 0; }
+    #footer .contact address {
+      font-style: normal; }
+  #footer a {
+    color: #444444;
+    text-decoration: none;
+    display: block; }
+    #footer a:hover {
+      color: black;
+      text-decoration: underline; }
+  #footer ul {
+    margin: 0;
+    padding: 0;
+    list-style: none; }
+  #footer .span-6 > ul > li {
+    margin: 1em 0; }
+  #footer .span-6 > ul > li > a {
+    text-transform: uppercase;
+    font-weight: bold; }
+  #footer .span-6 > ul > li > a small {
+    text-transform: lowercase;
+    font-size: 1em;
+    font-weight: normal;
+    color: #777777; }
+  #footer .span-6 > ul > li li {
+    text-transform: none; }
+
+#copyright {
+  text-align: center; }
