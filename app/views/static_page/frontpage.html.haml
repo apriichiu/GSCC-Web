@@ -24,17 +24,17 @@
       /       Plug in to a small group!
       /     %p
       /       %em "Your love for one another will prove to the world that you are my disciples." John 13:35 
-      / .item.active
-      /   %a{:href=>"https://www.facebook.com/events/685371291582184/"}
-      /     %img{:src=>"images/carousel/joytotheworld2014.jpg"}
-      /   .carousel-caption
-      /     %h4 Christmas Service 2014
-      /     %p
-      /       %em Join us as we sing carols and read scripture in a special Christmas service. "Shout for joy to the Lord, all the earth, burst into jubilant song with music" Psalm 98:4
+      .item
+        %a{:href=>"/events"}
+          %img{:src=>"images/carousel/GraceFullRelationships_campfire.jpg"}
+        .carousel-caption
+          %h4 2015 Mount Hermon GSCC Retreat
+          %p
+            %em Join us as Pastor Friest speaks at our 2015 GSCC retreat on Grace-Full Relationships!
           
     / Carousel nav
-    /%a.carousel-control.left{ :href=>"#myCarousel","data-slide"=>"prev"} &lsaquo;
-    /%a.carousel-control.right{ :href=>"#myCarousel","data-slide"=>"next"} &rsaquo;
+    %a.carousel-control.left{ :href=>"#myCarousel","data-slide"=>"prev"} &lsaquo;
+    %a.carousel-control.right{ :href=>"#myCarousel","data-slide"=>"next"} &rsaquo;
   / #carousel-indicator
   /   %ol.inline{:class=>"carousel-indicators", :style=>"background-color: #777"}
   /     %li{ "data-target"=>"#myCarousel", "data-slide-to"=>"0", :class=>"active"} +
@@ -75,4 +75,4 @@
     <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script><div style="overflow:hidden;height:200px;width:200px;"><div id="gmap_canvas" style="height:200px;width:200px;"></div><style>#gmap_canvas img{max-width:none!important;background:none!important}</style><a class="google-map-code" href="http://www.map-embed.net" id="get-map-data">map-embed.net</a></div><script type="text/javascript"> function init_map(){var myOptions = {zoom:14,center:new google.maps.LatLng(37.3116495,-122.04104660000002),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById("gmap_canvas"), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(37.3116495, -122.04104660000002)});infowindow = new google.maps.InfoWindow({content:"<b>Good Shepherd Christian Community</b><br/>940 South Stelling Rd.<br/>95014 Cupertino" });google.maps.event.addListener(marker, "click", function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);</script>
 
   #newsletter
-    %a{:href => "Fall_2014_Newsletter.pdf"} Fall 2014 Newsletter is here!
+    %a{:href => "GSCC Winter 2015 Newsletter.pdf"} Winter 2015 Newsletter is here!
