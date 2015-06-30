@@ -33,36 +33,40 @@ puts lutdatabase
 config = YAML::load(File.open("#{RAILS_ROOT}/config/facebook.yml"));
 gscc_app = FbGraph::Application.new(config['production']['app_id']);
 access_token = gscc_app.get_access_token(config['production']['client_secret']);
-page_id = config['production']['page_id'];
+gscc_page_id = config['production']['gscc_page_id'];
+flc_page_id = config['production']['flc_page_id'];
 
-page = FbGraph::Page.new(page_id, :access_token => access_token).fetch;
-puts "\nAccessing facebook page - "+page.name
-#need to fetch event by identifier so you get all the information
-puts "\nSearching for dirty events..."
+pages = Array.new([gscc_page_id,flc_page_id]);
+pages.each do |page_id|
+  page = FbGraph::Page.new(page_id, :access_token => access_token).fetch;
+  puts "\nAccessing facebook page - "+page.name
+  #need to fetch event by identifier so you get all the information
+  puts "\nSearching for dirty events..."
 
-page.events.each do |e|
-  ie = FbGraph::Event.new(e.identifier, :access_token => access_token).fetch;
-  existing_event = FacebookEvent.find(:first, :conditions => [ "identifier = ?", ie.identifier ]);
-  if existing_event 
-    puts "***found database entry "+existing_event.name
-    if ie.updated_time > lutdatabase
-      puts "\n**found dirty facebook event - "+ie.name
-      existing_event.name = ie.name
-      existing_event.start_time = ie.start_time
-      existing_event.end_time = ie.end_time
-      existing_event.location = ie.location
-      existing_event.description = ie.description
-      existing_event.updated_time = ie.updated_time
-      existing_event.identifier = ie.identifier
-      existing_event.picture = ie.picture
+  page.events.each do |e|
+    ie = FbGraph::Event.new(e.identifier, :access_token => access_token).fetch;
+    existing_event = FacebookEvent.find(:first, :conditions => [ "identifier = ?", ie.identifier ]);
+    if existing_event 
+      puts "***found database entry "+existing_event.name
+      if ie.updated_time > lutdatabase
+        puts "\n**found dirty facebook event - "+ie.name
+        existing_event.name = ie.name
+        existing_event.start_time = ie.start_time
+        existing_event.end_time = ie.end_time
+        existing_event.location = ie.location
+        existing_event.description = ie.description
+        existing_event.updated_time = ie.updated_time
+        existing_event.identifier = ie.identifier
+        existing_event.picture = ie.picture
+        existing_event.save
+        puts "***updated "+existing_event.name
+      end
+    else
+      puts "***database entry not found, adding to database "+ie.name
+      existing_event = FacebookEvent.new( :name => ie.name, :start_time => ie.start_time, :end_time => ie.end_time, :location => ie.location, :description => ie.description, :updated_time => ie.updated_time, :identifier => ie.identifier, :picture => ie.picture )
       existing_event.save
-      puts "***updated "+existing_event.name
+      puts "***saved "+existing_event.name
     end
-  else
-    puts "***database entry not found, adding to database "+ie.name
-    existing_event = FacebookEvent.new( :name => ie.name, :start_time => ie.start_time, :end_time => ie.end_time, :location => ie.location, :description => ie.description, :updated_time => ie.updated_time, :identifier => ie.identifier, :picture => ie.picture )
-    existing_event.save
-    puts "***saved "+existing_event.name
   end
 end
 
