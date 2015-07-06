@@ -42,7 +42,7 @@ pages.each do |page_id|
   puts "page_id="+page_id.to_s
   page = FbGraph::Page.new(page_id, :access_token => access_token).fetch;
 
-  pages_fetched.push(push)
+  pages_fetched.push(page)
 
   puts "\nAccessing facebook page - "+page.name
   #need to fetch event by identifier so you get all the information
