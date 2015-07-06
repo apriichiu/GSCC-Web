@@ -38,6 +38,7 @@ flc_page_id = config['production']['flc_page_id'];
 
 pages = Array.new([gscc_page_id,flc_page_id]);
 pages.each do |page_id|
+  puts "page_id="+page_id.to_s
   page = FbGraph::Page.new(page_id, :access_token => access_token).fetch;
   puts "\nAccessing facebook page - "+page.name
   #need to fetch event by identifier so you get all the information
@@ -68,26 +69,25 @@ pages.each do |page_id|
       puts "***saved "+existing_event.name
     end
   end
-end
-
 
 ##################
 # Deleting events 
 ##################
-puts "\nLooking for deleted facebook events..."
-all_events = FacebookEvent.find(:all);
-page.events.each do |e|
-  all_events.delete_if { |ae| ae.identifier == e.identifier }
-end
-if all_events.size > 0
-  puts "Found deleted events! Deleting events from database..."
-  all_events.each do |e|
-    puts "\n***deleting event "+e.name
-    e.delete
-    puts "****deleted."
+  puts "\nLooking for deleted facebook events..."
+  all_events = FacebookEvent.find(:all);
+  page.events.each do |e|
+    all_events.delete_if { |ae| ae.identifier == e.identifier }
+  end
+
+  if all_events.size > 0
+    puts "Found deleted events! Deleting events from database..."
+    all_events.each do |e|
+      puts "\n***deleting event "+e.name
+      e.delete
+      puts "****deleted."
+    end
   end
 end
-
 
 
 
