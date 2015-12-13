@@ -46,11 +46,6 @@
     <th class="ui-state-default"> Files </th>
     <td>
       <% @entry.attachments.each do |a| %>
-      <% if File.extname(a.object_file_name) == ".mp3" %>
-      <audio controls>
-      <source src=<% a.object_file_name %> type="audio/mp3">
-      </audio>
-      <% else %>
       <%= get_filetype_image(a) %> - <%= link_to a.object_file_name, a.object.url %> - <%= readable_file_size(a.object_file_size, 0) %> <br />
       <% end %>
     </td> 
