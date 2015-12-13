@@ -1,18 +1,33 @@
-%h1 Serve
-.subsection-navigation
-  %a{:href => subsection_path(:section => "serve", :subsection => "ministries")} Ministries
-  \/
-  %a{:href => subsection_path(:section => "serve", :subsection => "compassion")} Compassion
+%br
+:javascript
+  $(function() {
+  $("#serve").tabs();
+  });
+%div{:id => "serve"}
+  %ul
+    %li 
+      %a{:href => "#ministries"}Ministries
+    %li
+      %a{:href => "#compassion"}Compassion
+
+  %div{:id => "ministries"}
+    = render "/static_page/serve/ministries"
+
+  %div{:id => "compassion"}
+    = render "/static_page/serve/compassion"
 
 
-Good Shepherd Christian Community serves each other and their community as members of the body of Christ. We serve each other in faith for building up His church.
-%p
-We encourage you to receive from the ministries of Good Shepherd, and if you would like to serve in the ministries at Good Shepherd, we invite you to learn about our ministries. Good Shepherd is also involved in serving the community through our Compassion ministry.
-%p
-Learn more about serving opportunities in Good Shepherd Christian Community 
-%a{:href => subsection_path(:section => "serve", :subsection => "ministries")} ministries.
-%p
-Learn more about being a part of the 
-%a{:href => subsection_path(:section => "serve", :subsection => "compassion")} Compassion
-ministry.
+
+
+
+/ Good Shepherd Christian Community serves each other and their community as members of the body of Christ. We serve each other in faith for building up His church.
+/ %p
+/ We encourage you to receive from the ministries of Good Shepherd, and if you would like to serve in the ministries at Good Shepherd, we invite you to learn about our ministries. Good Shepherd is also involved in serving the community through our Compassion ministry.
+/ %p
+/ Learn more about serving opportunities in Good Shepherd Christian Community 
+/ %a{:href => subsection_path(:section => "serve", :subsection => "ministries")} ministries.
+/ %p
+/ Learn more about being a part of the 
+/ %a{:href => subsection_path(:section => "serve", :subsection => "compassion")} Compassion
+/ ministry.
 
