@@ -5,9 +5,13 @@ table.datatable tr.odd td{
     background-color: #efe;
 }
 
+.datatable {
+    width: 100%;
+}
 .datatable tbody td{
     color: #333;
 }
+
 .datatable th{
     padding-top: 0px;
     padding-bottom: 0px;
@@ -20,6 +24,7 @@ table.display thead th.admin-column{
 
 #content .datatable tbody td a{
     color: #575; 
+    width: 100%;
 }
 
 .datatable tr.odd td.highlighted, .datatable tr.even td.highlighted{
@@ -28,7 +33,7 @@ table.display thead th.admin-column{
 
 .datatable tbody th input{
     color: #aaa;
-    width: 95%;
+    width: 100%;
 }
 
 .datatable tbody th input:focus{
