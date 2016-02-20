@@ -49,23 +49,18 @@
   /     %li{ "data-target"=>"#myCarousel", "data-slide-to"=>"1", :class=>"active"} +
   /     %li{ "data-target"=>"#myCarousel", "data-slide-to"=>"2"} +
 
-#large-unit
+#large-unit{:style => "height: 720px; background: url(/images/large-unit-bkg_2016.jpg) no-repeat;"}
   #left-section{:style => "float:left; width:40%;"}
-    #sunday-services.span-5{:style => "padding: 25px 10px 10px 10px; float:left;"}
+    #sunday-services.span-5{:style => "padding: 0px 10px 10px 10px; float:left;"}
       %p
         %a{:href => "/connect#worship"} <strong>Sunday Service</strong>
-        %p
-          11:00 AM / Church
-          %br
-          Sanctuary
-      %p
+        11:00 AM / Church Sanctuary
+      %p{:style => "padding-top: 10px;margin-top: 20px;"}
         %a{:href => "/connect#children"} <strong>Children's Program</strong>
-        %p
-          %br
-          11:00 AM / Children's Room
+        11:00 AM / Children's Room
       /%a#new-callout.pharkir{:href => 'http://www.facebook.com/gscommunity'}
-    #facebook.span-5{:style => "float: left; clear: left; padding-left: 5px; color:#FFFFFF"}
-      %p.span1{:style=>"font-size: 1.1em;"}
+    #facebook.span-5{:style => "float: left; clear: left; padding-top: 20px; color:#FFFFFF"}
+      %p.span1{:style=>"font-size: 1.1em;padding-top: 10px;"}
         Become a fan on facebook
       %a.span1{:href => 'http://www.facebook.com/gscommunity', :style => "padding-top: 10px;"}
         %img{:src=>"images/fb_icon.jpg"}
