@@ -156,18 +156,18 @@ a:hover {color: #ccc;}
   border: 4px solid #777;
   margin-bottom: 1em; }
 #content #large-unit {
-  background: url(/images/large-unit-bkg_2013.jpg) no-repeat;
-  height: 360px; }
+  background: url(/images/large-unit-bkg_2016.jpg) no-repeat;
+  height: 720px; 
+  }
 
   #content #large-unit #sunday-services p {
-    height: 36px;
-    margin: 0;
-    padding: 18px 40px 18px 10px;
-    color: #fff}
+    height: 15px;
+    color: #fff;
+  }
   #content #large-unit #sunday-services strong {
     font-size: 1.5em;
     line-height: 1;
-    display: block; }
+    }
   #content #large-unit #sunday-services a {
       color: #9bda5e;
   }
@@ -224,18 +224,13 @@ a:hover {color: #ccc;}
     float: left; 
     margin-left: 30px;
   }
-  
-  #content #large-unit #map {
-    position: relative;
-    left: -100px;
-    height: 200px;
-    width: 200px;
-    float: left;
-    display: block;
-    margin-left: 100px;
-    padding-left: 130px;
-    margin-top: 80px;
+
+  #content #large-unit #prayer-scripture p {
+    height: 15px;
+    color: #fff;
   }
+
+
 
 .interior #content {
   color: #ddd;
@@ -418,7 +413,7 @@ table#show-view-table tr.odd td
 
 p.small-group,h1.small-group
 {
-  font-family: Arial, Helvetica;
+  font-family: Arial, Helvetica !important;
   color: black !important;
   font-size: 26px !important;
 }
