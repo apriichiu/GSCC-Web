@@ -161,12 +161,14 @@ a:hover {color: #ccc;}
   }
 
   #content #large-unit #sunday-services p {
-    height: 15px;
-    color: #fff;
-  }
+    height: 36px;
+    margin: 0;
+    padding: 18px 40px 18px 10px;
+    color: #fff}
   #content #large-unit #sunday-services strong {
     font-size: 1.5em;
     line-height: 1;
+    display: block; }
     }
   #content #large-unit #sunday-services a {
       color: #9bda5e;
