@@ -11,19 +11,20 @@
   #myCarousel{:class=>"carousel slide", :style=>'height:324px'}
     / Carousel items
     .carousel-inner
-      / .item.active
-      /   %a{:href=>"/resources"}
-      /     %img{:src=>"images/carousel/slide_miracles.jpg"}
-      /   .carousel-caption
-      /     %p
-      /       %em “...he has given us new birth into a living hope through the resurrection of Jesus Christ" - 1 Peter 1:3
+      .item.active
+        %a{:href=>"/resources"}
+          %img{:src=>"images/carousel/slide_thisamazinglove.jpg"}
+        .carousel-caption
+          %h4 Mother's Day Service 2016
+          %p
+            %em Invite your friends and family to a special Sunday service on Mother's day!
       / .item
       /   %a{:href=>"https://www.facebook.com/events/954803904570803/"}
       /     %img{:src=>"images/carousel/slide_fatherwholeads.jpg"}
       /   .carousel-caption
       /     %h4 Father's Day Service 2015
       /     %p "The father of a righteous child has great joy; a man who fathers a wise son rejoices in him." - Proverbs 23:24
-      .item.active
+      .item
         %a{:href=>"/connect"}
           %img{:src=>"images/carousel/slide_connect.JPG"}
         .carousel-caption
@@ -41,8 +42,8 @@
       /       %em “Celebrate the Festival of Weeks with the firstfruits of the wheat harvest, and the Festival of Ingathering at the turn of the year." - Exodus 34:22
           
     / Carousel nav
-    / %a.carousel-control.left{ :href=>"#myCarousel","data-slide"=>"prev"} &lsaquo;
-    / %a.carousel-control.right{ :href=>"#myCarousel","data-slide"=>"next"} &rsaquo;
+    %a.carousel-control.left{ :href=>"#myCarousel","data-slide"=>"prev"} &lsaquo;
+    %a.carousel-control.right{ :href=>"#myCarousel","data-slide"=>"next"} &rsaquo;
   / #carousel-indicator
   /   %ol.inline{:class=>"carousel-indicators", :style=>"background-color: #777"}
   /     %li{ "data-target"=>"#myCarousel", "data-slide-to"=>"0", :class=>"active"} +
