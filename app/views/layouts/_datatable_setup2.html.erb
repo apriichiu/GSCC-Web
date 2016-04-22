@@ -7,45 +7,22 @@
 
 $(document).ready(function() {
       var oTable2 = $('.datatable2').dataTable({
+        "aaSorting": [[0, 'asc']],
         "bSortClasses" : false,
         "bLengthChange" : true,
         "bJQueryUI": true,
         "sPaginationType": "full_numbers",
-	"bAutoWidth": false,
-        "aoColumns": [
-            {
-                'asSorting': [ "desc" ],
-                'sType': 'date',
-                'bSortable':true,
-                'bSearchable':true
-                
-            },{
-                'sType': 'html',
-                'bSortable':true,
-                'bSearchable':true
-            },{
-                'sType': 'html',
-                'bSortable':true,
-                'bSearchable':true
-                
-            },{
-                'sType': 'html',
-                'bSortable':true,
-                'bSearchable':true
-                
-            },{
-                'sType': 'html',
-                'bSortable':true,
-                'bSearchable':true
-            
-            },{
-                'sType': 'string',
-                'bSortable':true,
-                'bSearchable':true
-                
-            }
-        ]
-    });
+	    "bAutoWidth": false,
+      "bSortable": true,
+        "aoColumnDefs": [
+        { "aTargets": [0], "bSortable": true },
+        { "aTargets": [1], "bSortable": true },
+        { "aTargets": [2], "bSortable": true },
+        { "aTargets": [3], "bSortable": true },
+        { "aTargets": [4], "bSortable": true },
+        { "aTargets": [5], "bSortable": true }]
+
+        });
 
     var asInitVals = new Array();
 
