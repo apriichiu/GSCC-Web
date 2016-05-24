@@ -1,9 +1,22 @@
+<html>
+<head>
 <script type='text/javascript' src='/javascripts/jquery.dataTables.min.js'> </script>
+<script type="text/javascript" src="/javascripts/jquery-latest.js"></script> 
+<script type="text/javascript" src="/javascripts/jquery.tablesorter.js"></script> 
 <link href='/stylesheets/demo_table_jui.css' rel='stylesheet' type='text/css'> 
 <link href='/stylesheets/jquery-custom.css' rel='stylesheet' type='text/css'> 
 <link href='/stylesheets/datatable.css' rel='stylesheet' type='text/css'> 
 
 <script type='text/javascript'>
+
+$(document).ready(function() 
+    { 
+        $('.datatable2').tablesorter( ); 
+    } 
+); 
+
+
+
 
 $(document).ready(function() {
       var oTable2 = $('.datatable2').dataTable({
@@ -16,13 +29,13 @@ $(document).ready(function() {
 
         });
 
-    var asInitVals = new Array();
+  //  var asInitVals = new Array();
 
     /***************************
       * row highlighting
       ***************************/
-    $('.datatable tbody td').bind('mouseenter', function () { $(this).parent().children().each(function(){$(this).addClass('highlighted');}); });
-    $('.datatable tbody td').bind('mouseleave', function () { $(this).parent().children().each(function(){$(this).removeClass('highlighted');}); })
+    $('.datatable2 tbody td').bind('mouseenter', function () { $(this).parent().children().each(function(){$(this).addClass('highlighted');}); });
+    $('.datatable2 tbody td').bind('mouseleave', function () { $(this).parent().children().each(function(){$(this).removeClass('highlighted');}); })
 
     /***************************
       * filters
@@ -60,3 +73,5 @@ $(document).ready(function() {
 } );
 
 </script>
+</head>
+</html>
