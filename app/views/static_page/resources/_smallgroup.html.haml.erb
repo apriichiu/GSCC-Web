@@ -1,5 +1,5 @@
 <%= render "/layouts/datatable_setup2" %>
-<table class='display datatable' cellpadding="0" cellspacing="0" border="0" style="width:100%">
+<table class='display datatable' cellpadding="0" cellspacing="0" border="0">
   <thead>
     <tr>
       <th>Date</th>
@@ -35,11 +35,26 @@
         <td><%= fetch_attachments(entry) %></td>
         <% if admin? %>
         <td> <%= link_to image_tag("datatable/edit.png", :size => "20x20"), edit_entry_path(entry), :title => "edit" %>
-  	<%= link_to image_tag("datatable/delete.png", :size=> "20x20"), entry, :confirm => 'Are you sure?', :method => :delete, :title => "delete"%></td>
+    <%= link_to image_tag("datatable/delete.png", :size=> "20x20"), entry, :confirm => 'Are you sure?', :method => :delete, :title => "delete"%></td>
         <% end %>
       <% end %>
     </tr>
     <% end %>
   </tbody>
+  <tbody> 
+    <tr> 
+      <th class="ui-state-default"></th> 
+      <th class="ui-state-default"><input type="text" name="search_title" value="filter title" class="search_init" /></th> 
+      <th class="ui-state-default"><input type="text" name="search_verse" value="filter verse" class="search_init" /></th> 
+      <th class="ui-state-default"><input type="text" name="search_tags" value="filter tags" class="search_init" /></th> 
+      <th class="ui-state-default"><input type="text" name="search_series" value="filter series" class="search_init" /></th> 
+      <% if admin? %>
+      <th class="ui-state-default"><input type="text" name="search_attachments" value="filter filetype" class="search_init" /></th> 
+      <th class="ui-state-default"></th>
+      <% else %>
+      <th class="ui-state-default"><input type="text" name="search_attachments" value="Filter filetype" class="search_init" /></th> 
+      <% end %>
+    </tr> 
+  </tbody> 
 </table>
-<br />
+<br /> 
