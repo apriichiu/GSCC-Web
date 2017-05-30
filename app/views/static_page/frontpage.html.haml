@@ -18,13 +18,13 @@
           %h4 Sermon Series
           %p
             %em "I can do all this through him who gives me strength.” - Philippians 4:13
-      / .item.active
-      /   %a{:href=>"/resources"}
-      /     %img{:src=>"images/carousel/slide_mothersday2017.jpg"}
-      /   .carousel-caption
-      /     %h4 Mother's Day Service
-      /     %p Invite your friends and family for a special Mother's Day Service on Sunday, May 14!
-      /     %p "I am reminded of your sincere faith, which first lived in your grandmother Lois and in your mother Eunice and, I am persuaded, now lives in you also." - 2 Timothy 1:5
+      .item
+        %a{:href=>"/resources"}
+          %img{:src=>"images/carousel/slide_2017fathersday.jpg"}
+        .carousel-caption
+          %h4 Sermon Series
+          %p
+            %em Join us for a special Father's Day Service! "We love because he first loved us” - 1 John 4:19
       / .item
       /   %a{:href=>"/connect"}
       /     %img{:src=>"images/carousel/slide_connect.JPG"}
@@ -33,8 +33,8 @@
       /     %p Find and join a small group!
           
     / Carousel nav
-    /%a.carousel-control.left{ :href=>"#myCarousel","data-slide"=>"prev"} &lsaquo;
-    /%a.carousel-control.right{ :href=>"#myCarousel","data-slide"=>"next"} &rsaquo;
+    %a.carousel-control.left{ :href=>"#myCarousel","data-slide"=>"prev"} &lsaquo;
+    %a.carousel-control.right{ :href=>"#myCarousel","data-slide"=>"next"} &rsaquo;
   / #carousel-indicator
   /   %ol.inline{:class=>"carousel-indicators", :style=>"background-color: #777"}
   /     %li{ "data-target"=>"#myCarousel", "data-slide-to"=>"0", :class=>"active"} +
