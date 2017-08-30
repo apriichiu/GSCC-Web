@@ -11,20 +11,20 @@
   #myCarousel{:class=>"carousel slide", :style=>'height:324px'}
     / Carousel items
     .carousel-inner
-      .item.active
+      .item
         %a{:href=>"https://www.gofundme.com/gscc-church-school-project"}
           %img{:src=>"images/carousel/gsccfundraiserbanner_web.jpg"}
         .carousel-caption
           %h4 GSCC Preschool Fundraiser
           %p
             %em Help us build our preschool by contributing to our fundraiser on GoFundMe!
-      / .item
-      /   %a{:href=>"/resources"}
-      /     %img{:src=>"images/carousel/slide_2017fathersday.jpg"}
-      /   .carousel-caption
-      /     %h4 Sermon Series
-      /     %p
-      /       %em Join us for a special Father's Day Service! "We love because he first loved us” - 1 John 4:19
+      .item.active
+        %a{:href=>"/resources"}
+          %img{:src=>"images/carousel/slide_unshakeablehope.jpg"}
+        .carousel-caption
+          %h4 Sermon Series
+          %p
+            %em "I am the Alpha and the Omega, the first and the last, the beginning and the end." - Revelations 22:13
       / .item
       /   %a{:href=>"/connect"}
       /     %img{:src=>"images/carousel/slide_connect.JPG"}
@@ -33,8 +33,8 @@
       /     %p Find and join a small group!
           
     / Carousel nav
-    /%a.carousel-control.left{ :href=>"#myCarousel","data-slide"=>"prev"} &lsaquo;
-    /%a.carousel-control.right{ :href=>"#myCarousel","data-slide"=>"next"} &rsaquo;
+    %a.carousel-control.left{ :href=>"#myCarousel","data-slide"=>"prev"} &lsaquo;
+    %a.carousel-control.right{ :href=>"#myCarousel","data-slide"=>"next"} &rsaquo;
   / #carousel-indicator
   /   %ol.inline{:class=>"carousel-indicators", :style=>"background-color: #777"}
   /     %li{ "data-target"=>"#myCarousel", "data-slide-to"=>"0", :class=>"active"} +
