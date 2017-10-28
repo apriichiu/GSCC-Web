@@ -22,11 +22,11 @@ Rails::Initializer.run do |config|
   # config.gem "aws-s3", :lib => "aws/s3"
   # config.gem "haml", :version => '>= 3.0.0'
   # config.gem "sqlite3"
-  config.gem "json"
-  config.gem "rest-client"
+  config.gem "json", :version => '1.7.6'
+  config.gem "rest-client", :version => '1.6.7'
   # config.gem "oauth2"
-  config.gem "fb_graph"
-  config.gem "sass"
+  config.gem "fb_graph", :version => '2.6.2'
+  config.gem "sass", :version => '3.2.5'
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
